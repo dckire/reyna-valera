@@ -3,45 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Santa Biblia Reina-Valera 1569-1602 - Palabra de Dios y recursos para vida plena">
     <title>Santa Biblia Reina-Valera | Palabra y Recursos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Marcellus&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Variables CSS actualizadas */
+        /* Variables CSS modernas */
         :root {
-            --color-primary: #8B4513;
-            --color-secondary: #D2B48C;
-            --color-accent: #A52A2A;
-            --color-gold: #D4AF37;
-            --color-light: #F5F5DC;
-            --color-dark: #3C2A1E;
-            --color-white: #FFFFFF;
-            --color-black: #1A1A1A;
-            --color-gray: #6B7280;
-            --color-green: #2E7D32;
-            --color-blue: #1565C0;
-            --color-purple: #6A1B9A;
-            --color-teal: #00897B;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
-            --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
-            --shadow-xl: 0 12px 24px rgba(0,0,0,0.25);
-            --border-radius-sm: 8px;
-            --border-radius-md: 12px;
-            --border-radius-lg: 16px;
-            --border-radius-xl: 24px;
-            --transition-fast: 0.2s ease;
-            --transition-normal: 0.3s ease;
-            --transition-slow: 0.5s ease;
-            --header-height-mobile: 60px;
-            --header-height-desktop: 80px;
-            --nav-height-mobile: 70px;
-            --nav-height-desktop: 60px;
-            --sidebar-width: 280px;
+            --color-primary: #2563eb;
+            --color-primary-light: #3b82f6;
+            --color-primary-dark: #1d4ed8;
+            --color-secondary: #10b981;
+            --color-accent: #8b5cf6;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-text-lighter: #9ca3af;
+            --color-background: #ffffff;
+            --color-surface: #f9fafb;
+            --color-border: #e5e7eb;
+            --color-card: #ffffff;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-danger: #ef4444;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-serif: 'Source Serif Pro', 'Times New Roman', serif;
+            
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 350ms ease;
         }
 
-        /* Reset y estilos base */
+        /* Reset y base */
         * {
             margin: 0;
             padding: 0;
@@ -54,33 +62,30 @@
         }
 
         body {
-            font-family: 'Crimson Pro', serif;
-            background-color: var(--color-light);
-            color: var(--color-dark);
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background-color: var(--color-background);
             line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-            transition: background-color var(--transition-normal);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Contenedor principal */
         .container {
             width: 100%;
-            max-width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 var(--spacing-sm);
         }
 
-        /* Header */
-        .main-header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-            color: var(--color-white);
-            padding: 1rem 0;
+        /* Header minimalista */
+        .header {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-lg);
-            border-bottom: 3px solid var(--color-gold);
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1rem 0;
         }
 
         .header-content {
@@ -92,56 +97,69 @@
         .logo {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
 
         .logo h1 {
-            font-family: 'Marcellus', serif;
-            font-size: 1.8rem;
-            color: var(--color-gold);
-            margin-bottom: 0.2rem;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: -0.025em;
         }
 
         .logo p {
-            font-size: 0.9rem;
-            color: var(--color-secondary);
-            font-style: italic;
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+            margin-top: 0.25rem;
+        }
+
+        .nav-desktop {
+            display: none;
+        }
+
+        .nav-desktop a {
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            transition: var(--transition-fast);
+            font-weight: 500;
+        }
+
+        .nav-desktop a:hover {
+            background-color: var(--color-surface);
+            color: var(--color-primary);
         }
 
         .mobile-menu-btn {
             background: none;
             border: none;
-            color: var(--color-white);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            color: var(--color-text);
             transition: var(--transition-fast);
         }
 
-        .mobile-menu-btn:active {
-            transform: scale(0.95);
+        .mobile-menu-btn:hover {
+            background-color: var(--color-surface);
         }
 
-        .desktop-nav {
-            display: none;
-        }
-
-        /* Menú móvil */
+        /* Menú móvil moderno */
         .mobile-menu {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 85%;
-            height: 100vh;
-            background: linear-gradient(to bottom, var(--color-dark), var(--color-primary));
-            z-index: 2000;
-            transition: right var(--transition-normal);
-            padding: 2rem 1.5rem;
-            box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+            width: 320px;
+            height: 100%;
+            background-color: var(--color-background);
+            z-index: 1000;
+            transition: var(--transition-normal);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-xl);
             overflow-y: auto;
         }
 
@@ -149,427 +167,331 @@
             right: 0;
         }
 
-        .mobile-menu-header {
+        .menu-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--color-gold);
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
         }
 
-        .mobile-menu-title {
-            font-family: 'Marcellus', serif;
-            color: var(--color-gold);
-            font-size: 1.5rem;
+        .menu-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
         }
 
-        .mobile-menu-close {
+        .menu-close {
             background: none;
             border: none;
-            color: var(--color-white);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .mobile-menu-links a {
-            color: var(--color-white);
-            text-decoration: none;
-            padding: 1rem;
-            border-radius: var(--border-radius-sm);
-            transition: var(--transition-fast);
-            border-left: 3px solid transparent;
-            font-size: 1.1rem;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            color: var(--color-text);
+            transition: var(--transition-fast);
         }
 
-        .mobile-menu-links a:active {
-            background: rgba(255,255,255,0.1);
-            border-left: 3px solid var(--color-gold);
+        .menu-close:hover {
+            background-color: var(--color-surface);
         }
 
-        .mobile-menu-links a i {
-            width: 24px;
-            text-align: center;
+        .menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        .menu-overlay {
+        .menu-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 0.875rem 1rem;
+            border-radius: var(--radius-md);
+            transition: var(--transition-fast);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .menu-links a:hover,
+        .menu-links a.active {
+            background-color: var(--color-surface);
+            color: var(--color-primary);
+        }
+
+        .overlay {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1999;
-            backdrop-filter: blur(3px);
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 999;
         }
 
-        .menu-overlay.active {
+        .overlay.active {
             display: block;
         }
 
-        /* Main Content */
+        /* Main content */
         main {
-            padding: 2rem 0;
-            min-height: calc(100vh - 140px);
+            padding: var(--spacing-lg) 0;
+            min-height: calc(100vh - 180px);
         }
 
-        /* Hero Section */
+        /* Hero section minimalista */
         .hero {
             text-align: center;
-            padding: 2rem 1rem;
-            background: linear-gradient(135deg, rgba(139,69,19,0.05) 0%, rgba(210,180,140,0.1) 100%);
-            border-radius: var(--border-radius-lg);
-            margin-bottom: 2rem;
-            border: 1px solid rgba(139,69,19,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-gold), var(--color-primary), var(--color-gold));
+            padding: var(--spacing-xl) 0;
+            margin-bottom: var(--spacing-xl);
         }
 
         .hero h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--color-primary);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.025em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
         }
 
         .hero p {
-            font-size: 1.1rem;
-            max-width: 800px;
+            font-size: 1.125rem;
+            color: var(--color-text-light);
+            max-width: 700px;
             margin: 0 auto;
-            color: var(--color-dark);
         }
 
-        /* Featured Verses */
-        .featured-verses {
-            margin: 2rem 0;
-        }
-
-        .featured-verses h3 {
-            font-family: 'Marcellus', serif;
-            color: var(--color-primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .featured-verses h3::after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-        }
-
-        .verses-grid {
+        /* Grid moderna */
+        .grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: var(--spacing-lg);
         }
 
-        .verse-card {
-            background: var(--color-white);
-            border-radius: var(--border-radius-md);
-            padding: 1.5rem;
+        .grid-1 { grid-template-columns: 1fr; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+        /* Cards modernas */
+        .card {
+            background: var(--color-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
             box-shadow: var(--shadow-md);
             transition: var(--transition-normal);
-            border-left: 5px solid var(--color-accent);
+            border: 1px solid var(--color-border);
         }
 
-        .verse-card:active {
-            transform: translateY(-3px);
+        .card:hover {
+            transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .card-header h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .card-body {
+            padding: var(--spacing-lg);
+        }
+
+        /* Verse cards */
+        .verse-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .verse-card:hover {
+            background: var(--color-card);
+            box-shadow: var(--shadow-md);
         }
 
         .verse-card p {
-            font-style: italic;
-            font-size: 1.1rem;
+            font-family: var(--font-serif);
+            font-size: 1.125rem;
+            color: var(--color-text);
+            margin-bottom: var(--spacing-md);
             line-height: 1.7;
-            margin-bottom: 1rem;
-            color: var(--color-dark);
         }
 
-        .verse-reference {
-            text-align: right;
+        .verse-ref {
+            font-size: 0.875rem;
             font-weight: 600;
-            color: var(--color-accent);
-            font-size: 1rem;
+            color: var(--color-primary);
+            text-align: right;
         }
 
-        /* Verse of the Day */
+        /* Verse of the day */
         .verse-of-day {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-            color: var(--color-white);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .verse-of-day::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
         }
 
         .verse-of-day-header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
         }
 
         .verse-of-day-header h3 {
-            font-family: 'Marcellus', serif;
-            font-size: 1.5rem;
-            color: var(--color-gold);
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
-        .verse-of-day-header .date {
-            font-size: 0.9rem;
+        .verse-date {
+            font-size: 0.875rem;
             opacity: 0.9;
         }
 
         .verse-content {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
 
-        .verse-reference-large {
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--color-secondary);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Bible Buttons */
-        .bible-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .bible-button {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-            color: var(--color-white);
-            border: none;
-            padding: 1.5rem;
-            border-radius: var(--border-radius-lg);
-            font-family: 'Marcellus', serif;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition-normal);
-            display: flex;
+        /* Buttons modernos */
+        .btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
-            box-shadow: var(--shadow-md);
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 500;
             text-decoration: none;
-        }
-
-        .bible-button:active {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .bible-button i {
-            font-size: 1.5rem;
-        }
-
-        /* Reading Plan */
-        .reading-plan {
-            background: var(--color-white);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(139,69,19,0.1);
-        }
-
-        .reading-plan-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--color-gold);
-            padding-bottom: 1rem;
-        }
-
-        .reading-plan-header h3 {
-            font-family: 'Marcellus', serif;
-            color: var(--color-primary);
-            font-size: 1.5rem;
-        }
-
-        .reading-plan-category {
-            margin-bottom: 2rem;
-        }
-
-        .reading-plan-category h4 {
-            color: var(--color-accent);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            border-left: 3px solid var(--color-accent);
-        }
-
-        .reading-plan-list {
-            list-style: none;
-        }
-
-        .reading-plan-list li {
-            padding: 0.8rem 1rem;
-            margin-bottom: 0.8rem;
-            background: rgba(210,180,140,0.1);
-            border-radius: var(--border-radius-sm);
-            border-left: 3px solid var(--color-primary);
-        }
-
-        .reading-plan-list strong {
-            color: var(--color-primary);
-            font-weight: 600;
-        }
-
-        /* NUEVA SECCIÓN: Recursos Digitales */
-        .digital-resources {
-            margin: 3rem 0;
-            padding: 2rem 0;
-            background: linear-gradient(to bottom, rgba(139,69,19,0.03), rgba(210,180,140,0.05));
-            border-radius: var(--border-radius-lg);
-            border: 1px solid rgba(139,69,19,0.1);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Marcellus', serif;
-            color: var(--color-primary);
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header p {
-            color: var(--color-gray);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .category-tab {
-            background: var(--color-white);
-            border: 2px solid var(--color-secondary);
-            color: var(--color-primary);
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-family: 'Marcellus', serif;
-            font-size: 1rem;
+            transition: var(--transition-fast);
+            border: none;
             cursor: pointer;
-            transition: var(--transition-normal);
+            font-size: 1rem;
         }
 
-        .category-tab.active {
-            background: var(--color-primary);
-            color: var(--color-white);
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-surface);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-border);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        /* Filters modernos */
+        .filters {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            color: var(--color-text);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .filter-btn:hover {
+            background-color: var(--color-border);
+        }
+
+        .filter-btn.active {
+            background-color: var(--color-primary);
+            color: white;
             border-color: var(--color-primary);
         }
 
-        .category-tab:active {
-            transform: translateY(-2px);
-        }
-
-        .resources-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
+        /* Resource cards modernas */
         .resource-card {
-            background: var(--color-white);
-            border-radius: var(--border-radius-lg);
+            background: var(--color-card);
+            border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-md);
             transition: var(--transition-normal);
-            border: 1px solid rgba(139,69,19,0.1);
+            border: 1px solid var(--color-border);
+            height: 100%;
             display: flex;
             flex-direction: column;
-            height: 100%;
         }
 
-        .resource-card:active {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
         .resource-badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--color-green);
-            color: var(--color-white);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+            top: var(--spacing-sm);
+            right: var(--spacing-sm);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
             font-weight: 600;
-            z-index: 2;
+            z-index: 1;
         }
 
-        .resource-badge.hot {
-            background: var(--color-accent);
+        .badge-new {
+            background-color: var(--color-success);
+            color: white;
         }
 
-        .resource-badge.new {
-            background: var(--color-blue);
+        .badge-popular {
+            background-color: var(--color-warning);
+            color: white;
+        }
+
+        .badge-hot {
+            background-color: var(--color-danger);
+            color: white;
         }
 
         .resource-image {
@@ -582,7 +504,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform var(--transition-slow);
+            transition: var(--transition-normal);
         }
 
         .resource-card:hover .resource-image img {
@@ -590,7 +512,7 @@
         }
 
         .resource-content {
-            padding: 1.5rem;
+            padding: var(--spacing-lg);
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -598,56 +520,55 @@
 
         .resource-category {
             display: inline-block;
-            background: rgba(139,69,19,0.1);
-            color: var(--color-primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-bottom: 0.8rem;
+            margin-bottom: var(--spacing-sm);
             align-self: flex-start;
         }
 
-        .resource-category.nutrition {
-            background: rgba(46,125,50,0.1);
-            color: var(--color-green);
+        .category-health {
+            background-color: #d1fae5;
+            color: #065f46;
         }
 
-        .resource-category.creative {
-            background: rgba(106,27,154,0.1);
-            color: var(--color-purple);
+        .category-creative {
+            background-color: #ede9fe;
+            color: #5b21b6;
         }
 
         .resource-title {
-            font-family: 'Marcellus', serif;
-            font-size: 1.3rem;
-            color: var(--color-dark);
-            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--spacing-sm);
             line-height: 1.4;
         }
 
         .resource-description {
-            color: var(--color-gray);
-            margin-bottom: 1.2rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
             flex-grow: 1;
         }
 
         .resource-features {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--spacing-lg);
         }
 
         .resource-features li {
-            padding: 0.3rem 0;
-            color: var(--color-dark);
-            font-size: 0.95rem;
+            padding: 0.25rem 0;
+            color: var(--color-text);
+            font-size: 0.875rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .resource-features li i {
-            color: var(--color-gold);
+            color: var(--color-primary);
+            font-size: 0.75rem;
         }
 
         .resource-price {
@@ -659,117 +580,108 @@
 
         .price-old {
             text-decoration: line-through;
-            color: var(--color-gray);
-            font-size: 0.9rem;
+            color: var(--color-text-lighter);
+            font-size: 0.875rem;
         }
 
         .price-new {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--color-accent);
+            color: var(--color-text);
         }
 
         .price-discount {
-            background: var(--color-accent);
-            color: var(--color-white);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            background-color: var(--color-danger);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
             font-weight: 600;
         }
 
-        .resource-button {
-            display: block;
+        .resource-btn {
             width: 100%;
-            text-align: center;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-            color: var(--color-white);
-            padding: 1rem;
-            border-radius: var(--border-radius-md);
-            text-decoration: none;
-            font-family: 'Marcellus', serif;
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            transition: var(--transition-normal);
-            border: none;
-            cursor: pointer;
+            margin-top: var(--spacing-md);
         }
 
-        .resource-button:active {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        /* Section headers */
+        .section-header {
+            margin-bottom: var(--spacing-lg);
         }
 
-        /* Footer */
-        .main-footer {
-            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
-            color: var(--color-white);
-            padding: 3rem 0 2rem;
-            margin-top: 3rem;
-            border-top: 3px solid var(--color-gold);
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .section-header p {
+            color: var(--color-text-light);
+            font-size: 1.125rem;
+        }
+
+        /* Footer moderno */
+        .footer {
+            background-color: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            padding: var(--spacing-xl) 0;
+            margin-top: var(--spacing-xl);
         }
 
         .footer-content {
-            text-align: center;
-        }
-
-        .footer-logo {
-            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
         }
 
         .footer-logo h3 {
-            font-family: 'Marcellus', serif;
-            font-size: 1.8rem;
-            color: var(--color-gold);
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
         }
 
         .footer-logo p {
-            font-size: 0.9rem;
-            color: var(--color-secondary);
-            font-style: italic;
+            color: var(--color-text-light);
         }
 
         .footer-links {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: var(--spacing-lg);
         }
 
         .footer-links a {
-            color: var(--color-white);
+            color: var(--color-text);
             text-decoration: none;
             transition: var(--transition-fast);
         }
 
         .footer-links a:hover {
-            color: var(--color-gold);
+            color: var(--color-primary);
         }
 
         .copyright {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: var(--color-secondary);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-light);
+            font-size: 0.875rem;
         }
 
-        /* Bottom Navigation - Solo móvil */
+        /* Mobile bottom nav */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--color-white);
+            background-color: var(--color-background);
+            border-top: 1px solid var(--color-border);
             display: flex;
             justify-content: space-around;
-            align-items: center;
-            padding: 0.8rem 0;
-            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
-            z-index: 1000;
-            border-top: 1px solid rgba(139,69,19,0.1);
+            padding: 0.75rem 0;
+            z-index: 90;
         }
 
         .nav-item {
@@ -777,23 +689,20 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: var(--color-gray);
-            flex: 1;
+            color: var(--color-text-light);
             padding: 0.5rem;
+            border-radius: var(--radius-md);
             transition: var(--transition-fast);
+            min-width: 60px;
         }
 
         .nav-item.active {
             color: var(--color-primary);
         }
 
-        .nav-item:active {
-            color: var(--color-primary);
-        }
-
         .nav-icon {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
         }
 
         .nav-text {
@@ -801,7 +710,7 @@
             font-weight: 500;
         }
 
-        /* Modal */
+        /* Modal moderno */
         .modal {
             display: none;
             position: fixed;
@@ -809,508 +718,155 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 3000;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
-            backdrop-filter: blur(5px);
+            padding: var(--spacing-sm);
         }
 
         .modal-content {
-            background: var(--color-white);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
+            background-color: var(--color-background);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
             max-width: 500px;
             width: 100%;
             box-shadow: var(--shadow-xl);
             position: relative;
-            border: 2px solid var(--color-gold);
         }
 
         .modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
             background: none;
             border: none;
-            font-size: 1.5rem;
-            color: var(--color-accent);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
             cursor: pointer;
-            padding: 0.5rem;
+            color: var(--color-text);
             transition: var(--transition-fast);
         }
 
-        .modal-close:active {
-            transform: rotate(90deg);
+        .modal-close:hover {
+            background-color: var(--color-surface);
         }
 
         .modal h2 {
-            font-family: 'Marcellus', serif;
-            color: var(--color-primary);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--spacing-sm);
         }
 
         .modal p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .modal-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .modal-btn {
-            padding: 0.8rem 2rem;
-            border-radius: var(--border-radius-md);
-            border: none;
-            font-family: 'Marcellus', serif;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
-
-        .modal-btn-primary {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-            color: var(--color-white);
-        }
-
-        .modal-btn-secondary {
-            background: var(--color-light);
-            color: var(--color-dark);
-            border: 1px solid var(--color-gray);
-        }
-
-        .modal-btn:active {
-            transform: translateY(-2px);
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-lg);
         }
 
         /* Animaciones */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+            animation: fadeIn 0.3s ease-out forwards;
         }
 
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
-
-        /* ============================================
-           MEDIA QUERIES PARA TABLETS
-           ============================================ */
+        /* Responsive */
         @media (min-width: 768px) {
             .container {
-                max-width: 720px;
-                padding: 0 20px;
+                padding: 0 var(--spacing-lg);
             }
             
-            .logo h1 {
-                font-size: 2.2rem;
+            .nav-desktop {
+                display: flex;
+                gap: var(--spacing-sm);
             }
             
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .verses-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .bible-buttons {
-                flex-direction: row;
-                justify-content: center;
-            }
-            
-            .bible-button {
-                flex: 1;
-                max-width: 300px;
-            }
-            
-            .resources-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-links {
-                gap: 3rem;
-            }
-        }
-
-        /* ============================================
-           MEDIA QUERIES PARA ESCRITORIO
-           ============================================ */
-        @media (min-width: 1024px) {
-            body {
-                display: grid;
-                grid-template-columns: var(--sidebar-width) 1fr;
-                grid-template-rows: auto 1fr auto;
-                min-height: 100vh;
-            }
-            
-            .mobile-menu-btn,
-            .mobile-menu,
-            .menu-overlay,
-            .bottom-nav {
+            .mobile-menu-btn {
                 display: none;
             }
             
-            /* Sidebar para escritorio */
-            .desktop-sidebar {
-                grid-column: 1;
-                grid-row: 1 / -1;
-                background: linear-gradient(to bottom, var(--color-dark), var(--color-primary));
-                color: var(--color-white);
-                padding: 2rem 1.5rem;
-                height: 100vh;
-                position: sticky;
-                top: 0;
-                overflow-y: auto;
-                box-shadow: var(--shadow-lg);
-                border-right: 3px solid var(--color-gold);
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
             }
             
-            .sidebar-header {
-                text-align: center;
-                margin-bottom: 3rem;
-                padding-bottom: 1.5rem;
-                border-bottom: 2px solid var(--color-gold);
+            .bottom-nav {
+                display: none;
             }
-            
-            .sidebar-header h2 {
-                font-family: 'Marcellus', serif;
-                color: var(--color-gold);
-                font-size: 1.8rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            .sidebar-header p {
-                font-size: 0.9rem;
-                color: var(--color-secondary);
-                font-style: italic;
-            }
-            
-            .sidebar-nav {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                margin-bottom: 3rem;
-            }
-            
-            .sidebar-nav a {
-                color: var(--color-white);
-                text-decoration: none;
-                padding: 1rem 1.5rem;
-                border-radius: var(--border-radius-sm);
-                transition: var(--transition-fast);
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                border-left: 3px solid transparent;
-            }
-            
-            .sidebar-nav a:hover,
-            .sidebar-nav a.active {
-                background: rgba(255,255,255,0.1);
-                border-left: 3px solid var(--color-gold);
-            }
-            
-            .sidebar-nav a i {
-                width: 24px;
-                text-align: center;
-                font-size: 1.2rem;
-            }
-            
-            .sidebar-quick-links {
-                margin-top: 2rem;
-            }
-            
-            .sidebar-quick-links h4 {
-                color: var(--color-gold);
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-                padding-left: 0.5rem;
-                border-left: 3px solid var(--color-gold);
-            }
-            
-            .quick-links-list {
-                list-style: none;
-            }
-            
-            .quick-links-list li {
-                margin-bottom: 0.8rem;
-            }
-            
-            .quick-links-list a {
-                color: var(--color-secondary);
-                text-decoration: none;
-                padding: 0.5rem 1rem;
-                display: block;
-                border-radius: var(--border-radius-sm);
-                transition: var(--transition-fast);
-                border-left: 2px solid transparent;
-            }
-            
-            .quick-links-list a:hover {
-                background: rgba(255,255,255,0.05);
-                color: var(--color-white);
-                border-left: 2px solid var(--color-secondary);
-            }
-            
-            /* Header de escritorio */
-            .main-header {
-                grid-column: 2;
-                grid-row: 1;
-                background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
-                padding: 1rem 2rem;
-                border-bottom: 3px solid var(--color-gold);
-            }
-            
-            .header-content {
-                justify-content: center;
-            }
-            
-            .logo {
-                align-items: center;
-            }
-            
-            .logo h1 {
-                font-size: 2.5rem;
-            }
-            
-            .logo p {
-                font-size: 1rem;
-            }
-            
-            /* Main content para escritorio */
-            main {
-                grid-column: 2;
-                grid-row: 2;
-                padding: 2rem;
-                min-height: calc(100vh - 180px);
-                overflow-y: auto;
-            }
-            
-            .container {
-                max-width: 100%;
-                padding: 0;
-            }
-            
-            /* Ajustes de contenido para escritorio */
-            .hero {
-                padding: 3rem;
-                margin-bottom: 3rem;
-            }
-            
+        }
+
+        @media (min-width: 1024px) {
             .hero h2 {
                 font-size: 3rem;
             }
             
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .verses-grid {
+            .grid-3 {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-            
-            .verse-of-day {
-                padding: 3rem;
-                margin: 3rem 0;
-            }
-            
-            .verse-content {
-                font-size: 1.5rem;
-            }
-            
-            .bible-buttons {
-                gap: 2rem;
-            }
-            
-            .bible-button {
-                padding: 2rem;
-                font-size: 1.3rem;
-                transition: all var(--transition-normal);
-            }
-            
-            .bible-button:hover {
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-xl);
-            }
-            
-            .verse-card {
-                transition: all var(--transition-normal);
-            }
-            
-            .verse-card:hover {
-                transform: translateY(-5px);
-                box-shadow: var(--shadow-xl);
-            }
-            
-            .resources-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .resource-card {
-                transition: all var(--transition-normal);
-            }
-            
-            .resource-card:hover {
-                transform: translateY(-10px);
-                box-shadow: var(--shadow-xl);
-            }
-            
-            /* Footer para escritorio */
-            .main-footer {
-                grid-column: 2;
-                grid-row: 3;
-                margin-top: 0;
-                padding: 2rem;
-                background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
-            }
-            
-            .footer-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                text-align: left;
-            }
-            
-            .footer-logo {
-                margin-bottom: 0;
-                flex: 1;
-            }
-            
-            .footer-links {
-                flex: 2;
-                justify-content: flex-end;
-                margin: 0;
-                gap: 2rem;
-            }
-            
-            .copyright {
-                flex: 1;
-                text-align: right;
-                margin-top: 0;
-                padding-top: 0;
-                border-top: none;
-            }
-            
-            /* Modal más grande en escritorio */
-            .modal-content {
-                max-width: 600px;
-                padding: 3rem;
-            }
-            
-            .modal h2 {
-                font-size: 2rem;
-            }
-            
-            .modal p {
-                font-size: 1.2rem;
             }
         }
 
-        /* ============================================
-           MEDIA QUERIES PARA ESCRITORIO GRANDE
-           ============================================ */
-        @media (min-width: 1400px) {
-            :root {
-                --sidebar-width: 320px;
-            }
-            
-            .desktop-sidebar {
-                padding: 3rem 2rem;
-            }
-            
-            .sidebar-header h2 {
-                font-size: 2rem;
-            }
-            
-            main {
-                padding: 3rem;
-            }
-            
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            
-            .hero {
-                padding: 4rem;
-            }
-            
-            .hero h2 {
-                font-size: 3.5rem;
-            }
-            
-            .verse-content {
-                font-size: 1.8rem;
-            }
-            
-            .resources-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        /* ============================================
-           UTILIDADES
-           ============================================ */
-        .hidden {
-            display: none !important;
-        }
-        
-        .visible {
-            display: block !important;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-gold {
-            color: var(--color-gold);
-        }
-        
-        .text-primary {
-            color: var(--color-primary);
-        }
-        
-        .bg-light {
-            background-color: var(--color-light);
-        }
-        
-        .mt-1 { margin-top: 1rem; }
-        .mt-2 { margin-top: 2rem; }
-        .mt-3 { margin-top: 3rem; }
-        .mb-1 { margin-bottom: 1rem; }
-        .mb-2 { margin-bottom: 2rem; }
-        .mb-3 { margin-bottom: 3rem; }
-        .p-1 { padding: 1rem; }
-        .p-2 { padding: 2rem; }
-        .p-3 { padding: 3rem; }
+        /* Utilidades */
+        .text-center { text-align: center; }
+        .mt-1 { margin-top: var(--spacing-sm); }
+        .mt-2 { margin-top: var(--spacing-md); }
+        .mt-3 { margin-top: var(--spacing-lg); }
+        .mt-4 { margin-top: var(--spacing-xl); }
+        .mb-1 { margin-bottom: var(--spacing-sm); }
+        .mb-2 { margin-bottom: var(--spacing-md); }
+        .mb-3 { margin-bottom: var(--spacing-lg); }
+        .mb-4 { margin-bottom: var(--spacing-xl); }
+        .p-1 { padding: var(--spacing-sm); }
+        .p-2 { padding: var(--spacing-md); }
+        .p-3 { padding: var(--spacing-lg); }
+        .p-4 { padding: var(--spacing-xl); }
     </style>
 </head>
 <body>
-    <!-- Sidebar para escritorio -->
-    <aside class="desktop-sidebar">
-        <div class="sidebar-header">
-            <h2>Santa Biblia</h2>
-            <p>Reina-Valera 1569-1602</p>
+    <!-- Header minimalista -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Santa Biblia</h1>
+                    <p>Reina-Valera 1569-1602</p>
+                </div>
+                
+                <nav class="nav-desktop">
+                    <a href="#" class="active">Inicio</a>
+                    <a href="#">Antiguo Testamento</a>
+                    <a href="#">Nuevo Testamento</a>
+                    <a href="#recursos">Recursos</a>
+                    <a href="#">Buscar</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú móvil -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-header">
+            <h3 class="menu-title">Navegación</h3>
+            <button class="menu-close" id="menuClose">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
         
-        <nav class="sidebar-nav">
+        <nav class="menu-links">
             <a href="#" class="active">
                 <i class="fas fa-home"></i> Inicio
             </a>
@@ -1320,88 +876,8 @@
             <a href="#">
                 <i class="fas fa-book-open"></i> Nuevo Testamento
             </a>
-            <a href="#">
-                <i class="fas fa-search"></i> Buscar
-            </a>
-            <a href="#">
-                <i class="fas fa-bookmark"></i> Favoritos
-            </a>
-            <a href="#">
-                <i class="fas fa-history"></i> Historial
-            </a>
-            <a href="#">
-                <i class="fas fa-map"></i> Mapas Bíblicos
-            </a>
-            <a href="#">
-                <i class="fas fa-calendar-alt"></i> Plan de Lectura
-            </a>
-            <a href="#digital-resources">
-                <i class="fas fa-store"></i> Recursos Digitales
-            </a>
-            <a href="#">
-                <i class="fas fa-cog"></i> Configuración
-            </a>
-            <a href="#">
-                <i class="fas fa-info-circle"></i> Acerca de
-            </a>
-        </nav>
-        
-        <div class="sidebar-quick-links">
-            <h4>Acceso Rápido</h4>
-            <ul class="quick-links-list">
-                <li><a href="#">Salmo 23</a></li>
-                <li><a href="#">Juan 3:16</a></li>
-                <li><a href="#">Mateo 5-7</a></li>
-                <li><a href="#">Romanos 8</a></li>
-                <li><a href="#">Isaías 40:31</a></li>
-                <li><a href="#">Filipenses 4:13</a></li>
-            </ul>
-        </div>
-        
-        <div class="sidebar-quick-links mt-3">
-            <h4>Versículos del Día Anteriores</h4>
-            <ul class="quick-links-list">
-                <li><a href="#">Jeremías 29:11</a></li>
-                <li><a href="#">Proverbios 3:5-6</a></li>
-                <li><a href="#">Salmos 46:1</a></li>
-                <li><a href="#">2 Timoteo 1:7</a></li>
-            </ul>
-        </div>
-    </aside>
-
-    <!-- Header principal -->
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <h1>LA SANTA BIBLIA</h1>
-                <p>Reina-Valera 1569-1602</p>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Menú móvil -->
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <h2 class="mobile-menu-title">Navegación</h2>
-            <button class="mobile-menu-close" id="mobileMenuClose">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <nav class="mobile-menu-links">
-            <a href="#">
-                <i class="fas fa-home"></i> Inicio
-            </a>
-            <a href="#">
-                <i class="fas fa-book"></i> Antiguo Testamento
-            </a>
-            <a href="#">
-                <i class="fas fa-book-open"></i> Nuevo Testamento
+            <a href="#recursos">
+                <i class="fas fa-store"></i> Recursos
             </a>
             <a href="#">
                 <i class="fas fa-search"></i> Buscar
@@ -1413,285 +889,287 @@
                 <i class="fas fa-history"></i> Historial
             </a>
             <a href="#">
-                <i class="fas fa-map"></i> Mapas Bíblicos
-            </a>
-            <a href="#">
-                <i class="fas fa-calendar-alt"></i> Plan de Lectura
-            </a>
-            <a href="#digital-resources">
-                <i class="fas fa-store"></i> Recursos Digitales
-            </a>
-            <a href="#">
                 <i class="fas fa-cog"></i> Configuración
-            </a>
-            <a href="#">
-                <i class="fas fa-info-circle"></i> Acerca de
             </a>
         </nav>
     </div>
 
     <!-- Contenido principal -->
-    <main>
-        <div class="container">
-            <!-- Hero Section -->
-            <section class="hero fade-in">
-                <h2>La Palabra Eterna de Dios</h2>
-                <p>ANTIGUA VERSIÓN DE CASIODORO DE REINA (1569), REVISADA POR CIPRIANO DE VALERA (1602) Y COTEJADA CON LOS TEXTOS HEBREO Y GRIEGO.</p>
-            </section>
+    <main class="container">
+        <!-- Hero section -->
+        <section class="hero">
+            <h2>La Palabra Eterna de Dios</h2>
+            <p>ANTIGUA VERSIÓN DE CASIODORO DE REINA (1569), REVISADA POR CIPRIANO DE VALERA (1602) Y COTEJADA CON LOS TEXTOS HEBREO Y GRIEGO.</p>
+        </section>
 
-            <!-- Featured Verses -->
-            <section class="featured-verses fade-in delay-1">
-                <h3>Versículos Destacados</h3>
-                <div class="verses-grid">
-                    <div class="verse-card">
-                        <p>"Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna."</p>
-                        <div class="verse-reference">Juan 3:16</div>
-                    </div>
-                    <div class="verse-card">
-                        <p>"El Señor es mi pastor; nada me faltará. En lugares de delicados pastos me hará yacer: junto a aguas de reposo me pastoreará."</p>
-                        <div class="verse-reference">Salmos 23:1-2</div>
-                    </div>
-                    <div class="verse-card">
-                        <p>"Fiel es el que os llama, el cual también lo hará. Estad siempre gozosos. Orad sin cesar. Dad gracias en todo; porque esta es la voluntad de Dios para con vosotros en Cristo Jesús."</p>
-                        <div class="verse-reference">1 Tesalonicenses 5:24, 16-18</div>
-                    </div>
+        <!-- Versículos destacados -->
+        <section class="mb-4">
+            <div class="section-header">
+                <h2>Versículos Destacados</h2>
+                <p>Pasajes que inspiran y guían</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="verse-card fade-in">
+                    <p>"Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna."</p>
+                    <div class="verse-ref">Juan 3:16</div>
                 </div>
-            </section>
+                
+                <div class="verse-card fade-in">
+                    <p>"El Señor es mi pastor; nada me faltará. En lugares de delicados pastos me hará yacer: junto a aguas de reposo me pastoreará."</p>
+                    <div class="verse-ref">Salmos 23:1-2</div>
+                </div>
+                
+                <div class="verse-card fade-in">
+                    <p>"Fiel es el que os llama, el cual también lo hará. Estad siempre gozosos. Orad sin cesar. Dad gracias en todo; porque esta es la voluntad de Dios para con vosotros en Cristo Jesús."</p>
+                    <div class="verse-ref">1 Tesalonicenses 5:24, 16-18</div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Verse of the Day -->
-            <section class="verse-of-day fade-in delay-2">
-                <div class="verse-of-day-header">
-                    <h3>Versículo del Día</h3>
-                    <div class="date" id="currentDate"></div>
-                </div>
-                <div class="verse-content">
-                    <p>"Por lo cual, como por un solo hombre entró el pecado en el mundo, y por el pecado la muerte, así la muerte pasó a todos los hombres, por cuanto todos pecaron."</p>
-                </div>
-                <div class="verse-reference-large">Romanos 5:12</div>
-            </section>
+        <!-- Versículo del día -->
+        <section class="verse-of-day">
+            <div class="verse-of-day-header">
+                <h3>Versículo del Día</h3>
+                <div class="verse-date" id="currentDate"></div>
+            </div>
+            <div class="verse-content">
+                <p>"Por lo cual, como por un solo hombre entró el pecado en el mundo, y por el pecado la muerte, así la muerte pasó a todos los hombres, por cuanto todos pecaron."</p>
+            </div>
+            <div class="text-center">Romanos 5:12</div>
+        </section>
 
-            <!-- Bible Buttons -->
-            <div class="bible-buttons fade-in delay-3">
-                <a href="#" class="bible-button">
-                    <i class="fas fa-book"></i>
-                    <span>Antiguo Testamento</span>
+        <!-- Acceso rápido -->
+        <section class="mb-4">
+            <div class="section-header">
+                <h2>Acceso Rápido</h2>
+                <p>Explora las Escrituras</p>
+            </div>
+            
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-book"></i> Antiguo Testamento
                 </a>
-                <a href="#" class="bible-button">
-                    <i class="fas fa-book-open"></i>
-                    <span>Nuevo Testamento</span>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-book-open"></i> Nuevo Testamento
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-search"></i> Buscar
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-bookmark"></i> Favoritos
                 </a>
             </div>
+        </section>
 
-            <!-- Reading Plan -->
-            <section class="reading-plan fade-in delay-4">
-                <div class="reading-plan-header">
+        <!-- Plan de lectura -->
+        <section class="mb-4">
+            <div class="card">
+                <div class="card-header">
                     <h3>Plan de Lectura</h3>
-                    <span>Semana 15</span>
                 </div>
-                
-                <div class="reading-plan-category">
-                    <h4>Parábolas del Antiguo Testamento</h4>
-                    <ul class="reading-plan-list">
-                        <li>Los árboles eligen su rey <strong>Jueces 9:7-15</strong></li>
-                        <li>El cedro del Líbano <strong>Ezequiel 31</strong></li>
-                        <li>La viña estéril <strong>Isaías 5:1-6</strong></li>
-                    </ul>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h4 class="mb-1">Parábolas del Antiguo Testamento</h4>
+                        <ul>
+                            <li>Los árboles eligen su rey <strong>Jueces 9:7-15</strong></li>
+                            <li>El cedro del Líbano <strong>Ezequiel 31</strong></li>
+                            <li>La viña estéril <strong>Isaías 5:1-6</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="mb-1">Parábolas del Nuevo Testamento</h4>
+                        <ul>
+                            <li>La parábola del sembrador <strong>Mateo 13:1-23</strong></li>
+                            <li>La parábola de la oveja perdida <strong>Lucas 15:1-7</strong></li>
+                            <li>La parábola del hijo pródigo <strong>Lucas 15:11-32</strong></li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="reading-plan-category">
-                    <h4>Parábolas del Nuevo Testamento</h4>
-                    <ul class="reading-plan-list">
-                        <li>La parábola del sembrador <strong>Mateo 13:1-23</strong></li>
-                        <li>La parábola de la oveja perdida <strong>Lucas 15:1-7</strong></li>
-                        <li>La parábola del hijo pródigo <strong>Lucas 15:11-32</strong></li>
-                    </ul>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- NUEVA SECCIÓN: Recursos Digitales -->
-            <section class="digital-resources fade-in delay-5" id="digital-resources">
-                <div class="section-header">
-                    <h2>Recursos para una Vida Plena</h2>
-                    <p>Descubre recursos digitales seleccionados para fortalecer tu salud, creatividad y emprendimiento</p>
+        <!-- Recursos Digitales -->
+        <section class="mb-4" id="recursos">
+            <div class="section-header">
+                <h2>Recursos Digitales</h2>
+                <p>Herramientas para tu crecimiento personal y espiritual</p>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="salud">Salud y Nutrición</button>
+                <button class="filter-btn" data-filter="creatividad">Creatividad</button>
+            </div>
+            
+            <!-- Grid de recursos -->
+            <div class="grid grid-2">
+                <!-- Recurso 1 -->
+                <div class="resource-card" data-category="salud">
+                    <div class="resource-image">
+                        <div class="resource-badge badge-new">NUEVO</div>
+                        <img src="https://images.unsplash.com/photo-1553530666-bad89060a8cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jugos Detox">
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-category category-health">Salud</span>
+                        <h3 class="resource-title">100 Jugos Detox y Bebidas Medicinales</h3>
+                        <p class="resource-description">Recetas exclusivas de jugos desintoxicantes con propiedades purificantes y revitalizantes.</p>
+                        <ul class="resource-features">
+                            <li><i class="fas fa-check"></i> 100 recetas exclusivas</li>
+                            <li><i class="fas fa-check"></i> Propiedades diuréticas</li>
+                            <li><i class="fas fa-check"></i> Fortalece sistema inmunológico</li>
+                            <li><i class="fas fa-check"></i> 2 bonos incluidos</li>
+                        </ul>
+                        <div class="resource-price">
+                            <div>
+                                <span class="price-old">$24.99</span>
+                                <span class="price-new">$14.99</span>
+                            </div>
+                            <span class="price-discount">40% OFF</span>
+                        </div>
+                        <a href="https://go.hotmart.com/O104149889C" target="_blank" class="btn btn-primary resource-btn">
+                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="category-tabs">
-                    <button class="category-tab active" data-category="all">Todos los Recursos</button>
-                    <button class="category-tab" data-category="nutrition">Salud y Nutrición</button>
-                    <button class="category-tab" data-category="creative">Creatividad y Emprendimiento</button>
+                <!-- Recurso 2 -->
+                <div class="resource-card" data-category="salud">
+                    <div class="resource-image">
+                        <div class="resource-badge badge-popular">POPULAR</div>
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Postres sin Azúcar">
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-category category-health">Salud</span>
+                        <h3 class="resource-title">100 Postres sin Azúcar</h3>
+                        <p class="resource-description">Deliciosos postres sin azúcar con ingredientes naturales y bajos en carbohidratos.</p>
+                        <ul class="resource-features">
+                            <li><i class="fas fa-check"></i> 100 recetas sin azúcar</li>
+                            <li><i class="fas fa-check"></i> Opciones keto y veganas</li>
+                            <li><i class="fas fa-check"></i> Sustitutos naturales</li>
+                            <li><i class="fas fa-check"></i> Tablas nutricionales</li>
+                        </ul>
+                        <div class="resource-price">
+                            <div>
+                                <span class="price-old">$24.99</span>
+                                <span class="price-new">$14.99</span>
+                            </div>
+                            <span class="price-discount">40% OFF</span>
+                        </div>
+                        <a href="https://go.hotmart.com/T104149888X" target="_blank" class="btn btn-primary resource-btn">
+                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="resources-grid">
-                    <!-- Recurso 1: 100 Detox Juices -->
-                    <div class="resource-card" data-category="nutrition">
-                        <div class="resource-image">
-                            <div class="resource-badge hot">¡NUEVO!</div>
-                            <img src="https://images.unsplash.com/photo-1553530666-bad89060a8cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Jugos Detox Saludables">
-                        </div>
-                        <div class="resource-content">
-                            <span class="resource-category nutrition">Salud y Nutrición</span>
-                            <h3 class="resource-title">100 Jugos Detox y Bebidas Medicinales</h3>
-                            <p class="resource-description">Recetas exclusivas de jugos desintoxicantes elaborados con frutas, vegetales, plantas y hierbas seleccionadas por sus propiedades purificantes y revitalizantes.</p>
-                            <ul class="resource-features">
-                                <li><i class="fas fa-check"></i> 100 recetas exclusivas y detalladas</li>
-                                <li><i class="fas fa-check"></i> Propiedades diuréticas y antiinflamatorias</li>
-                                <li><i class="fas fa-check"></i> Elimina toxinas y acelera el metabolismo</li>
-                                <li><i class="fas fa-check"></i> Fortalece el sistema inmunológico</li>
-                                <li><i class="fas fa-check"></i> 2 bonos exclusivos incluidos</li>
-                            </ul>
-                            <div class="resource-price">
-                                <div>
-                                    <span class="price-old">$24.99 USD</span>
-                                    <span class="price-new">$14.99 USD</span>
-                                </div>
-                                <span class="price-discount">40% OFF</span>
-                            </div>
-                            <a href="https://go.hotmart.com/O104149889C?redirectionUrl=https%3A%2F%2Fmakakosmx.my.canva.site%2F100-powerful-detox-juices-and-medicinal-drinks-a15" target="_blank" class="resource-button">
-                                <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                            </a>
-                        </div>
+                <!-- Recurso 3 -->
+                <div class="resource-card" data-category="salud">
+                    <div class="resource-image">
+                        <div class="resource-badge badge-hot">MÁS VENDIDO</div>
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Recetas Keto">
                     </div>
-                    
-                    <!-- Recurso 2: 100 Zero Sugar Desserts -->
-                    <div class="resource-card" data-category="nutrition">
-                        <div class="resource-image">
-                            <div class="resource-badge">POPULAR</div>
-                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Postres sin Azúcar">
-                        </div>
-                        <div class="resource-content">
-                            <span class="resource-category nutrition">Salud y Nutrición</span>
-                            <h3 class="resource-title">100 Postres sin Azúcar - Dulzura Saludable</h3>
-                            <p class="resource-description">Deliciosos postres sin azúcar elaborados con ingredientes naturales y bajos en carbohidratos. Perfectos para disfrutar sin culpa y mantener un estilo de vida saludable.</p>
-                            <ul class="resource-features">
-                                <li><i class="fas fa-check"></i> 100 recetas de postres sin azúcar</li>
-                                <li><i class="fas fa-check"></i> Opciones keto, veganas y sin gluten</li>
-                                <li><i class="fas fa-check"></i> Sustitutos naturales del azúcar</li>
-                                <li><i class="fas fa-check"></i> Tablas nutricionales incluidas</li>
-                                <li><i class="fas fa-check"></i> Ideal para emprendedores y reposteros</li>
-                            </ul>
-                            <div class="resource-price">
-                                <div>
-                                    <span class="price-old">$24.99 USD</span>
-                                    <span class="price-new">$14.99 USD</span>
-                                </div>
-                                <span class="price-discount">40% OFF</span>
+                    <div class="resource-content">
+                        <span class="resource-category category-health">Salud</span>
+                        <h3 class="resource-title">250 Recetas Cetogénicas</h3>
+                        <p class="resource-description">Guía completa con recetas keto fáciles de preparar, sin arroz ni harina.</p>
+                        <ul class="resource-features">
+                            <li><i class="fas fa-check"></i> 250+ recetas cetogénicas</li>
+                            <li><i class="fas fa-check"></i> Sin gluten ni azúcar</li>
+                            <li><i class="fas fa-check"></i> Adecuado para diabéticos</li>
+                            <li><i class="fas fa-check"></i> 7 bonos incluidos</li>
+                        </ul>
+                        <div class="resource-price">
+                            <div>
+                                <span class="price-old">$24.99</span>
+                                <span class="price-new">$19.99</span>
                             </div>
-                            <a href="https://go.hotmart.com/T104149888X?redirectionUrl=https%3A%2F%2Fmakakosmx.my.canva.site%2F100-zero-sugar-desserts-healthy-sweetness-a15" target="_blank" class="resource-button">
-                                <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                            </a>
+                            <span class="price-discount">20% OFF</span>
                         </div>
-                    </div>
-                    
-                    <!-- Recurso 3: 250 Keto Recipes -->
-                    <div class="resource-card" data-category="nutrition">
-                        <div class="resource-image">
-                            <div class="resource-badge">MÁS VENDIDO</div>
-                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Recetas Keto">
-                        </div>
-                        <div class="resource-content">
-                            <span class="resource-category nutrition">Salud y Nutrición</span>
-                            <h3 class="resource-title">250 Recetas Cetogénicas Bajas en Carbos</h3>
-                            <p class="resource-content">
-                                <p class="resource-description">Guía completa con más de 200 recetas keto fáciles de preparar, sin arroz ni harina. Transforma tu cuerpo en 7 días utilizando ingredientes accesibles en cualquier supermercado.</p>
-                                <ul class="resource-features">
-                                    <li><i class="fas fa-check"></i> 250+ recetas cetogénicas detalladas</li>
-                                    <li><i class="fas fa-check"></i> Sin gluten, azúcar ni harinas refinadas</li>
-                                    <li><i class="fas fa-check"></i> Adecuado para diabéticos</li>
-                                    <li><i class="fas fa-check"></i> Quema grasa abdominal efectivamente</li>
-                                    <li><i class="fas fa-check"></i> 7 bonos exclusivos incluidos</li>
-                                </ul>
-                                <div class="resource-price">
-                                    <div>
-                                        <span class="price-old">$24.99 USD</span>
-                                        <span class="price-new">$19.99 USD</span>
-                                    </div>
-                                    <span class="price-discount">20% OFF</span>
-                                </div>
-                                <a href="https://go.hotmart.com/O104035291V?redirectionUrl=https%3A%2F%2Fdigitalablearning.systeme.io%2F250-low-carb-ketogenic-recipes-afi20" target="_blank" class="resource-button">
-                                    <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Recurso 4: Diseña y Crea con Resina -->
-                    <div class="resource-card" data-category="creative">
-                        <div class="resource-image">
-                            <div class="resource-badge new">¡LIMITADO!</div>
-                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Accesorios con Resina">
-                        </div>
-                        <div class="resource-content">
-                            <span class="resource-category creative">Creatividad y Emprendimiento</span>
-                            <h3 class="resource-title">Diseña y Crea con Resina - Curso Completo</h3>
-                            <p class="resource-description">Aprende a elaborar accesorios con resina y comienza tu negocio desde casa en solo 20 días. Más de 60 clases en video con técnicas profesionales y materiales accesibles.</p>
-                            <ul class="resource-features">
-                                <li><i class="fas fa-check"></i> 60+ clases en video HD</li>
-                                <li><i class="fas fa-check"></i> Aprende a crear aretes, pulseras, llaveros y más</li>
-                                <li><i class="fas fa-check"></i> Lista de proveedores por país</li>
-                                <li><i class="fas fa-check"></i> Módulo especial de llaveros inteligentes</li>
-                                <li><i class="fas fa-check"></i> Comunidad VIP y certificado incluido</li>
-                            </ul>
-                            <div class="resource-price">
-                                <div>
-                                    <span class="price-old">$74.00 USD</span>
-                                    <span class="price-new">$37.00 USD</span>
-                                </div>
-                                <span class="price-discount">50% OFF</span>
-                            </div>
-                            <a href="https://go.hotmart.com/E104138970N?redirectionUrl=https%3A%2F%2Fxn--diseaycrea-w9a.com%2Fresina-con-yuli" target="_blank" class="resource-button">
-                                <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Recurso 5: Curso de Sublimación -->
-                    <div class="resource-card" data-category="creative">
-                        <div class="resource-image">
-                            <div class="resource-badge">OFERTA ESPECIAL</div>
-                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sublimación Personalizada">
-                        </div>
-                        <div class="resource-content">
-                            <span class="resource-category creative">Creatividad y Emprendimiento</span>
-                            <h3 class="resource-title">Curso Completo de Sublimación y Estampación</h3>
-                            <p class="resource-description">Domina la técnica de sublimación, los equipos y programas de diseño. Convierte tu pasión en un negocio próspero desde casa con este programa completo y actualizado.</p>
-                            <ul class="resource-features">
-                                <li><i class="fas fa-check"></i> 11 módulos completos paso a paso</li>
-                                <li><i class="fas fa-check"></i> Aprende a sublimar tazas, camisetas, gorras y más</li>
-                                <li><i class="fas fa-check"></i> Lista de proveedores confiables</li>
-                                <li><i class="fas fa-check"></i> Estrategias de marketing digital</li>
-                                <li><i class="fas fa-check"></i> 12 bonos gratuitos + mentorías en vivo</li>
-                            </ul>
-                            <div class="resource-price">
-                                <div>
-                                    <span class="price-old">$241 USD</span>
-                                    <span class="price-new">$60 USD</span>
-                                </div>
-                                <span class="price-discount">74% OFF</span>
-                            </div>
-                            <a href="https://go.hotmart.com/I104136959O?redirectionUrl=https%3A%2F%2Facademiadeestampadores.online%2Felrentnegsublimacion%2F" target="_blank" class="resource-button">
-                                <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                            </a>
-                        </div>
+                        <a href="https://go.hotmart.com/O104035291V" target="_blank" class="btn btn-primary resource-btn">
+                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
+                        </a>
                     </div>
                 </div>
-            </section>
-        </div>
+                
+                <!-- Recurso 4 -->
+                <div class="resource-card" data-category="creatividad">
+                    <div class="resource-image">
+                        <div class="resource-badge badge-new">LIMITADO</div>
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Resina">
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-category category-creative">Creatividad</span>
+                        <h3 class="resource-title">Curso de Resina - Desde Cero</h3>
+                        <p class="resource-description">Aprende a elaborar accesorios con resina y comienza tu negocio desde casa.</p>
+                        <ul class="resource-features">
+                            <li><i class="fas fa-check"></i> 60+ clases en video</li>
+                            <li><i class="fas fa-check"></i> Aretes, pulseras, llaveros</li>
+                            <li><i class="fas fa-check"></i> Lista de proveedores</li>
+                            <li><i class="fas fa-check"></i> Comunidad VIP</li>
+                        </ul>
+                        <div class="resource-price">
+                            <div>
+                                <span class="price-old">$74.00</span>
+                                <span class="price-new">$37.00</span>
+                            </div>
+                            <span class="price-discount">50% OFF</span>
+                        </div>
+                        <a href="https://go.hotmart.com/E104138970N" target="_blank" class="btn btn-primary resource-btn">
+                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Recurso 5 -->
+                <div class="resource-card" data-category="creatividad">
+                    <div class="resource-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sublimación">
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-category category-creative">Creatividad</span>
+                        <h3 class="resource-title">Curso Completo de Sublimación</h3>
+                        <p class="resource-description">Domina la técnica de sublimación y convierte tu pasión en un negocio próspero.</p>
+                        <ul class="resource-features">
+                            <li><i class="fas fa-check"></i> 11 módulos completos</li>
+                            <li><i class="fas fa-check"></i> Tazas, camisetas, gorras</li>
+                            <li><i class="fas fa-check"></i> Estrategias de marketing</li>
+                            <li><i class="fas fa-check"></i> 12 bonos gratuitos</li>
+                        </ul>
+                        <div class="resource-price">
+                            <div>
+                                <span class="price-old">$241</span>
+                                <span class="price-new">$60</span>
+                            </div>
+                            <span class="price-discount">74% OFF</span>
+                        </div>
+                        <a href="https://go.hotmart.com/I104136959O" target="_blank" class="btn btn-primary resource-btn">
+                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <h3>Santa Biblia</h3>
-                <p>Reina-Valera 1569-1602</p>
-            </div>
-            
-            <div class="footer-links">
-                <a href="#">Acerca de</a>
-                <a href="#">Contacto</a>
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-                <a href="#digital-resources">Recursos</a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Santa Biblia</h3>
+                    <p>Reina-Valera 1569-1602</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Inicio</a>
+                    <a href="#recursos">Recursos</a>
+                    <a href="#">Acerca de</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                </div>
             </div>
             
             <div class="copyright">
@@ -1700,7 +1178,7 @@
         </div>
     </footer>
 
-    <!-- Bottom Navigation - Solo móvil -->
+    <!-- Navegación inferior móvil -->
     <nav class="bottom-nav">
         <a href="#" class="nav-item active">
             <i class="fas fa-home nav-icon"></i>
@@ -1710,16 +1188,16 @@
             <i class="fas fa-book nav-icon"></i>
             <span class="nav-text">Biblia</span>
         </a>
-        <a href="#digital-resources" class="nav-item">
+        <a href="#recursos" class="nav-item">
             <i class="fas fa-store nav-icon"></i>
             <span class="nav-text">Recursos</span>
         </a>
         <a href="#" class="nav-item">
-            <i class="fas fa-bookmark nav-icon"></i>
-            <span class="nav-text">Guardados</span>
+            <i class="fas fa-search nav-icon"></i>
+            <span class="nav-text">Buscar</span>
         </a>
         <a href="#" class="nav-item">
-            <i class="fas fa-cog nav-icon"></i>
+            <i class="fas fa-ellipsis-h nav-icon"></i>
             <span class="nav-text">Más</span>
         </a>
     </nav>
@@ -1729,11 +1207,10 @@
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
             <h2>Nota Importante</h2>
-            <p>📖✨ No dejes que la pantalla reemplace la Palabra impresa ✨📖</p>
-            <p>Esta aplicación es una herramienta para facilitar el acceso a las Sagradas Escrituras, pero te animamos a complementarla con la lectura de la Biblia en formato físico.</p>
-            <div class="modal-buttons">
-                <button class="modal-btn modal-btn-primary" id="acceptBtn">Entendido</button>
-                <button class="modal-btn modal-btn-secondary" id="remindBtn">Recordar más tarde</button>
+            <p>Esta aplicación complementa pero no reemplaza la lectura de la Biblia en formato físico. Te animamos a mantener ambas prácticas.</p>
+            <div class="btn-group mt-3">
+                <button class="btn btn-primary" id="acceptBtn">Entendido</button>
+                <button class="btn btn-secondary" id="remindBtn">Recordar después</button>
             </div>
         </div>
     </div>
@@ -1743,43 +1220,29 @@
         let lastScrollTop = 0;
         let lastTapTime = 0;
         const tapDelay = 300;
-        let navigationVisible = true;
 
-        // Inicialización cuando el DOM esté listo
+        // Inicialización
         document.addEventListener('DOMContentLoaded', function() {
             // Inicializar fecha actual
             updateCurrentDate();
             
-            // Inicializar hora
-            updateCurrentTime();
-            setInterval(updateCurrentTime, 60000);
-            
-            // Inicializar animaciones de aparición
-            initFadeAnimations();
-            
             // Inicializar menú móvil
             initMobileMenu();
+            
+            // Inicializar filtros
+            initFilters();
             
             // Inicializar modal
             initModal();
             
-            // Inicializar navegación por pestañas
-            initTabNavigation();
+            // Inicializar animaciones
+            initAnimations();
             
-            // Inicializar filtros de recursos
-            initResourceFilters();
-            
-            // Inicializar efectos de interacción
-            initInteractionEffects();
+            // Inicializar navegación
+            initNavigation();
             
             // Mostrar modal después de 1 segundo
             setTimeout(showModal, 1000);
-            
-            // Inicializar scroll para ocultar/mostrar navegación
-            initScrollNavigation();
-            
-            // Ajustar estilos según dispositivo
-            adjustForDevice();
         });
 
         // Actualizar fecha actual
@@ -1792,67 +1255,75 @@
                 day: 'numeric' 
             };
             const dateString = now.toLocaleDateString('es-ES', options);
-            document.getElementById('currentDate').textContent = dateString;
+            const dateElement = document.getElementById('currentDate');
+            if (dateElement) {
+                dateElement.textContent = dateString;
+            }
         }
 
-        // Actualizar hora actual
-        function updateCurrentTime() {
-            // Esta función se mantiene para consistencia
-            const now = new Date();
-        }
-
-        // Inicializar animaciones de aparición
-        function initFadeAnimations() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-        }
-
-        // Inicializar menú móvil
+        // Menú móvil
         function initMobileMenu() {
             const menuBtn = document.getElementById('mobileMenuBtn');
-            const menuClose = document.getElementById('mobileMenuClose');
+            const menuClose = document.getElementById('menuClose');
             const mobileMenu = document.getElementById('mobileMenu');
-            const overlay = document.getElementById('menuOverlay');
+            const overlay = document.getElementById('overlay');
             
             if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                    overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-                
-                menuClose.addEventListener('click', closeMobileMenu);
-                overlay.addEventListener('click', closeMobileMenu);
+                menuBtn.addEventListener('click', openMenu);
+                menuClose.addEventListener('click', closeMenu);
+                overlay.addEventListener('click', closeMenu);
                 
                 // Cerrar menú al hacer clic en enlaces
                 const menuLinks = mobileMenu.querySelectorAll('a');
                 menuLinks.forEach(link => {
-                    link.addEventListener('click', closeMobileMenu);
+                    link.addEventListener('click', closeMenu);
                 });
             }
             
-            function closeMobileMenu() {
+            function openMenu() {
+                mobileMenu.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeMenu() {
                 mobileMenu.classList.remove('active');
                 overlay.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         }
 
-        // Inicializar modal
+        // Filtros
+        function initFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const resourceCards = document.querySelectorAll('.resource-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Actualizar botón activo
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filtrar tarjetas
+                    resourceCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            const category = card.getAttribute('data-category');
+                            if (category === filter) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        }
+
+        // Modal
         function initModal() {
             const modal = document.getElementById('warningModal');
             const modalClose = document.getElementById('modalClose');
@@ -1867,12 +1338,11 @@
             function closeModal() {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
-                // Guardar en localStorage que se mostró
-                localStorage.setItem('bibleAppModalShown', 'true');
+                localStorage.setItem('bibleModalShown', 'true');
             }
             
-            // Verificar si ya se mostró el modal
-            const modalShown = localStorage.getItem('bibleAppModalShown');
+            // Verificar si ya se mostró
+            const modalShown = localStorage.getItem('bibleModalShown');
             
             if (!modalShown) {
                 window.showModal = showModal;
@@ -1890,186 +1360,82 @@
             }
         }
 
-        // Inicializar navegación por pestañas
-        function initTabNavigation() {
-            const navItems = document.querySelectorAll('.nav-item');
+        // Animaciones
+        function initAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
             
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(10px)';
+                element.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                observer.observe(element);
+            });
+        }
+
+        // Navegación
+        function initNavigation() {
+            // Navegación inferior
+            const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => {
                 item.addEventListener('click', function(e) {
-                    // Solo si es un enlace interno
                     if (this.getAttribute('href') === '#') {
                         e.preventDefault();
                     }
                     
-                    // Actualizar estado activo
                     navItems.forEach(i => i.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
             
-            // Para escritorio: manejar navegación del sidebar
-            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-            sidebarLinks.forEach(link => {
+            // Enlaces del header
+            const headerLinks = document.querySelectorAll('.nav-desktop a');
+            headerLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Solo si es un enlace interno
                     if (this.getAttribute('href') === '#') {
                         e.preventDefault();
                     }
                     
-                    // Actualizar estado activo
-                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    headerLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
-        }
-
-        // Inicializar filtros de recursos
-        function initResourceFilters() {
-            const categoryTabs = document.querySelectorAll('.category-tab');
-            const resourceCards = document.querySelectorAll('.resource-card');
             
-            categoryTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Actualizar pestaña activa
-                    categoryTabs.forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const category = this.getAttribute('data-category');
-                    
-                    // Filtrar recursos
-                    resourceCards.forEach(card => {
-                        if (category === 'all') {
-                            card.style.display = 'flex';
-                        } else {
-                            if (card.getAttribute('data-category') === category) {
-                                card.style.display = 'flex';
-                            } else {
-                                card.style.display = 'none';
-                            }
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         }
-                    });
-                });
-            });
-        }
-
-        // Inicializar efectos de interacción
-        function initInteractionEffects() {
-            // Efecto de presión en elementos interactivos
-            const interactiveElements = document.querySelectorAll('.bible-button, .verse-card, .resource-card, .nav-item, .resource-button');
-            
-            interactiveElements.forEach(element => {
-                // Para dispositivos táctiles
-                element.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.98)';
-                });
-                
-                element.addEventListener('touchend', function() {
-                    this.style.transform = '';
-                });
-                
-                // Para mouse (solo en escritorio)
-                element.addEventListener('mousedown', function() {
-                    if (!isTouchDevice()) {
-                        this.style.transform = 'scale(0.98)';
                     }
                 });
-                
-                element.addEventListener('mouseup', function() {
-                    if (!isTouchDevice()) {
-                        this.style.transform = '';
-                    }
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    this.style.transform = '';
-                });
-            });
-            
-            // Detectar doble toque para funcionalidades extra
-            document.addEventListener('touchstart', function(e) {
-                const currentTime = new Date().getTime();
-                const tapLength = currentTime - lastTapTime;
-                
-                if (tapLength < tapDelay && tapLength > 0) {
-                    // Doble toque detectado
-                    e.preventDefault();
-                    toggleFullScreenVerse();
-                }
-                
-                lastTapTime = currentTime;
             });
         }
 
-        // Alternar pantalla completa para versículo
-        function toggleFullScreenVerse() {
-            const verseOfDay = document.querySelector('.verse-of-day');
-            if (verseOfDay) {
-                verseOfDay.classList.toggle('fullscreen');
-                
-                if (verseOfDay.classList.contains('fullscreen')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = 'auto';
-                }
-            }
+        // Detectar dispositivo táctil
+        function isTouchDevice() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         }
 
-        // Inicializar scroll para ocultar/mostrar navegación (solo móvil)
-        function initScrollNavigation() {
-            if (window.innerWidth < 1024) {
-                let scrollTimeout;
-                
-                window.addEventListener('scroll', function() {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const bottomNav = document.querySelector('.bottom-nav');
-                    const mainHeader = document.querySelector('.main-header');
-                    
-                    if (!bottomNav || !mainHeader) return;
-                    
-                    // Limpiar timeout anterior
-                    clearTimeout(scrollTimeout);
-                    
-                    // Mostrar navegación
-                    bottomNav.classList.remove('hidden');
-                    mainHeader.classList.remove('hidden');
-                    navigationVisible = true;
-                    
-                    // Ocultar navegación después de 2 segundos sin scroll
-                    scrollTimeout = setTimeout(function() {
-                        if (scrollTop > 100) {
-                            bottomNav.classList.add('hidden');
-                            mainHeader.classList.add('hidden');
-                            navigationVisible = false;
-                        }
-                    }, 2000);
-                    
-                    lastScrollTop = scrollTop;
-                });
-            }
-        }
-
-        // Ajustar estilos según dispositivo
-        function adjustForDevice() {
-            const isTouch = isTouchDevice();
-            
-            if (isTouch) {
-                document.body.classList.add('touch-device');
-            } else {
-                document.body.classList.add('desktop-device');
-                
-                // Mejorar hover effects en escritorio
-                const hoverElements = document.querySelectorAll('.bible-button, .verse-card, .resource-card, .sidebar-nav a, .resource-button');
-                hoverElements.forEach(element => {
-                    element.style.transition = 'all 0.3s ease';
-                });
-            }
-            
-            // Ajustar tamaño de fuente según ancho de pantalla
-            adjustFontSize();
-            window.addEventListener('resize', adjustFontSize);
-        }
-
-        // Ajustar tamaño de fuente
+        // Ajustar fuente según pantalla
         function adjustFontSize() {
             const width = window.innerWidth;
             const html = document.documentElement;
@@ -2085,33 +1451,9 @@
             }
         }
 
-        // Detectar si es dispositivo táctil
-        function isTouchDevice() {
-            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        }
-
-        // Funciones auxiliares
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        }
-
-        // Exportar funciones para uso global (si es necesario)
-        window.toggleMobileMenu = function() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('active');
-                document.getElementById('menuOverlay').classList.toggle('active');
-                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
-            }
-        };
+        // Inicializar ajuste de fuente
+        adjustFontSize();
+        window.addEventListener('resize', adjustFontSize);
     </script>
 </body>
-</html>
+                                                                                     </html>
