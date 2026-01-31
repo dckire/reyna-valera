@@ -1,1467 +1,1060 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Biblia Reina-Valera | Palabra y Recursos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Variables CSS modernas */
-        :root {
-            --color-primary: #2563eb;
-            --color-primary-light: #3b82f6;
-            --color-primary-dark: #1d4ed8;
-            --color-secondary: #10b981;
-            --color-accent: #8b5cf6;
-            --color-text: #1f2937;
-            --color-text-light: #6b7280;
-            --color-text-lighter: #9ca3af;
-            --color-background: #ffffff;
-            --color-surface: #f9fafb;
-            --color-border: #e5e7eb;
-            --color-card: #ffffff;
-            --color-success: #10b981;
-            --color-warning: #f59e0b;
-            --color-danger: #ef4444;
-            
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --font-serif: 'Source Serif Pro', 'Times New Roman', serif;
-            
-            --transition-fast: 150ms ease;
-            --transition-normal: 250ms ease;
-            --transition-slow: 350ms ease;
-        }
-
-        /* Reset y base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            color: var(--color-text);
-            background-color: var(--color-background);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-sm);
-        }
-
-        /* Header minimalista */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--color-border);
-            padding: 1rem 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            letter-spacing: -0.025em;
-        }
-
-        .logo p {
-            font-size: 0.875rem;
-            color: var(--color-text-light);
-            margin-top: 0.25rem;
-        }
-
-        .nav-desktop {
-            display: none;
-        }
-
-        .nav-desktop a {
-            color: var(--color-text);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-md);
-            transition: var(--transition-fast);
-            font-weight: 500;
-        }
-
-        .nav-desktop a:hover {
-            background-color: var(--color-surface);
-            color: var(--color-primary);
-        }
-
-        .mobile-menu-btn {
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            color: var(--color-text);
-            transition: var(--transition-fast);
-        }
-
-        .mobile-menu-btn:hover {
-            background-color: var(--color-surface);
-        }
-
-        /* Menú móvil moderno */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 320px;
-            height: 100%;
-            background-color: var(--color-background);
-            z-index: 1000;
-            transition: var(--transition-normal);
-            padding: var(--spacing-lg);
-            box-shadow: var(--shadow-xl);
-            overflow-y: auto;
-        }
-
-        .mobile-menu.active {
-            right: 0;
-        }
-
-        .menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--spacing-xl);
-            padding-bottom: var(--spacing-md);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .menu-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-
-        .menu-close {
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            color: var(--color-text);
-            transition: var(--transition-fast);
-        }
-
-        .menu-close:hover {
-            background-color: var(--color-surface);
-        }
-
-        .menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .menu-links a {
-            color: var(--color-text);
-            text-decoration: none;
-            padding: 0.875rem 1rem;
-            border-radius: var(--radius-md);
-            transition: var(--transition-fast);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .menu-links a:hover,
-        .menu-links a.active {
-            background-color: var(--color-surface);
-            color: var(--color-primary);
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            z-index: 999;
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        /* Main content */
-        main {
-            padding: var(--spacing-lg) 0;
-            min-height: calc(100vh - 180px);
-        }
-
-        /* Hero section minimalista */
-        .hero {
-            text-align: center;
-            padding: var(--spacing-xl) 0;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .hero h2 {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--color-text);
-            line-height: 1.2;
-            margin-bottom: var(--spacing-md);
-            letter-spacing: -0.025em;
-        }
-
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-        }
-
-        .hero p {
-            font-size: 1.125rem;
-            color: var(--color-text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Grid moderna */
-        .grid {
-            display: grid;
-            gap: var(--spacing-lg);
-        }
-
-        .grid-1 { grid-template-columns: 1fr; }
-        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-
-        /* Cards modernas */
-        .card {
-            background: var(--color-card);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-normal);
-            border: 1px solid var(--color-border);
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .card-header {
-            padding: var(--spacing-lg);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .card-header h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-
-        .card-body {
-            padding: var(--spacing-lg);
-        }
-
-        /* Verse cards */
-        .verse-card {
-            background: var(--color-surface);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            transition: var(--transition-normal);
-            cursor: pointer;
-        }
-
-        .verse-card:hover {
-            background: var(--color-card);
-            box-shadow: var(--shadow-md);
-        }
-
-        .verse-card p {
-            font-family: var(--font-serif);
-            font-size: 1.125rem;
-            color: var(--color-text);
-            margin-bottom: var(--spacing-md);
-            line-height: 1.7;
-        }
-
-        .verse-ref {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--color-primary);
-            text-align: right;
-        }
-
-        /* Verse of the day */
-        .verse-of-day {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            color: white;
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-xl);
-            margin: var(--spacing-xl) 0;
-        }
-
-        .verse-of-day-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .verse-of-day-header h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-
-        .verse-date {
-            font-size: 0.875rem;
-            opacity: 0.9;
-        }
-
-        .verse-content {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            line-height: 1.6;
-            margin-bottom: var(--spacing-md);
-            text-align: center;
-        }
-
-        /* Buttons modernos */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            border-radius: var(--radius-md);
-            font-weight: 500;
-            text-decoration: none;
-            transition: var(--transition-fast);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--color-primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--color-surface);
-            color: var(--color-text);
-            border: 1px solid var(--color-border);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--color-border);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-
-        /* Filters modernos */
-        .filters {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: var(--spacing-lg);
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 0.5rem 1rem;
-            background-color: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            font-weight: 500;
-            color: var(--color-text);
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
-
-        .filter-btn:hover {
-            background-color: var(--color-border);
-        }
-
-        .filter-btn.active {
-            background-color: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-        }
-
-        /* Resource cards modernas */
-        .resource-card {
-            background: var(--color-card);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-normal);
-            border: 1px solid var(--color-border);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .resource-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .resource-badge {
-            position: absolute;
-            top: var(--spacing-sm);
-            right: var(--spacing-sm);
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-md);
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 1;
-        }
-
-        .badge-new {
-            background-color: var(--color-success);
-            color: white;
-        }
-
-        .badge-popular {
-            background-color: var(--color-warning);
-            color: white;
-        }
-
-        .badge-hot {
-            background-color: var(--color-danger);
-            color: white;
-        }
-
-        .resource-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .resource-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-normal);
-        }
-
-        .resource-card:hover .resource-image img {
-            transform: scale(1.05);
-        }
-
-        .resource-content {
-            padding: var(--spacing-lg);
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .resource-category {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-md);
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: var(--spacing-sm);
-            align-self: flex-start;
-        }
-
-        .category-health {
-            background-color: #d1fae5;
-            color: #065f46;
-        }
-
-        .category-creative {
-            background-color: #ede9fe;
-            color: #5b21b6;
-        }
-
-        .resource-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: var(--spacing-sm);
-            line-height: 1.4;
-        }
-
-        .resource-description {
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-md);
-            flex-grow: 1;
-        }
-
-        .resource-features {
-            list-style: none;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .resource-features li {
-            padding: 0.25rem 0;
-            color: var(--color-text);
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .resource-features li i {
-            color: var(--color-primary);
-            font-size: 0.75rem;
-        }
-
-        .resource-price {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: auto;
-        }
-
-        .price-old {
-            text-decoration: line-through;
-            color: var(--color-text-lighter);
-            font-size: 0.875rem;
-        }
-
-        .price-new {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-text);
-        }
-
-        .price-discount {
-            background-color: var(--color-danger);
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: var(--radius-sm);
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .resource-btn {
-            width: 100%;
-            margin-top: var(--spacing-md);
-        }
-
-        /* Section headers */
-        .section-header {
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--color-text);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
-        }
-
-        .section-header p {
-            color: var(--color-text-light);
-            font-size: 1.125rem;
-        }
-
-        /* Footer moderno */
-        .footer {
-            background-color: var(--color-surface);
-            border-top: 1px solid var(--color-border);
-            padding: var(--spacing-xl) 0;
-            margin-top: var(--spacing-xl);
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
-        }
-
-        .footer-logo h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .footer-logo p {
-            color: var(--color-text-light);
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-lg);
-        }
-
-        .footer-links a {
-            color: var(--color-text);
-            text-decoration: none;
-            transition: var(--transition-fast);
-        }
-
-        .footer-links a:hover {
-            color: var(--color-primary);
-        }
-
-        .copyright {
-            padding-top: var(--spacing-lg);
-            border-top: 1px solid var(--color-border);
-            color: var(--color-text-light);
-            font-size: 0.875rem;
-        }
-
-        /* Mobile bottom nav */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--color-background);
-            border-top: 1px solid var(--color-border);
-            display: flex;
-            justify-content: space-around;
-            padding: 0.75rem 0;
-            z-index: 90;
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--color-text-light);
-            padding: 0.5rem;
-            border-radius: var(--radius-md);
-            transition: var(--transition-fast);
-            min-width: 60px;
-        }
-
-        .nav-item.active {
-            color: var(--color-primary);
-        }
-
-        .nav-icon {
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .nav-text {
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        /* Modal moderno */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: var(--spacing-sm);
-        }
-
-        .modal-content {
-            background-color: var(--color-background);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-xl);
-            max-width: 500px;
-            width: 100%;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: var(--spacing-md);
-            right: var(--spacing-md);
-            background: none;
-            border: none;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            color: var(--color-text);
-            transition: var(--transition-fast);
-        }
-
-        .modal-close:hover {
-            background-color: var(--color-surface);
-        }
-
-        .modal h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .modal p {
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        /* Animaciones */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.3s ease-out forwards;
-        }
-
-        /* Responsive */
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 var(--spacing-lg);
-            }
-            
-            .nav-desktop {
-                display: flex;
-                gap: var(--spacing-sm);
-            }
-            
-            .mobile-menu-btn {
-                display: none;
-            }
-            
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-            }
-            
-            .bottom-nav {
-                display: none;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .hero h2 {
-                font-size: 3rem;
-            }
-            
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* Utilidades */
-        .text-center { text-align: center; }
-        .mt-1 { margin-top: var(--spacing-sm); }
-        .mt-2 { margin-top: var(--spacing-md); }
-        .mt-3 { margin-top: var(--spacing-lg); }
-        .mt-4 { margin-top: var(--spacing-xl); }
-        .mb-1 { margin-bottom: var(--spacing-sm); }
-        .mb-2 { margin-bottom: var(--spacing-md); }
-        .mb-3 { margin-bottom: var(--spacing-lg); }
-        .mb-4 { margin-bottom: var(--spacing-xl); }
-        .p-1 { padding: var(--spacing-sm); }
-        .p-2 { padding: var(--spacing-md); }
-        .p-3 { padding: var(--spacing-lg); }
-        .p-4 { padding: var(--spacing-xl); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Santa Biblia Reina-Valera - App Móvil</title>
+  <meta name="description" content="ANTIGUA VERSIÓN DE CASIODORO DE REINA (1569), REVISADA POR CIPRIANO DE VALERA (1602) - App Móvil">
+  <link rel="icon" type="image/jpeg" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMnK9YNHAeUqJMg3Ik0uXISwxlt3eeAc0uIj6Mr4SD-HPdRSNGWGv4wD-Bu9s19ejScpwxcYVX9SJ5ZfX-JbXlrRLvYrR-pqVvZMNIeK6zRaUlJzBbl-1VdJb-yg8bIAymQ9isL-YirKPYAA6FyN_s_1KfeZlNd7i-cj8VkW7_XRiSZuqlPcpd26GcBAs/s200/IMG-20250113-WA0002.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYMJS3X12P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BYMJS3X12P');
+    </script>
+    <meta name="google-site-verification" content="KWZFlVdcT-h9cB1Qnj0LgSLJP-J-NS4bgjhnQG_c140" />
+   
+  <style>
+    :root {
+      --color-primary: #8B4513;
+      --color-secondary: #D2B48C;
+      --color-accent: #A52A2A;
+      --color-gold: #D4AF37;
+      --color-light: #F5F5DC;
+      --color-dark: #3C2A1E;
+      --color-text: #333;
+      --color-white: #FFFFFF;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      --shadow-heavy: 0 4px 15px rgba(0, 0, 0, 0.2);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+      --header-height: 60px;
+      --nav-height: 70px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Crimson Text', serif;
+      background-color: var(--color-light);
+      color: var(--color-text);
+      line-height: 1.6;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      touch-action: manipulation;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(210, 180, 140, 0.1) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.1) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* App Container */
+    .app-container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    /* Status Bar Simulation */
+    .status-bar {
+      height: 44px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .status-bar.hidden {
+      transform: translateY(-100%);
+    }
+
+    .status-bar .time {
+      font-weight: 700;
+    }
+
+    .status-bar .icons {
+      display: flex;
+      gap: 5px;
+    }
+
+    /* Header */
+    .header {
+      height: var(--header-height);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+      color: var(--color-white);
+      padding: 0 15px;
+      box-shadow: var(--shadow-heavy);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--color-gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .header.hidden {
+      transform: translateY(-100%);
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'MedievalSharp', cursive;
+      font-size: 1.4rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      letter-spacing: 1px;
+      color: var(--color-gold);
+      text-align: center;
+    }
+
+    .subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--color-secondary);
+      margin-top: -2px;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: var(--color-white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .menu-toggle:active {
+      background-color: rgba(0, 0, 0, 0.2);
+      transform: scale(0.95);
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      padding-bottom: calc(var(--nav-height) + 15px);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 2rem 1rem;
+      background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95));
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      border: 1px solid rgba(139, 69, 19, 0.2);
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-gold), var(--color-primary), var(--color-gold));
+    }
+
+    .hero-section h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-section h1::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background: var(--color-gold);
+    }
+
+    .hero-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .featured-verses {
+      margin: 2rem 0;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: linear-gradient(to right, var(--color-primary), var(--color-dark));
+      padding: 1.5rem;
+      color: var(--color-white);
+    }
+
+    .featured-verses h2 {
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--color-gold);
+      font-size: 1.5rem;
+    }
+
+    .verses-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .verse-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.2rem;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--color-gold);
+      transition: var(--transition);
+    }
+
+    .verse-card:active {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .verse-card p {
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .verse-card .verse-ref {
+      text-align: right;
+      font-weight: bold;
+      color: var(--color-secondary);
+      font-size: 0.9rem;
+    }
+
+    .card {
+      background: var(--color-white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(139, 69, 19, 0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .card:active {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+      color: var(--color-white);
+      padding: 1rem;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      position: relative;
+      text-align: center;
+    }
+
+    .card-header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--color-gold);
+    }
+
+    .card-body {
+      padding: 1.2rem;
+    }
+
+    .verse-of-day {
+      border-left: 4px solid var(--color-accent);
+      background: linear-gradient(to right, rgba(210, 180, 140, 0.1) 0%, rgba(255, 255, 255, 0.5) 100%);
+    }
+
+    .verse-of-day blockquote {
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .verse-of-day cite {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      color: var(--color-accent);
+      font-size: 1rem;
+    }
+
+    .bible-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .bible-button {
+      background: linear-gradient(to bottom, var(--color-primary), var(--color-dark));
+      color: var(--color-white);
+      border: none;
+      padding: 1.2rem 1.5rem;
+      border-radius: 50px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bible-button:active {
+      transform: scale(0.98);
+      background: linear-gradient(to bottom, var(--color-dark), var(--color-primary));
+    }
+
+    .reading-plan ul {
+      list-style: none;
+    }
+
+    .reading-plan li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+      border-bottom: 1px dashed rgba(139, 69, 19, 0.1);
+      padding-bottom: 0.8rem;
+    }
+
+    .reading-plan li:last-child {
+      border-bottom: none;
+    }
+
+    .reading-plan li:before {
+      content: "✝";
+      color: var(--color-accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .reading-plan a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-primary);
+      border-radius: 30px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .reading-plan a:active {
+      color: var(--color-white);
+      background-color: var(--color-primary);
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .resource-item {
+      text-align: center;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: var(--transition);
+      padding: 0.5rem;
+    }
+
+    .resource-item:active {
+      transform: translateY(-3px);
+    }
+
+    .resource-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      border: 2px solid var(--color-gold);
+      transition: var(--transition);
+    }
+
+    .resource-item:active .resource-icon {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+    }
+
+    .resource-icon i {
+      font-size: 1.5rem;
+      color: var(--color-white);
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      height: var(--nav-height);
+      background: var(--color-white);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+      padding-bottom: env(safe-area-inset-bottom);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .bottom-nav.hidden {
+      transform: translateY(100%);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      color: var(--color-text);
+      flex: 1;
+      padding: 8px 0;
+      transition: var(--transition);
+    }
+
+    .nav-item.active {
+      color: var(--color-primary);
+    }
+
+    .nav-icon {
+      font-size: 1.2rem;
+    }
+
+    .nav-text {
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    /* Side Menu */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--color-dark), var(--color-primary));
+      z-index: 2000;
+      transition: var(--transition);
+      padding: 2rem 1.5rem;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    .side-menu-title {
+      font-family: 'Cinzel', serif;
+      color: var(--color-gold);
+      font-size: 1.3rem;
+    }
+
+    .side-menu-close {
+      background: none;
+      border: none;
+      color: var(--color-white);
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .side-menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .side-menu-links a {
+      color: var(--color-white);
+      text-decoration: none;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      border-left: 3px solid transparent;
+      font-size: 1rem;
+    }
+
+    .side-menu-links a:active {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 3px solid var(--color-gold);
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1999;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+      padding: 15px;
+    }
+
+    .modal-content {
+      background: linear-gradient(to bottom, var(--color-light), var(--color-white));
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      position: relative;
+      border: 2px solid var(--color-gold);
+      max-width: 400px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-accent);
+      transition: var(--transition);
+    }
+
+    .modal-close:active {
+      transform: rotate(90deg);
+    }
+
+    .modal h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .modal p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    #btn-aceptar {
+      min-width: 120px;
+      padding: 0.8rem 1.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
+      color: var(--color-white);
+      padding: 2rem 0 1rem;
+      margin-top: 2rem;
+      position: relative;
+      border-top: 3px solid var(--color-gold);
+    }
+
+    .footer-content {
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    .footer-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: block;
+      border: 3px solid var(--color-gold);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .copyright {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--color-secondary);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* App Frame for Demo */
+    .app-frame {
+      width: 100%;
+      max-width: 414px;
+      height: 100%;
+      margin: 0 auto;
+      background: var(--color-light);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .notch {
+      width: 180px;
+      height: 30px;
+      background: var(--color-dark);
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1001;
+    }
+
+    /* Media Queries */
+    @media (min-width: 415px) {
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+      }
+      
+      .app-frame {
+        height: 90vh;
+        border: 12px solid #1a1a1a;
+        border-radius: 40px;
+      }
+      
+      .notch {
+        display: block;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .title {
+        font-size: 1.2rem;
+      }
+      
+      .hero-section h1 {
+        font-size: 1.5rem;
+      }
+      
+      .bible-button {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header minimalista -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>Santa Biblia</h1>
-                    <p>Reina-Valera 1569-1602</p>
-                </div>
-                
-                <nav class="nav-desktop">
-                    <a href="#" class="active">Inicio</a>
-                    <a href="#">Antiguo Testamento</a>
-                    <a href="#">Nuevo Testamento</a>
-                    <a href="#recursos">Recursos</a>
-                    <a href="#">Buscar</a>
-                </nav>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+  <div class="app-frame">
+    <div class="notch"></div>
+    <div class="app-container">
+      <!-- Status Bar Simulation -->
+      <div class="status-bar">
+        <div class="time" id="current-time">9:41</div>
+        <div class="icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-three-quarters"></i>
         </div>
-        
-		<script id="hotmart_launcher_script">
-			(function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
-			(l[c].q=l[c].q||[]).push(arguments)},l[c].l=1*new Date();h=a.createElement(u),
-			e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
-			})(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
+      </div>
 
-			hot('account','3561fdb1-e1c5-3ba7-b751-7c0adf309765');
-		</script>
-
-    </header>
-
-    <!-- Menú móvil -->
-    <div class="overlay" id="overlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="menu-header">
-            <h3 class="menu-title">Navegación</h3>
-            <button class="menu-close" id="menuClose">
-                <i class="fas fa-times"></i>
-            </button>
+      <!-- Header -->
+      <header class="header">
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="header-content">
+          <h1 class="title">LA SANTA BIBLIA</h1>
+          <p class="subtitle">Reina-Valera 1569-1602</p>
         </div>
-        
-        <nav class="menu-links">
-            <a href="#" class="active">
-                <i class="fas fa-home"></i> Inicio
-            </a>
-            <a href="#">
-                <i class="fas fa-book"></i> Antiguo Testamento
-            </a>
-            <a href="#">
-                <i class="fas fa-book-open"></i> Nuevo Testamento
-            </a>
-            <a href="#recursos">
-                <i class="fas fa-store"></i> Recursos
-            </a>
-            <a href="#">
-                <i class="fas fa-search"></i> Buscar
-            </a>
-            <a href="#">
-                <i class="fas fa-bookmark"></i> Favoritos
-            </a>
-            <a href="#">
-                <i class="fas fa-history"></i> Historial
-            </a>
-            <a href="#">
-                <i class="fas fa-cog"></i> Configuración
-            </a>
-        </nav>
-    </div>
+      </header>
 
-    <!-- Contenido principal -->
-    <main class="container">
-        <!-- Hero section -->
-        <section class="hero">
-            <h2>La Palabra Eterna de Dios</h2>
-            <p>ANTIGUA VERSIÓN DE CASIODORO DE REINA (1569), REVISADA POR CIPRIANO DE VALERA (1602) Y COTEJADA CON LOS TEXTOS HEBREO Y GRIEGO.</p>
-        </section>
-
-        <!-- Versículos destacados -->
-        <section class="mb-4">
-            <div class="section-header">
-                <h2>Versículos Destacados</h2>
-                <p>Pasajes que inspiran y guían</p>
-            </div>
-            
-            <div class="grid grid-3">
-                <div class="verse-card fade-in">
-                    <p>"Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna."</p>
-                    <div class="verse-ref">Juan 3:16</div>
-                </div>
-                
-                <div class="verse-card fade-in">
-                    <p>"El Señor es mi pastor; nada me faltará. En lugares de delicados pastos me hará yacer: junto a aguas de reposo me pastoreará."</p>
-                    <div class="verse-ref">Salmos 23:1-2</div>
-                </div>
-                
-                <div class="verse-card fade-in">
-                    <p>"Fiel es el que os llama, el cual también lo hará. Estad siempre gozosos. Orad sin cesar. Dad gracias en todo; porque esta es la voluntad de Dios para con vosotros en Cristo Jesús."</p>
-                    <div class="verse-ref">1 Tesalonicenses 5:24, 16-18</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Versículo del día -->
-        <section class="verse-of-day">
-            <div class="verse-of-day-header">
-                <h3>Versículo del Día</h3>
-                <div class="verse-date" id="currentDate"></div>
-            </div>
-            <div class="verse-content">
-                <p>"Por lo cual, como por un solo hombre entró el pecado en el mundo, y por el pecado la muerte, así la muerte pasó a todos los hombres, por cuanto todos pecaron."</p>
-            </div>
-            <div class="text-center">Romanos 5:12</div>
-        </section>
-
-        <!-- Acceso rápido -->
-        <section class="mb-4">
-            <div class="section-header">
-                <h2>Acceso Rápido</h2>
-                <p>Explora las Escrituras</p>
-            </div>
-            
-            <div class="btn-group">
-                <a href="viejo.html" class="btn btn-primary">
-                    <i class="fas fa-book"></i> Antiguo Testamento
-                </a>
-                <a href="nuevo.html" class="btn btn-secondary">
-                    <i class="fas fa-book-open"></i> Nuevo Testamento
-                </a>
-                <a href="buscador.html" class="btn btn-secondary">
-                    <i class="fas fa-search"></i> Buscar
-                </a>
-                
-            </div>
-        </section>
-
-        <!-- Plan de lectura -->
-        <section class="mb-4">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Plan de Lectura</h3>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <h4 class="mb-1">Parábolas del Antiguo Testamento</h4>
-                        <ul>
-                            <li>Los árboles eligen su rey <strong>Jueces 9:7-15</strong></li>
-                            <li>El cedro del Líbano <strong>Ezequiel 31</strong></li>
-                            <li>La viña estéril <strong>Isaías 5:1-6</strong></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="mb-1">Parábolas del Nuevo Testamento</h4>
-                        <ul>
-                            <li>La parábola del sembrador <strong>Mateo 13:1-23</strong></li>
-                            <li>La parábola de la oveja perdida <strong>Lucas 15:1-7</strong></li>
-                            <li>La parábola del hijo pródigo <strong>Lucas 15:11-32</strong></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Recursos Digitales -->
-        <section class="mb-4" id="recursos">
-            <div class="section-header">
-                <h2>Recursos Digitales</h2>
-                <p>Herramientas para tu crecimiento personal y espiritual</p>
-            </div>
-            
-            <!-- Filtros -->
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="salud">Salud y Nutrición</button>
-                <button class="filter-btn" data-filter="creatividad">Creatividad</button>
-            </div>
-            
-            <!-- Grid de recursos -->
-            <div class="grid grid-2">
-                <!-- Recurso 1 -->
-                <div class="resource-card" data-category="salud">
-                    <div class="resource-image">
-                        <div class="resource-badge badge-new">NUEVO</div>
-                        <img src="https://images.unsplash.com/photo-1553530666-bad89060a8cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jugos Detox">
-                    </div>
-                    <div class="resource-content">
-                        <span class="resource-category category-health">Salud</span>
-                        <h3 class="resource-title">100 Jugos Detox y Bebidas Medicinales</h3>
-                        <p class="resource-description">Recetas exclusivas de jugos desintoxicantes con propiedades purificantes y revitalizantes.</p>
-                        <ul class="resource-features">
-                            <li><i class="fas fa-check"></i> 100 recetas exclusivas</li>
-                            <li><i class="fas fa-check"></i> Propiedades diuréticas</li>
-                            <li><i class="fas fa-check"></i> Fortalece sistema inmunológico</li>
-                            <li><i class="fas fa-check"></i> 2 bonos incluidos</li>
-                        </ul>
-                        <div class="resource-price">
-                            <div>
-                                <span class="price-old">$24.99</span>
-                                <span class="price-new">$14.99</span>
-                            </div>
-                            <span class="price-discount">40% OFF</span>
-                        </div>
-                        <a href="https://go.hotmart.com/O104149889C" target="_blank" class="btn btn-primary resource-btn">
-                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Recurso 2 -->
-                <div class="resource-card" data-category="salud">
-                    <div class="resource-image">
-                        <div class="resource-badge badge-popular">POPULAR</div>
-                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Postres sin Azúcar">
-                    </div>
-                    <div class="resource-content">
-                        <span class="resource-category category-health">Salud</span>
-                        <h3 class="resource-title">100 Postres sin Azúcar</h3>
-                        <p class="resource-description">Deliciosos postres sin azúcar con ingredientes naturales y bajos en carbohidratos.</p>
-                        <ul class="resource-features">
-                            <li><i class="fas fa-check"></i> 100 recetas sin azúcar</li>
-                            <li><i class="fas fa-check"></i> Opciones keto y veganas</li>
-                            <li><i class="fas fa-check"></i> Sustitutos naturales</li>
-                            <li><i class="fas fa-check"></i> Tablas nutricionales</li>
-                        </ul>
-                        <div class="resource-price">
-                            <div>
-                                <span class="price-old">$24.99</span>
-                                <span class="price-new">$14.99</span>
-                            </div>
-                            <span class="price-discount">40% OFF</span>
-                        </div>
-                        <a href="https://go.hotmart.com/T104149888X" target="_blank" class="btn btn-primary resource-btn">
-                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Recurso 3 -->
-                <div class="resource-card" data-category="salud">
-                    <div class="resource-image">
-                        <div class="resource-badge badge-hot">MÁS VENDIDO</div>
-                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Recetas Keto">
-                    </div>
-                    <div class="resource-content">
-                        <span class="resource-category category-health">Salud</span>
-                        <h3 class="resource-title">250 Recetas Cetogénicas</h3>
-                        <p class="resource-description">Guía completa con recetas keto fáciles de preparar, sin arroz ni harina.</p>
-                        <ul class="resource-features">
-                            <li><i class="fas fa-check"></i> 250+ recetas cetogénicas</li>
-                            <li><i class="fas fa-check"></i> Sin gluten ni azúcar</li>
-                            <li><i class="fas fa-check"></i> Adecuado para diabéticos</li>
-                            <li><i class="fas fa-check"></i> 7 bonos incluidos</li>
-                        </ul>
-                        <div class="resource-price">
-                            <div>
-                                <span class="price-old">$24.99</span>
-                                <span class="price-new">$19.99</span>
-                            </div>
-                            <span class="price-discount">20% OFF</span>
-                        </div>
-                        <a href="https://go.hotmart.com/O104035291V" target="_blank" class="btn btn-primary resource-btn">
-                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Recurso 4 -->
-                <div class="resource-card" data-category="creatividad">
-                    <div class="resource-image">
-                        <div class="resource-badge badge-new">LIMITADO</div>
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Resina">
-                    </div>
-                    <div class="resource-content">
-                        <span class="resource-category category-creative">Creatividad</span>
-                        <h3 class="resource-title">Curso de Resina - Desde Cero</h3>
-                        <p class="resource-description">Aprende a elaborar accesorios con resina y comienza tu negocio desde casa.</p>
-                        <ul class="resource-features">
-                            <li><i class="fas fa-check"></i> 60+ clases en video</li>
-                            <li><i class="fas fa-check"></i> Aretes, pulseras, llaveros</li>
-                            <li><i class="fas fa-check"></i> Lista de proveedores</li>
-                            <li><i class="fas fa-check"></i> Comunidad VIP</li>
-                        </ul>
-                        <div class="resource-price">
-                            <div>
-                                <span class="price-old">$74.00</span>
-                                <span class="price-new">$37.00</span>
-                            </div>
-                            <span class="price-discount">50% OFF</span>
-                        </div>
-                        <a href="https://go.hotmart.com/E104138970N" target="_blank" class="btn btn-primary resource-btn">
-                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Recurso 5 -->
-                <div class="resource-card" data-category="creatividad">
-                    <div class="resource-image">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sublimación">
-                    </div>
-                    <div class="resource-content">
-                        <span class="resource-category category-creative">Creatividad</span>
-                        <h3 class="resource-title">Curso Completo de Sublimación</h3>
-                        <p class="resource-description">Domina la técnica de sublimación y convierte tu pasión en un negocio próspero.</p>
-                        <ul class="resource-features">
-                            <li><i class="fas fa-check"></i> 11 módulos completos</li>
-                            <li><i class="fas fa-check"></i> Tazas, camisetas, gorras</li>
-                            <li><i class="fas fa-check"></i> Estrategias de marketing</li>
-                            <li><i class="fas fa-check"></i> 12 bonos gratuitos</li>
-                        </ul>
-                        <div class="resource-price">
-                            <div>
-                                <span class="price-old">$241</span>
-                                <span class="price-new">$60</span>
-                            </div>
-                            <span class="price-discount">74% OFF</span>
-                        </div>
-                        <a href="https://go.hotmart.com/I104136959O" target="_blank" class="btn btn-primary resource-btn">
-                            <i class="fas fa-shopping-cart"></i> Obtener Ahora
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Santa Biblia</h3>
-                    <p>Reina-Valera 1569-1602</p>
-                </div>
-                
-                <div class="footer-links">
-                    <a href="#">Inicio</a>
-                    <a href="#recursos">Recursos</a>
-                    <a href="#">Acerca de</a>
-                    <a href="#">Contacto</a>
-                    <a href="#">Privacidad</a>
-                    <a href="#">Términos</a>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 Santa Biblia App. Todos los derechos reservados.</p>
-            </div>
+      <!-- Menú lateral -->
+      <div class="overlay" id="overlay"></div>
+      <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+          <h2 class="side-menu-title">Navegación</h2>
+          <button class="side-menu-close" id="sideMenuClose">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
-    </footer>
+        <div class="side-menu-links">
+          <a href="acercade.html">Acerca de</a>
+          <a href="plan-de-lectura.html">Plan de Lectura</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="notas.html">Notas</a>
+          <a href="numerosdeemergencia.html">Números de Emergencia</a>
+        </div>
+      </div>
 
-    <!-- Navegación inferior móvil -->
-    <nav class="bottom-nav">
-        <a href="#" class="nav-item active">
-            <i class="fas fa-home nav-icon"></i>
-            <span class="nav-text">Inicio</span>
+      <!-- Modal de advertencia -->
+      <div id="nota-advertencia" class="modal">
+        <div class="modal-content">
+          <span class="modal-close" id="btn-cerrar">&times;</span>
+          <h2>Nota Importante</h2>
+          <p>📖✨ No dejes que la pantalla reemplace la Palabra impresa ✨📖</p>
+          <button id="btn-aceptar" class="bible-button">OK</button>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="main-content" id="main-content">
+        <section class="hero-section fade-in">
+          <h1>La Palabra Eterna de Dios</h1>
+          <p>ANTIGUA VERSIÓN DE CASIODORO DE REINA (1569), REVISADA POR CIPRIANO DE VALERA (1602) Y COTEJADA CON LOS TEXTOS HEBREO Y GRIEGO.</p>
+        </section>
+
+        <section class="featured-verses fade-in">
+          <h2>Versículos Destacados</h2>
+          <div class="verses-container">
+            <div class="verse-card">
+              <p>"Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna."</p>
+              <div class="verse-ref">Juan 3:16</div>
+            </div>
+            <div class="verse-card">
+              <p>"El Señor es mi pastor; nada me faltará. En lugares de delicados pastos me hará yacer: junto a aguas de reposo me pastoreará."</p>
+              <div class="verse-ref">Salmos 23:1-2</div>
+            </div>
+            <div class="verse-card">
+              <p>"Fiel es el que os llama, el cual también lo hará. Estad siempre gozosos. Orad sin cesar. Dad gracias en todo; porque esta es la voluntad de Dios para con vosotros en Cristo Jesús."</p>
+              <div class="verse-ref">1 Tesalonicenses 5:24, 16-18</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card verse-of-day fade-in">
+          <div class="card-header">
+            <h2>Versículo del Día</h2>
+          </div>
+          <div class="card-body">
+            <blockquote>
+              <p>35 Y fué, que en moviendo el arca, Moisés decía: Levántate, Jehová, y sean disipados tus enemigos, y huyan de tu presencia los que te aborrecen.</p>
+              <p>36 Y cuando ella asentaba, decía: Vuelve, Jehová, a los millares de millares de Israel.</p>
+            </blockquote>
+            <cite>Números 10:35-36</cite>
+          </div>
+        </section>
+
+        <div class="bible-buttons">
+          <button class="bible-button" onclick="location.href='viejo.html'">
+            <i class="fas fa-book"></i> Antiguo Testamento
+          </button>
+          <button class="bible-button" onclick="location.href='nuevo.html'">
+            <i class="fas fa-book-open"></i> Nuevo Testamento
+          </button>
+        </div>
+
+        <div class="main-grid">
+          <section class="card reading-plan fade-in">
+            <div class="card-header">
+              <h2>Plan de Lectura</h2>
+            </div>
+            <div class="card-body">
+              <h3>Parábolas del Antiguo Testamento</h3>
+              <ul>
+                <li>Los árboles eligen su rey <strong>Jueces 9:7-15</strong></li>
+                <li>El cedro del Líbano <strong>Ezequiel 31</strong></li>
+                <li>La viña estéril <strong>Isaías 5:1-6</strong></li>
+              </ul>
+
+              <h3>Parábolas del Nuevo Testamento</h3>
+              <ul>
+                <li>La parábola del sembrador <strong>Mateo 13:1-23</strong></li>
+                <li>La parábola de la oveja perdida <strong>Lucas 15:1-7</strong></li>
+                <li>La parábola del hijo pródigo <strong>Lucas 15:11-32</strong></li>
+              </ul>
+              <a href="parabolas.html">Ver plan completo</a>
+            </div>
+          </section>
+
+         
+        </div>
+      </main>
+
+      <!-- Bottom Navigation -->
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+          <i class="fas fa-home nav-icon"></i>
+          <span class="nav-text">Inicio</span>
         </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-book nav-icon"></i>
-            <span class="nav-text">Biblia</span>
-        </a>
-        <a href="#recursos" class="nav-item">
-            <i class="fas fa-store nav-icon"></i>
-            <span class="nav-text">Recursos</span>
+        <a href="mapas.html" class="nav-item">
+          <i class="fas fa-map nav-icon"></i>
+          <span class="nav-text">Mapas</span>
         </a>
         <a href="buscador.html" class="nav-item">
-            <i class="fas fa-search nav-icon"></i>
-            <span class="nav-text">Buscar</span>
+          <i class="fas fa-search nav-icon"></i>
+          <span class="nav-text">Buscar</span>
         </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-ellipsis-h nav-icon"></i>
-            <span class="nav-text">Más</span>
+        <a href="notas.html" class="nav-item">
+          <i class="fas fa-bookmark nav-icon"></i>
+          <span class="nav-text">Guardados</span>
         </a>
-    </nav>
-
-    <!-- Modal de advertencia -->
-    <div id="warningModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <h2>Nota Importante</h2>
-            <p>Esta aplicación complementa pero no reemplaza la lectura de la Biblia en formato físico. Te animamos a mantener ambas prácticas.</p>
-            <div class="btn-group mt-3">
-                <button class="btn btn-primary" id="acceptBtn">Entendido</button>
-                <button class="btn btn-secondary" id="remindBtn">Recordar después</button>
-            </div>
-        </div>
+        <a href="ajustes.html" class="nav-item">
+          <i class="fas fa-cog nav-icon"></i>
+          <span class="nav-text">Ajustes</span>
+        </a>
+      </nav>
     </div>
+  </div>
 
-    <script>
-        // Variables globales
-        let lastScrollTop = 0;
-        let lastTapTime = 0;
-        const tapDelay = 300;
+  <script>
+    // Variables para controlar la visibilidad de la navegación
+    let navigationVisible = true;
+    let lastTapTime = 0;
+    const tapDelay = 300; // Milisegundos entre toques
 
-        // Inicialización
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar fecha actual
-            updateCurrentDate();
-            
-            // Inicializar menú móvil
-            initMobileMenu();
-            
-            // Inicializar filtros
-            initFilters();
-            
-            // Inicializar modal
-            initModal();
-            
-            // Inicializar animaciones
-            initAnimations();
-            
-            // Inicializar navegación
-            initNavigation();
-            
-            // Mostrar modal después de 1 segundo
-            setTimeout(showModal, 1000);
-        });
+    // Actualizar hora en tiempo real
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('es-ES', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: false 
+      });
+      document.getElementById('current-time').textContent = timeString;
+    }
 
-        // Actualizar fecha actual
-        function updateCurrentDate() {
-            const now = new Date();
-            const options = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            };
-            const dateString = now.toLocaleDateString('es-ES', options);
-            const dateElement = document.getElementById('currentDate');
-            if (dateElement) {
-                dateElement.textContent = dateString;
-            }
+    // Actualizar cada minuto
+    updateTime();
+    setInterval(updateTime, 60000);
+
+    // Nota de advertencia
+    const modal = document.getElementById("nota-advertencia");
+    const btnAceptar = document.getElementById("btn-aceptar");
+    const btnCerrar = document.getElementById("btn-cerrar");
+
+    // Mostrar modal después de 1 segundo
+    setTimeout(function() {
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }, 1000);
+
+    function cerrarModal() {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    btnAceptar.addEventListener("click", cerrarModal);
+    btnCerrar.addEventListener("click", cerrarModal);
+
+    // Función para alternar la visibilidad de la navegación
+    function toggleNavigation() {
+      const bottomNav = document.querySelector('.bottom-nav');
+      const header = document.querySelector('.header');
+      const statusBar = document.querySelector('.status-bar');
+      
+      if (navigationVisible) {
+        // Ocultar navegación
+        bottomNav.classList.add('hidden');
+        header.classList.add('hidden');
+        statusBar.classList.add('hidden');
+        navigationVisible = false;
+      } else {
+        // Mostrar navegación
+        bottomNav.classList.remove('hidden');
+        header.classList.remove('hidden');
+        statusBar.classList.remove('hidden');
+        navigationVisible = true;
+      }
+    }
+
+    // Detectar toques en la pantalla
+    document.addEventListener('touchstart', function(e) {
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTapTime;
+      
+      // Si es un doble toque, alternar la navegación
+      if (tapLength < tapDelay && tapLength > 0) {
+        e.preventDefault();
+        toggleNavigation();
+      }
+      
+      lastTapTime = currentTime;
+    });
+
+    // También alternar navegación con un solo toque largo (1 segundo)
+    let touchTimer;
+    document.addEventListener('touchstart', function(e) {
+      touchTimer = setTimeout(function() {
+        toggleNavigation();
+      }, 1000);
+    });
+
+    document.addEventListener('touchend', function() {
+      clearTimeout(touchTimer);
+    });
+
+    // Efecto de aparición de elementos al hacer scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const checkFade = function() {
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('visible');
         }
+      });
+    }
 
-        // Menú móvil
-        function initMobileMenu() {
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const menuClose = document.getElementById('menuClose');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const overlay = document.getElementById('overlay');
-            
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', openMenu);
-                menuClose.addEventListener('click', closeMenu);
-                overlay.addEventListener('click', closeMenu);
-                
-                // Cerrar menú al hacer clic en enlaces
-                const menuLinks = mobileMenu.querySelectorAll('a');
-                menuLinks.forEach(link => {
-                    link.addEventListener('click', closeMenu);
-                });
-            }
-            
-            function openMenu() {
-                mobileMenu.classList.add('active');
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-            
-            function closeMenu() {
-                mobileMenu.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
+    window.addEventListener('scroll', checkFade);
+    window.addEventListener('load', checkFade);
 
-        // Filtros
-        function initFilters() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const resourceCards = document.querySelectorAll('.resource-card');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Actualizar botón activo
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    
-                    // Filtrar tarjetas
-                    resourceCards.forEach(card => {
-                        if (filter === 'all') {
-                            card.style.display = 'flex';
-                        } else {
-                            const category = card.getAttribute('data-category');
-                            if (category === filter) {
-                                card.style.display = 'flex';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-                });
-            });
-        }
+    // Menú lateral para móviles
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const sideMenuClose = document.getElementById('sideMenuClose');
+    const overlay = document.getElementById('overlay');
 
-        // Modal
-        function initModal() {
-            const modal = document.getElementById('warningModal');
-            const modalClose = document.getElementById('modalClose');
-            const acceptBtn = document.getElementById('acceptBtn');
-            const remindBtn = document.getElementById('remindBtn');
-            
-            function showModal() {
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-            
-            function closeModal() {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                localStorage.setItem('bibleModalShown', 'true');
-            }
-            
-            // Verificar si ya se mostró
-            const modalShown = localStorage.getItem('bibleModalShown');
-            
-            if (!modalShown) {
-                window.showModal = showModal;
-                
-                if (modalClose) modalClose.addEventListener('click', closeModal);
-                if (acceptBtn) acceptBtn.addEventListener('click', closeModal);
-                if (remindBtn) remindBtn.addEventListener('click', closeModal);
-                
-                // Cerrar modal al hacer clic fuera
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeModal();
-                    }
-                });
-            }
-        }
+    function openSideMenu() {
+      sideMenu.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-        // Animaciones
-        function initAnimations() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            fadeElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(10px)';
-                element.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                observer.observe(element);
-            });
-        }
+    function closeSideMenu() {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
 
-        // Navegación
-        function initNavigation() {
-            // Navegación inferior
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === '#') {
-                        e.preventDefault();
-                    }
-                    
-                    navItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Enlaces del header
-            const headerLinks = document.querySelectorAll('.nav-desktop a');
-            headerLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === '#') {
-                        e.preventDefault();
-                    }
-                    
-                    headerLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Scroll suave
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && href.startsWith('#')) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    }
-                });
-            });
-        }
+    if (menuToggle) {
+      menuToggle.addEventListener('click', openSideMenu);
+    }
 
-        // Detectar dispositivo táctil
-        function isTouchDevice() {
-            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        }
+    if (sideMenuClose) {
+      sideMenuClose.addEventListener('click', closeSideMenu);
+    }
 
-        // Ajustar fuente según pantalla
-        function adjustFontSize() {
-            const width = window.innerWidth;
-            const html = document.documentElement;
-            
-            if (width >= 1400) {
-                html.style.fontSize = '18px';
-            } else if (width >= 1024) {
-                html.style.fontSize = '17px';
-            } else if (width >= 768) {
-                html.style.fontSize = '16px';
-            } else {
-                html.style.fontSize = '15px';
-            }
-        }
+    if (overlay) {
+      overlay.addEventListener('click', closeSideMenu);
+    }
 
-        // Inicializar ajuste de fuente
-        adjustFontSize();
-        window.addEventListener('resize', adjustFontSize);
-    </script>
+    // Efectos táctiles en botones y tarjetas
+    document.querySelectorAll('.card, .bible-button, .resource-item, .nav-item').forEach(element => {
+      element.addEventListener('touchstart', function() {
+        this.style.opacity = '0.7';
+      });
+      
+      element.addEventListener('touchend', function() {
+        this.style.opacity = '1';
+      });
+    });
+
+    // Navegación entre pestañas - CORREGIDO: Permitir que los enlaces funcionen
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Solo cambiar la clase activa, no prevenir el comportamiento por defecto
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+        // El enlace seguirá funcionando normalmente
+      });
+    });
+
+    // Inicializar checkFade al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      checkFade();
+    });
+  </script>
 </body>
 </html>
