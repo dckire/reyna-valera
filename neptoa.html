@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYMJS3X12P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BYMJS3X12P');
+    </script>
+    <meta name="google-site-verification" content="KWZFlVdcT-h9cB1Qnj0LgSLJP-J-NS4bgjhnQG_c140" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nephtoa - La Abertura | Significado Bíblico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cardo:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cardo', serif;
+            line-height: 1.8;
+            color: #3e2723;
+            background: linear-gradient(rgba(121, 85, 72, 0.2), rgba(93, 64, 55, 0.15)),
+                        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* Contenedor principal - Estilo de caverna/abertura */
+        .contenido {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px 60px;
+            background: rgba(250, 248, 245, 0.97);
+            border-radius: 25px;
+            box-shadow: 
+                0 25px 60px rgba(93, 64, 55, 0.3),
+                inset 0 0 60px rgba(121, 85, 72, 0.1);
+            border: 4px solid #8d6e63;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Efecto de abertura/caverna */
+        .contenido::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(141, 110, 99, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(121, 85, 72, 0.08) 0%, transparent 50%),
+                url('https://www.transparenttextures.com/patterns/rocky-wall.png');
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .contenido > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Encabezado con efecto de grieta/abertura */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 4px double #6d4c41;
+            position: relative;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8d6e63, #6d4c41, #8d6e63, transparent);
+        }
+        
+        .titulo-principal {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 4.2rem;
+            font-weight: 700;
+            color: #5d4037;
+            text-shadow: 
+                3px 3px 6px rgba(93, 64, 55, 0.2),
+                0 0 20px rgba(141, 110, 99, 0.1);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .titulo-principal::before,
+        .titulo-principal::after {
+            content: "⛰️";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            opacity: 0.6;
+        }
+        
+        .titulo-principal::before {
+            left: -60px;
+        }
+        
+        .titulo-principal::after {
+            right: -60px;
+        }
+        
+        .hebreo-titulo {
+            display: block;
+            font-size: 3rem;
+            color: #795548;
+            font-weight: bold;
+            direction: rtl;
+            letter-spacing: 8px;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(141, 110, 99, 0.15);
+            border-radius: 15px;
+            border: 2px solid #a1887f;
+            box-shadow: 
+                0 5px 15px rgba(121, 85, 72, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .subtitulo {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #8d6e63;
+            font-style: italic;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+        
+        /* Contenido principal */
+        .texto-principal {
+            font-size: 1.4rem;
+            line-height: 1.9;
+            margin-bottom: 50px;
+            text-align: justify;
+            color: #4e342e;
+        }
+        
+        .texto-principal p {
+            margin-bottom: 35px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .texto-principal p:first-of-type::first-letter {
+            font-size: 5.5rem;
+            font-family: 'MedievalSharp', cursive;
+            color: #6d4c41;
+            float: left;
+            line-height: 0.8;
+            margin-right: 20px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sección de significado geológico */
+        .seccion-geologica {
+            background: linear-gradient(135deg, rgba(141, 110, 99, 0.1), rgba(109, 76, 65, 0.05));
+            border-radius: 20px;
+            padding: 45px;
+            margin: 50px 0;
+            border-left: 6px solid #795548;
+            box-shadow: 
+                8px 8px 25px rgba(121, 85, 72, 0.15),
+                inset 0 0 30px rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        
+        .seccion-geologica::before {
+            content: "🕳️";
+            position: absolute;
+            top: -30px;
+            left: 40px;
+            font-size: 3.5rem;
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            border: 3px solid #795548;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .seccion-titulo {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 2.4rem;
+            color: #5d4037;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Análisis etimológico */
+        .analisis-etimologico {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin: 50px 0;
+        }
+        
+        .etimologia-item {
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 
+                0 10px 30px rgba(121, 85, 72, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.8);
+            border: 2px solid #d7ccc8;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .etimologia-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #8d6e63, #a1887f, #bcaaa4);
+        }
+        
+        .etimologia-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 20px 40px rgba(121, 85, 72, 0.3),
+                inset 0 0 30px rgba(255, 255, 255, 0.9);
+        }
+        
+        .palabra-hebrea-grande {
+            font-size: 2.8rem;
+            color: #5d4037;
+            font-weight: bold;
+            direction: rtl;
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 15px;
+            background: rgba(189, 170, 164, 0.2);
+            border-radius: 10px;
+            border: 2px solid #d7ccc8;
+        }
+        
+        .significado-primario {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #795548;
+            margin: 20px 0;
+            text-align: center;
+            padding: 10px;
+            background: linear-gradient(135deg, rgba(189, 170, 164, 0.3), transparent);
+            border-radius: 8px;
+        }
+        
+        .explicacion-detallada {
+            font-size: 1.25rem;
+            color: #4e342e;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+        
+        /* Traducción destacada */
+        .traduccion-destacada {
+            background: linear-gradient(135deg, #6d4c41, #8d6e63);
+            color: white;
+            padding: 60px;
+            margin: 60px 0;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 
+                0 20px 50px rgba(109, 76, 65, 0.5),
+                inset 0 0 40px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .traduccion-destacada::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #d7ccc8, #efebe9, #d7ccc8);
+        }
+        
+        .traduccion-destacada::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            right: 10%;
+            height: 30px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+            border-radius: 50%;
+        }
+        
+        .traduccion-titulo {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #d7ccc8;
+            letter-spacing: 2px;
+        }
+        
+        .traduccion-texto {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #fff;
+            text-shadow: 
+                3px 3px 8px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(255, 255, 255, 0.2);
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .traduccion-subtexto {
+            font-size: 1.6rem;
+            color: #efebe9;
+            font-style: italic;
+            margin-top: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        /* Contexto bíblico */
+        .contexto-biblico {
+            background: rgba(255, 248, 225, 0.95);
+            border: 3px solid #ffb74d;
+            padding: 45px;
+            margin: 50px 0;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(255, 183, 77, 0.1);
+        }
+        
+        .contexto-biblico::before {
+            content: "📖";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            border: 3px solid #ffb74d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Ubicación estratégica */
+        .ubicacion-estrategica {
+            background: linear-gradient(135deg, rgba(144, 164, 174, 0.1), rgba(96, 125, 139, 0.05));
+            border: 3px solid #607d8b;
+            padding: 45px;
+            margin: 50px 0;
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .ubicacion-estrategica::before {
+            content: "🗺️";
+            position: absolute;
+            top: -30px;
+            right: 40px;
+            font-size: 3rem;
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            border: 3px solid #607d8b;
+        }
+        
+        /* Lista de referencias */
+        .referencias-lista {
+            background: rgba(225, 245, 254, 0.95);
+            border: 3px solid #29b6f6;
+            padding: 40px;
+            margin: 50px 0;
+            border-radius: 20px;
+        }
+        
+        .referencia-item {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border-left: 5px solid #29b6f6;
+            box-shadow: 0 5px 15px rgba(41, 182, 246, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .referencia-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .referencia-verso {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #0288d1;
+            margin-bottom: 10px;
+        }
+        
+        .referencia-descripcion {
+            font-size: 1.2rem;
+            color: #455a64;
+            line-height: 1.7;
+        }
+        
+        /* Significado simbólico */
+        .significado-simbolico {
+            background: linear-gradient(135deg, rgba(206, 147, 216, 0.1), rgba(186, 104, 200, 0.05));
+            border: 3px solid #9c27b0;
+            padding: 45px;
+            margin: 50px 0;
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .significado-simbolico::before {
+            content: "🔮";
+            position: absolute;
+            top: -30px;
+            left: 40px;
+            font-size: 3rem;
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            border: 3px solid #9c27b0;
+        }
+        
+        /* Botones */
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            padding-top: 50px;
+            border-top: 3px solid #d7ccc8;
+            flex-wrap: wrap;
+        }
+        
+        .boton {
+            background: linear-gradient(135deg, #8d6e63, #6d4c41);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-family: 'MedievalSharp', cursive;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            box-shadow: 
+                0 10px 25px rgba(141, 110, 99, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            min-width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .boton::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .boton:hover::before {
+            left: 100%;
+        }
+        
+        .boton:hover {
+            background: linear-gradient(135deg, #a1887f, #8d6e63);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 35px rgba(141, 110, 99, 0.5),
+                inset 0 0 25px rgba(255, 255, 255, 0.2);
+        }
+        
+        .boton:active {
+            transform: translateY(2px) scale(1);
+            box-shadow: 
+                0 5px 20px rgba(141, 110, 99, 0.4),
+                inset 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        
+        .boton.secundario {
+            background: linear-gradient(135deg, #795548, #5d4037);
+        }
+        
+        .boton.secundario:hover {
+            background: linear-gradient(135deg, #8d6e63, #795548);
+        }
+        
+        /* Decoraciones geológicas */
+        .separador-geologico {
+            text-align: center;
+            margin: 50px 0;
+            color: #8d6e63;
+            font-size: 2.5rem;
+            letter-spacing: 15px;
+            opacity: 0.7;
+        }
+        
+        /* Animaciones */
+        @keyframes entrada-caverna {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .contenido {
+            animation: entrada-caverna 1s ease-out;
+        }
+        
+        /* Efectos de texto */
+        .resaltado-marron {
+            background: linear-gradient(120deg, rgba(189, 170, 164, 0.4) 0%, rgba(189, 170, 164, 0) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #5d4037;
+        }
+        
+        .nota-importante {
+            background: linear-gradient(135deg, #fff3e0, #ffecb3);
+            border: 2px solid #ffb74d;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border-left: 6px solid #ff9800;
+            font-style: italic;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .contenido {
+                padding: 30px;
+                margin: 20px auto;
+            }
+            
+            .titulo-principal {
+                font-size: 2.8rem;
+            }
+            
+            .titulo-principal::before,
+            .titulo-principal::after {
+                display: none;
+            }
+            
+            .hebreo-titulo {
+                font-size: 1.8rem;
+                letter-spacing: 4px;
+                padding: 15px;
+            }
+            
+            .texto-principal {
+                font-size: 1.2rem;
+            }
+            
+            .analisis-etimologico {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .traduccion-texto {
+                font-size: 2.5rem;
+            }
+            
+            .botones {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .boton {
+                width: 100%;
+                padding: 18px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenido">
+        <div class="header">
+            <h1 class="titulo-principal">Nephtoa</h1>
+            <div class="subtitulo">La Abertura en las Montañas</div>
+            <span class="hebreo-titulo">נֶפְתּוֹחַ</span>
+        </div>
+        
+        <div class="texto-principal">
+            <p>Nephtoa, un topónimo geográfico mencionado en las Escrituras como punto de referencia en los límites territoriales de las tribus de Israel, representa una característica geológica significativa en el paisaje montañoso de Canaán. Su nombre, derivado de la raíz hebrea que significa "abrir" o "desatar", evoca la imagen de una grieta, paso o abertura natural entre las montañas que servía como ruta crucial en la antigüedad.</p>
+            
+            <div class="seccion-geologica">
+                <h2 class="seccion-titulo">Análisis Etimológico y Geológico</h2>
+                <p>El nombre "Nephtoa" proviene de la raíz hebrea <span class="resaltado-marron">פתח</span> (patach), que significa "abrir", "desatar", "liberar" o "hacer una abertura". En su forma nominal, se refiere específicamente a una "abertura", "paso" o "grieta" en terreno montañoso.</p>
+            </div>
+            
+            <div class="analisis-etimologico">
+                <div class="etimologia-item">
+                    <span class="palabra-hebrea-grande">נֶפְתּוֹחַ</span>
+                    <div class="significado-primario">Nephtoa (Sustantivo)</div>
+                    <div class="explicacion-detallada">
+                        Forma nominal de la raíz פתח. El prefijo "נ" (nun) puede indicar un participio o un sustantivo de lugar. Literalmente significa "lo que está abierto", "la abertura" o "el lugar de apertura". En geografía, se refiere específicamente a un paso natural entre montañas, una grieta o desfiladero que permite el tránsito.
+                    </div>
+                </div>
+                
+                <div class="etimologia-item">
+                    <span class="palabra-hebrea-grande">פָּתַח</span>
+                    <div class="significado-primario">Patach (Verbo)</div>
+                    <div class="explicacion-detallada">
+                        Raíz verbal primaria que significa "abrir", como abrir una puerta (Génesis 7:11), los ojos (Génesis 3:5), o la boca (Éxodo 4:12). También se usa para "desatar" o "liberar" (Jueces 15:19). En contexto geográfico, describe la acción natural de las fuerzas geológicas que "abren" o crean pasos en las montañas.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="traduccion-destacada">
+                <div class="traduccion-titulo">Significado Geográfico</div>
+                <div class="traduccion-texto">"La Abertura" o "El Paso"</div>
+                <div class="traduccion-subtexto">También interpretado como: "La Garganta", "El Desfiladero" o "El Paso de Montaña"</div>
+            </div>
+            
+            <div class="ubicacion-estrategica">
+                <h2 class="seccion-titulo">🗺️ Ubicación y Contexto Geográfico</h2>
+                <p>Nephtoa se menciona específicamente como punto límite en <span class="resaltado-marron">Josué 15:9</span> y <span class="resaltado-marron">18:15</span>, marcando la frontera entre los territorios de las tribus de <strong>Judá</strong> y <strong>Benjamín</strong>.</p>
+                <p>Se localizaba en las montañas al noroeste de Jerusalén, cerca de <span class="resaltado-marron">Chíriath-jearim</span>, formando parte del sistema de valles y pasos que conectaban la llanura costera con las tierras altas de Judá. Su posición estratégica lo convertía en un punto de control militar y comercial crucial.</p>
+                
+                <div class="nota-importante">
+                    <strong>Importante:</strong> La identificación exacta del lugar sigue siendo tema de debate arqueológico. Algunos estudiosos lo identifican con el actual <em>Lifta</em> (antiguamente Nephtoah), un manantial al noroeste de Jerusalén, mientras que otros sugieren que era un paso montañoso específico en la región.
+                </div>
+            </div>
+            
+            <div class="contexto-biblico">
+                <h2 class="seccion-titulo">📖 Contexto Bíblico y Funcionalidad</h2>
+                <p>En el reparto de la Tierra Prometida bajo el liderazgo de Josué, Nephtoa funcionó como un <span class="resaltado-marron">hito geográfico claro y reconocible</span> para demarcar los límites tribales. Su mención como punto de referencia indica que era un lugar conocido y fácilmente identificable para los israelitas.</p>
+                <p>Como "abertura" o "paso" entre las montañas, Nephtoa representaba tanto una <span class="resaltado-marron">oportunidad</span> (para el comercio y comunicación) como una <span class="resaltado-marron">vulnerabilidad</span> (para invasiones militares). Su control era esencial para la seguridad de las tribus circundantes.</p>
+            </div>
+            
+            
+            
+            <div class="referencias-lista">
+                <h2 class="seccion-titulo">Referencias Bíblicas Específicas</h2>
+                
+                <div class="referencia-item">
+                    <div class="referencia-verso">Josué 15:9</div>
+                    <div class="referencia-descripcion">
+                        "Y desde la cumbre del monte se extendía hasta la fuente de las aguas de Nephtoa, y salía a las ciudades del monte de Efron..."
+                        - Aquí Nephtoa marca el límite norte de la tribu de Judá, comenzando desde la cumbre de la montaña hasta la fuente de sus aguas.
+                    </div>
+                </div>
+                
+                <div class="referencia-item">
+                    <div class="referencia-verso">Josué 18:15</div>
+                    <div class="referencia-descripcion">
+                        "Y por el lado del sur, desde el extremo de Chíriath-jearim, sale el término al occidente, y sale a la fuente de las aguas de Nephtoa."
+                        - En esta referencia, Nephtoa marca el límite sur de la tribu de Benjamín, específicamente desde el extremo de Chíriath-jearim.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="significado-simbolico">
+                <h2 class="seccion-titulo">Simbólismo</h2>
+                <p>El nombre Nephtoa, que significa "abertura", adquiere un significado simbólico profundo en el contexto bíblico:</p>
+                
+                <ul style="margin-left: 30px; margin-top: 20px; font-size: 1.3rem; color: #4e342e;">
+                    <li style="margin-bottom: 15px;"><strong>Providencia Divina:</strong> Las "aberturas" naturales como Nephtoa eran vistas como provisión divina para el tránsito y comunicación.</li>
+                    <li style="margin-bottom: 15px;"><strong>Límites y Orden:</strong> Como marcador de fronteras tribales, representa el orden y distribución establecidos por Dios.</li>
+                    <li style="margin-bottom: 15px;"><strong>Transición y Paso:</strong> Simboliza los momentos de transición en la vida del pueblo, los "pasos" de una etapa a otra.</li>
+                    <li style="margin-bottom: 15px;"><strong>Apertura Espiritual:</strong> En sentido metafórico, puede representar la "apertura" del corazón a Dios o de Dios a su pueblo.</li>
+                </ul>
+                
+                <p style="margin-top: 25px;">El hecho de que Nephtoa esté asociado con <span class="resaltado-marron">"aguas"</span> (fuente de las aguas de Nephtoa) añade otra dimensión simbólica, relacionando la apertura física con la provisión vital de agua, elemento esencial para la vida.</p>
+            </div>
+            
+            <div class="separador-geologico">💧  💧</div>
+            
+            <p>Hoy, el estudio de lugares como Nephtoa nos recuerda que la geografía bíblica no es meramente descriptiva, sino profundamente <span class="resaltado-marron">teológica y simbólica</span>. Cada montaña, valle, río y "abertura" en el paisaje cananeo formaba parte del escenario donde Dios guiaba a su pueblo, establecía límites y proveía pasos seguros en su jornada hacia la tierra prometida.</p>
+            
+            <p>Como los antiguos israelitas que reconocían en Nephtoa tanto un hito geográfico como un recordatorio de la guía divina, nosotros podemos ver en estos nombres antiguos <span class="resaltado-marron">invitaciones a reconocer las "aberturas"</span> que Dios provee en nuestras propias vidas: los pasos que permiten avanzar, los límites que establecen orden, y las fuentes que dan vida en el camino.</p>
+        </div>
+        
+        <div class="botones">
+            
+            <button class="boton" onclick="window.history.back()">
+                <span>◀️</span> Volver Atrás
+            </button>
+        </div>
+    </div>
+</body>
+</html>
