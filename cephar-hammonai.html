@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYMJS3X12P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BYMJS3X12P');
+    </script>
+    <meta name="google-site-verification" content="KWZFlVdcT-h9cB1Qnj0LgSLJP-J-NS4bgjhnQG_c140" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cephar-hammonai - La Aldea del Artesano | Significado Bíblico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.8;
+            color: #3e2a1a;
+            background: linear-gradient(rgba(189, 170, 164, 0.15), rgba(161, 136, 127, 0.1)),
+                        url('https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* Contenedor principal - Estilo de taller artesanal */
+        .contenido {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 50px 60px;
+            background: rgba(255, 253, 250, 0.98);
+            border-radius: 25px;
+            box-shadow: 
+                0 25px 60px rgba(121, 85, 72, 0.25),
+                inset 0 0 60px rgba(255, 248, 225, 0.3);
+            border: 4px solid #a1887f;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Textura de taller artesanal */
+        .contenido::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(176, 190, 197, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(161, 136, 127, 0.05) 0%, transparent 50%),
+                url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .contenido > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Encabezado con estilo artesanal */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 4px double #8d6e63;
+            position: relative;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #bcaaa4, #a1887f, #bcaaa4, transparent);
+        }
+        
+        .titulo-principal {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 4.5rem;
+            font-weight: 400;
+            color: #5d4037;
+            text-shadow: 
+                3px 3px 6px rgba(93, 64, 55, 0.2),
+                0 0 30px rgba(176, 190, 197, 0.1);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .titulo-principal::before,
+        .titulo-principal::after {
+            content: "⚒️";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            opacity: 0.7;
+        }
+        
+        .titulo-principal::before {
+            left: -70px;
+        }
+        
+        .titulo-principal::after {
+            right: -70px;
+        }
+        
+        .hebreo-titulo {
+            display: block;
+            font-size: 3.2rem;
+            color: #795548;
+            font-weight: bold;
+            direction: rtl;
+            letter-spacing: 12px;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(176, 190, 197, 0.15);
+            border-radius: 15px;
+            border: 2px solid #90a4ae;
+            box-shadow: 
+                0 5px 15px rgba(144, 164, 174, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+        
+        .subtitulo {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #6d4c41;
+            font-style: italic;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+        
+        /* Contenido principal */
+        .texto-principal {
+            font-size: 1.45rem;
+            line-height: 1.9;
+            margin-bottom: 50px;
+            text-align: justify;
+            color: #4e342e;
+        }
+        
+        .texto-principal p {
+            margin-bottom: 35px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .texto-principal p:first-of-type::first-letter {
+            font-size: 5.5rem;
+            font-family: 'UnifrakturMaguntia', cursive;
+            color: #5d4037;
+            float: left;
+            line-height: 0.8;
+            margin-right: 25px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sección de significado artesanal */
+        .seccion-artesanal {
+            background: linear-gradient(135deg, rgba(176, 190, 197, 0.1), rgba(144, 164, 174, 0.05));
+            border-radius: 20px;
+            padding: 45px;
+            margin: 50px 0;
+            border-left: 6px solid #607d8b;
+            box-shadow: 
+                8px 8px 25px rgba(96, 125, 139, 0.15),
+                inset 0 0 30px rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+        
+        .seccion-artesanal::before {
+            content: "🔨";
+            position: absolute;
+            top: -35px;
+            left: 40px;
+            font-size: 3.5rem;
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            border: 3px solid #607d8b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .seccion-titulo {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 2.6rem;
+            color: #455a64;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Análisis etimológico con estilo de taller */
+        .analisis-etimologico {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .etimologia-item {
+            background: linear-gradient(145deg, #ffffff, #f5f7fa);
+            padding: 40px 35px;
+            border-radius: 18px;
+            box-shadow: 
+                0 12px 35px rgba(96, 125, 139, 0.2),
+                inset 0 0 25px rgba(255, 255, 255, 0.8);
+            border: 3px solid #cfd8dc;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .etimologia-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #90a4ae, #b0bec5, #cfd8dc);
+        }
+        
+        .etimologia-item:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 
+                0 25px 50px rgba(96, 125, 139, 0.3),
+                inset 0 0 35px rgba(255, 255, 255, 0.9);
+        }
+        
+        .etimologia-item.cephar {
+            border-top: 6px solid #8d6e63;
+        }
+        
+        .etimologia-item.hammonai {
+            border-top: 6px solid #607d8b;
+        }
+        
+        .palabra-hebrea-grande {
+            font-size: 3.2rem;
+            color: #455a64;
+            font-weight: bold;
+            direction: rtl;
+            display: block;
+            margin-bottom: 25px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(207, 216, 220, 0.3);
+            border-radius: 12px;
+            border: 2px solid #b0bec5;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .significado-primario {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #546e7a;
+            margin: 25px 0;
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(176, 190, 197, 0.4), transparent);
+            border-radius: 10px;
+            border: 1px dashed #90a4ae;
+        }
+        
+        .explicacion-detallada {
+            font-size: 1.3rem;
+            color: #37474f;
+            line-height: 1.9;
+            margin-top: 25px;
+            text-align: justify;
+        }
+        
+        /* Traducción destacada */
+        .traduccion-destacada {
+            background: linear-gradient(135deg, #546e7a, #37474f);
+            color: white;
+            padding: 70px;
+            margin: 70px 0;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 
+                0 25px 60px rgba(55, 71, 79, 0.5),
+                inset 0 0 50px rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .traduccion-destacada::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #cfd8dc, #eceff1, #cfd8dc);
+        }
+        
+        .traduccion-destacada::after {
+            content: "🏘️";
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 5rem;
+            opacity: 0.2;
+        }
+        
+        .traduccion-titulo {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 3.2rem;
+            margin-bottom: 40px;
+            color: #cfd8dc;
+            letter-spacing: 3px;
+        }
+        
+        .traduccion-texto {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 40px 0;
+            color: #fff;
+            text-shadow: 
+                4px 4px 10px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(255, 255, 255, 0.2);
+            font-family: 'UnifrakturMaguntia', cursive;
+        }
+        
+        .traduccion-subtexto {
+            font-size: 1.8rem;
+            color: #eceff1;
+            font-style: italic;
+            margin-top: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        /* Contexto histórico y social */
+        .contexto-historico {
+            background: rgba(255, 243, 224, 0.95);
+            border: 4px solid #ffb74d;
+            padding: 50px;
+            margin: 60px 0;
+            border-radius: 25px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(255, 183, 77, 0.15);
+        }
+        
+        .contexto-historico::before {
+            content: "🏺";
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            font-size: 3rem;
+            border: 4px solid #ffb74d;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Ubicación y función */
+        .ubicacion-funcion {
+            background: linear-gradient(135deg, rgba(165, 214, 167, 0.1), rgba(129, 199, 132, 0.05));
+            border: 4px solid #81c784;
+            padding: 50px;
+            margin: 60px 0;
+            border-radius: 25px;
+            position: relative;
+        }
+        
+        .ubicacion-funcion::before {
+            content: "📍";
+            position: absolute;
+            top: -35px;
+            right: 50px;
+            font-size: 3.5rem;
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            border: 4px solid #81c784;
+        }
+        
+        /* Referencias bíblicas */
+        .referencias-biblicas {
+            background: rgba(225, 245, 254, 0.95);
+            border: 4px solid #4fc3f7;
+            padding: 50px;
+            margin: 60px 0;
+            border-radius: 25px;
+        }
+        
+        .referencia-item {
+            margin: 30px 0;
+            padding: 25px 30px;
+            background: white;
+            border-radius: 15px;
+            border-left: 8px solid #4fc3f7;
+            box-shadow: 0 8px 20px rgba(79, 195, 247, 0.15);
+            transition: transform 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .referencia-item:hover {
+            transform: translateX(15px);
+        }
+        
+        .referencia-item::before {
+            content: "📜";
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2.5rem;
+            opacity: 0.2;
+        }
+        
+        .referencia-verso {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: #0288d1;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1f5fe;
+        }
+        
+        .referencia-descripcion {
+            font-size: 1.35rem;
+            color: #455a64;
+            line-height: 1.8;
+        }
+        
+        /* Significado social y teológico */
+        .significado-social {
+            background: linear-gradient(135deg, rgba(206, 147, 216, 0.1), rgba(186, 104, 200, 0.05));
+            border: 4px solid #9c27b0;
+            padding: 50px;
+            margin: 60px 0;
+            border-radius: 25px;
+            position: relative;
+        }
+        
+        .significado-social::before {
+            content: "👨‍🔧";
+            position: absolute;
+            top: -35px;
+            left: 50px;
+            font-size: 3.5rem;
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            border: 4px solid #9c27b0;
+        }
+        
+        /* Notas especiales */
+        .nota-especial {
+            background: linear-gradient(135deg, #fff3e0, #ffecb3);
+            border: 4px solid #ff9800;
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 20px;
+            border-left: 10px solid #ff9800;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .nota-especial::before {
+            content: "💡";
+            position: absolute;
+            top: -25px;
+            left: 30px;
+            font-size: 2.5rem;
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+            border: 3px solid #ff9800;
+        }
+        
+        /* Botones */
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 70px;
+            padding-top: 60px;
+            border-top: 4px solid #cfd8dc;
+            flex-wrap: wrap;
+        }
+        
+        .boton {
+            background: linear-gradient(135deg, #607d8b, #455a64);
+            color: white;
+            border: none;
+            padding: 22px 45px;
+            font-size: 1.4rem;
+            font-family: 'UnifrakturMaguntia', cursive;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: all 0.5s ease;
+            box-shadow: 
+                0 12px 30px rgba(69, 90, 100, 0.4),
+                inset 0 0 25px rgba(255, 255, 255, 0.15);
+            min-width: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .boton::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .boton:hover::before {
+            left: 100%;
+        }
+        
+        .boton:hover {
+            background: linear-gradient(135deg, #78909c, #607d8b);
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 
+                0 20px 45px rgba(69, 90, 100, 0.5),
+                inset 0 0 35px rgba(255, 255, 255, 0.2);
+        }
+        
+        .boton:active {
+            transform: translateY(4px) scale(1);
+            box-shadow: 
+                0 8px 25px rgba(69, 90, 100, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .boton.secundario {
+            background: linear-gradient(135deg, #8d6e63, #6d4c41);
+        }
+        
+        .boton.secundario:hover {
+            background: linear-gradient(135deg, #a1887f, #8d6e63);
+        }
+        
+        /* Decoraciones artesanales */
+        .separador-artesanal {
+            text-align: center;
+            margin: 60px 0;
+            color: #90a4ae;
+            font-size: 3rem;
+            letter-spacing: 25px;
+            opacity: 0.6;
+        }
+        
+        /* Animaciones */
+        @keyframes entrada-taller {
+            from {
+                opacity: 0;
+                transform: translateY(40px) rotateX(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+        
+        .contenido {
+            animation: entrada-taller 1.2s ease-out;
+        }
+        
+        /* Efectos de texto */
+        .resaltado-artesanal {
+            background: linear-gradient(120deg, rgba(176, 190, 197, 0.5) 0%, rgba(176, 190, 197, 0) 100%);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #37474f;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .termino-tecnico {
+            background: rgba(144, 164, 174, 0.2);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-style: italic;
+            border: 1px dashed #90a4ae;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .contenido {
+                padding: 30px;
+                margin: 20px auto;
+            }
+            
+            .titulo-principal {
+                font-size: 3.2rem;
+            }
+            
+            .titulo-principal::before,
+            .titulo-principal::after {
+                display: none;
+            }
+            
+            .hebreo-titulo {
+                font-size: 2rem;
+                letter-spacing: 6px;
+                padding: 15px;
+            }
+            
+            .texto-principal {
+                font-size: 1.25rem;
+            }
+            
+            .analisis-etimologico {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .traduccion-texto {
+                font-size: 3rem;
+            }
+            
+            .botones {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .boton {
+                width: 100%;
+                padding: 20px 35px;
+            }
+            
+            .separador-artesanal {
+                font-size: 2rem;
+                letter-spacing: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenido">
+        <div class="header">
+            <h1 class="titulo-principal">Cephar-hammonai</h1>
+            <div class="subtitulo">La Aldea del Artesano</div>
+            <span class="hebreo-titulo">כְּפַר הַמֹּנִי</span>
+        </div>
+        
+        <div class="texto-principal">
+            <p>Cephar-hammonai, mencionado en el libro de Nehemías como un lugar asociado con los servidores del templo, representa un fascinante ejemplo de cómo los nombres geográficos en la Biblia reflejan la estructura social y ocupacional del antiguo Israel. Este topónimo compuesto no solo identifica una ubicación física, sino que también revela información valiosa sobre la organización comunitaria y las especializaciones laborales en el período post-exílico.</p>
+            
+            <div class="seccion-artesanal">
+                <h2 class="seccion-titulo">Análisis Lingüístico y Ocupacional</h2>
+                <p>El nombre "Cephar-hammonai" es un compuesto hebreo que combina un término para "aldea" con una designación ocupacional específica, ofreciendo una ventana única a la estructura social de las comunidades israelitas.</p>
+            </div>
+            
+            <div class="analisis-etimologico">
+                <div class="etimologia-item cephar">
+                    <span class="palabra-hebrea-grande">כְּפַר</span>
+                    <div class="significado-primario">Cephar (Aldea)</div>
+                    <div class="explicacion-detallada">
+                        Palabra aramea/hebrea que significa "aldea", "poblado" o "asentamiento rural". Derivado posiblemente de la raíz כפר (kafar), que significa "cubrir" o "expiar", pero en contexto geográfico se refiere específicamente a un pueblo sin murallas, en contraste con las ciudades amuralladas (עיר). Indica una comunidad pequeña, posiblemente especializada o dedicada a una actividad específica. El término aparece también en el Nuevo Testamento como "Capernaum" (כפר נחום - "Aldea de Nahum").
+                    </div>
+                </div>
+                
+                <div class="etimologia-item hammonai">
+                    <span class="palabra-hebrea-grande">הַמֹּנִי</span>
+                    <div class="significado-primario">Hammonai (Los de Amón)</div>
+                    <div class="explicacion-detallada">
+                        Forma gentilicia o patronímica que significa "los amonitas" o "los de Amón". Deriva de <span class="termino-tecnico">עַמּוֹן</span> (Ammón), nombre de persona y también del pueblo amonita. El sufijo <span class="termino-tecnico">אי</span> (-i) indica pertenencia o asociación. En el contexto de Nehemías, probablemente se refiere a un grupo de servidores del templo (netineos) que tenían ascendencia amonita o estaban asociados con la región de Amón. También podría relacionarse con el nombre personal "Amón".
+                    </div>
+                </div>
+            </div>
+            
+            <div class="traduccion-destacada">
+                <div class="traduccion-titulo">Significado Completo</div>
+                <div class="traduccion-texto">"Aldea de los Amonitas"</div>
+                <div class="traduccion-subtexto">Interpretaciones alternativas: "El Pueblo de los de Amón" o "Asentamiento de los Amonitas"</div>
+            </div>
+            
+            <div class="ubicacion-funcion">
+                <h2 class="seccion-titulo">📍 Contexto Histórico y Ubicación</h2>
+                <p>Cephar-hammonai aparece mencionado en <span class="resaltado-artesanal">Nehemías 7:52</span> en la lista de los hijos de los <span class="termino-tecnico">netineos</span> (servidores del templo) que regresaron del exilio babilónico con Zorobabel.</p>
+                
+                <div class="nota-especial">
+                    <strong>Nota importante:</strong> Los netineos eran una clase de servidores del templo, posiblemente descendientes de los gabaonitas (Josué 9:27) o de otros grupos no israelitas dedicados al servicio del tabernáculo y luego del templo.
+                </div>
+                
+                <p>La ubicación exacta de Cephar-hammonai no se conoce con certeza, pero el hecho de que esté asociado con los netineos sugiere que podría haber estado cerca de Jerusalén o en territorio benjamita, donde muchos servidores del templo tenían sus asentamientos.</p>
+            </div>
+            
+            <div class="separador-artesanal">🏘️ 🏘️</div>
+            
+            <div class="contexto-historico">
+                <h2 class="seccion-titulo">🏺 Contexto Post-Exílico y Social</h2>
+                <p>La mención de Cephar-hammonai en el libro de Nehemías refleja la compleja realidad social del <span class="resaltado-artesanal">período de la restauración</span> (siglo V a.C.) después del exilio babilónico:</p>
+                
+                <ul style="margin-left: 40px; margin-top: 25px; font-size: 1.4rem; color: #4e342e;">
+                    <li style="margin-bottom: 20px;"><strong>Organización Comunitaria:</strong> Los retornados del exilio se organizaban en comunidades basadas en origen familiar, tribal u ocupacional.</li>
+                    <li style="margin-bottom: 20px;"><strong>Integración de No-Israelitas:</strong> La presencia de un grupo llamado "los amonitas" entre los servidores del templo muestra la integración de pueblos no israelitas en la comunidad religiosa.</li>
+                    <li style="margin-bottom: 20px;"><strong>Especialización Ocupacional:</strong> El patrón de asentamientos especializados sugiere una división del trabajo organizada dentro de la sociedad post-exílica.</li>
+                    <li style="margin-bottom: 20px;"><strong>Continuidad del Culto:</strong> Los netineos representaban la continuidad del servicio del templo a través de las generaciones, incluso después del exilio.</li>
+                </ul>
+            </div>
+            
+            <div class="referencias-biblicas">
+                <h2 class="seccion-titulo">Referencias Bíblicas Clave</h2>
+                
+                <div class="referencia-item">
+                    <div class="referencia-verso">Nehemías 7:52</div>
+                    <div class="referencia-descripcion">
+                        "Los hijos de Besai, los hijos de Meunim, los hijos de Nefisesim, los hijos de Bacbuc, los hijos de Hacufa, los hijos de Harhur, los hijos de Bazlut, los hijos de Mehida, los hijos de Harsa, los hijos de Barcos, los hijos de Sisara, los hijos de Tema, los hijos de Nezia, los hijos de Hatifa. Los hijos de los siervos de Salomón: los hijos de Sotai, los hijos de Soferet, los hijos de Peruda, los hijos de Jaala, los hijos de Darcón, los hijos de Gidel, los hijos de Sefatías, los hijos de Hatil, los hijos de Poqueret-hazebaim, los hijos de Amón. Todos los netineos e hijos de los siervos de Salomón, trescientos noventa y dos."
+                        <br><br>
+                        <strong>Contexto:</strong> Este versículo aparece en la lista detallada de los que regresaron del exilio. La referencia a "los hijos de Amón" probablemente se refiere a los habitantes de Cephar-hammonai, aunque el nombre específico "Cephar-hammonai" no aparece en este texto sino en algunas versiones y tradiciones.
+                    </div>
+                </div>
+                
+                <div class="referencia-item">
+                    <div class="referencia-verso">Esdras 2:43-58 (Paralelo)</div>
+                    <div class="referencia-descripcion">
+                        Lista similar de netineos y "hijos de los siervos de Salomón" que regresaron del exilio, mostrando la organización comunitaria de los servidores del templo.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="significado-social">
+                <h2 class="seccion-titulo"Significado Social y Teológico</h2>
+                <p>El estudio de Cephar-hammonai revela importantes aspectos de la vida comunitaria y teológica en el Israel post-exílico:</p>
+                
+                <div class="nota-especial" style="margin: 30px 0;">
+                    <strong>Inclusividad Comunitaria:</strong> La presencia de un grupo llamado "amonitas" entre los servidores del templo es notable, considerando la histórica hostilidad entre israelitas y amonitas (Deuteronomio 23:3-4). Esto muestra una evolución en las actitudes religiosas y sociales después del exilio.
+                </div>
+                
+                <p><strong>1. Reorganización Social:</strong> Después del trauma del exilio, la comunidad judía se reorganizó no solo tribalmente, sino también ocupacionalmente. Los netineos y otros grupos especializados recibieron asentamientos específicos.</p>
+                
+                <p><strong>2. Santidad Expandida:</strong> El concepto de "pueblo santo" se expandió para incluir a aquellos que, aunque no israelitas de nacimiento, se dedicaban al servicio del templo y participaban en la vida religiosa comunitaria.</p>
+                
+                <p><strong>3. Memoria Histórica:</strong> Nombres como Cephar-hammonai funcionaban como "marcadores de memoria" que preservaban la historia y origen de diferentes grupos dentro de la comunidad.</p>
+                
+                <p><strong>4. Continuidad Institucional:</strong> La preservación de los netineos y sus asentamientos muestra la importancia de mantener la continuidad institucional del culto a través de las crisis nacionales.</p>
+            </div>
+            
+            <div class="separador-artesanal">🕍 📜 🕍</div>
+            
+            <p>El caso de Cephar-hammonai, aunque mencionado brevemente en las Escrituras, nos ofrece una <span class="resaltado-artesanal">ventana valiosa</span> a la compleja realidad social del Israel post-exílico. Revela una comunidad en proceso de reconstrucción no solo de sus muros físicos (como describe Nehemías), sino también de su <span class="termino-tecnico">tejido social</span> y <span class="termino-tecnico">identidad religiosa</span>.</p>
+            
+            <p>Hoy, el estudio de lugares como Cephar-hammonai nos recuerda que la fe bíblica no se desarrolló en abstracto, sino en <span class="resaltado-artesanal">comunidades concretas</span> con historias específicas, organizaciones sociales particulares y desafíos reales. Cada nombre en las listas genealógicas y geográficas de la Biblia representa personas reales que, en su contexto histórico particular, contribuyeron a la gran narrativa de la relación entre Dios y su pueblo.</p>
+        </div>
+        
+        <div class="botones">
+           
+            <button class="boton" onclick="window.history.back()">
+                <span>◀️</span> Volver Atrás
+            </button>
+        </div>
+    </div>
+</body>
+</html>
