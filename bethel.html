@@ -2,93 +2,275 @@
 <html lang="es">
 <head>
 	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYMJS3X12P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BYMJS3X12P');
-</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYMJS3X12P"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-BYMJS3X12P');
+	</script>
 	<meta name="google-site-verification" content="KWZFlVdcT-h9cB1Qnj0LgSLJP-J-NS4bgjhnQG_c140" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Significado de bethel</title>
+	<title>Significado de Beth-el - Casa de Dios</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+	<style>
+		/* Estilos generales */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body {
+			font-family: 'Crimson Pro', serif;
+			line-height: 1.8;
+			color: #2c2c2c;
+			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+						url('https://media.istockphoto.com/id/1354441996/es/foto/imagen-de-libro-antiguo-abierto-sobre-mesa-de-madera-con-superposici%C3%B3n-de-purpurina.jpg');
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+			min-height: 100vh;
+			padding: 20px;
+		}
+		
+		/* Contenedor principal */
+		.contenido {
+			max-width: 900px;
+			margin: 40px auto;
+			padding: 40px;
+			background: rgba(245, 242, 235, 0.95);
+			border-radius: 15px;
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+			border: 1px solid #c9b18a;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		/* Decoración de pergamino */
+		.contenido::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('https://www.transparenttextures.com/patterns/parchment.png');
+			opacity: 0.3;
+			pointer-events: none;
+		}
+		
+		/* Título principal */
+		.titulo-superior-centralizado {
+			text-align: center;
+			margin-bottom: 40px;
+			padding-bottom: 20px;
+			border-bottom: 2px solid #8b4513;
+			position: relative;
+		}
+		
+		.titulo-superior-centralizado h1 {
+			font-family: 'Cinzel', serif;
+			font-size: 3.5rem;
+			font-weight: 700;
+			color: #8b4513;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+			letter-spacing: 2px;
+			margin-bottom: 10px;
+		}
+		
+		.titulo-superior-centralizado::after {
+			content: "בֵּית־אֵל";
+			display: block;
+			font-size: 2.5rem;
+			color: #8b4513;
+			letter-spacing: 5px;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		
+		/* Contenido del texto */
+		.texto-columna {
+			font-size: 1.3rem;
+			line-height: 1.9;
+			margin-bottom: 40px;
+			text-align: justify;
+			color: #3a3a3a;
+		}
+		
+		.texto-columna p {
+			margin-bottom: 25px;
+			position: relative;
+			padding-left: 20px;
+		}
+		
+		.texto-columna p:first-of-type::first-letter {
+			font-size: 4rem;
+			font-family: 'Cinzel', serif;
+			color: #8b4513;
+			float: left;
+			line-height: 0.8;
+			margin-right: 10px;
+			margin-top: 5px;
+		}
+		
+		/* Destacados para las definiciones */
+		.definicion {
+			background: rgba(139, 69, 19, 0.1);
+			border-left: 4px solid #8b4513;
+			padding: 20px;
+			margin: 25px 0;
+			border-radius: 0 8px 8px 0;
+		}
+		
+		.definicion p {
+			margin-bottom: 15px;
+			font-size: 1.2rem;
+		}
+		
+		.hebreo {
+			font-size: 1.8rem;
+			font-weight: bold;
+			color: #8b4513;
+			direction: rtl;
+			margin-right: 10px;
+		}
+		
+		.traduccion {
+			background: rgba(255, 215, 0, 0.1);
+			border: 1px dashed #8b4513;
+			padding: 25px;
+			margin: 30px 0;
+			text-align: center;
+			border-radius: 8px;
+			font-size: 1.4rem;
+			color: #8b4513;
+			font-weight: 600;
+		}
+		
+		.traduccion span {
+			font-family: 'Cinzel', serif;
+			font-size: 1.6rem;
+			display: block;
+			margin-top: 10px;
+			color: #654321;
+		}
+		
+		/* Botones */
+		.botones {
+			text-align: center;
+			margin-top: 40px;
+			padding-top: 30px;
+			border-top: 1px solid #c9b18a;
+		}
+		
+		.botones button {
+			background: linear-gradient(to bottom, #8b4513, #654321);
+			color: #f5f2eb;
+			border: none;
+			padding: 15px 30px;
+			font-size: 1.2rem;
+			font-family: 'Cinzel', serif;
+			cursor: pointer;
+			border-radius: 8px;
+			margin: 0 10px;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			min-width: 180px;
+		}
+		
+		.botones button:hover {
+			background: linear-gradient(to bottom, #a0522d, #8b4513);
+			transform: translateY(-3px);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+		}
+		
+		.botones button:active {
+			transform: translateY(1px);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
+		
+		/* Elemento decorativo */
+		.decoracion {
+			text-align: center;
+			margin: 30px 0;
+			color: #8b4513;
+			font-size: 1.5rem;
+			letter-spacing: 10px;
+		}
+		
+		/* Responsive */
+		@media (max-width: 768px) {
+			body {
+				padding: 10px;
+			}
+			
+			.contenido {
+				padding: 25px;
+				margin: 20px auto;
+			}
+			
+			.titulo-superior-centralizado h1 {
+				font-size: 2.5rem;
+			}
+			
+			.titulo-superior-centralizado::after {
+				font-size: 1.8rem;
+				letter-spacing: 3px;
+			}
+			
+			.texto-columna {
+				font-size: 1.1rem;
+			}
+			
+			.botones button {
+				display: block;
+				width: 100%;
+				margin: 10px 0;
+			}
+			
+			.hebreo {
+				font-size: 1.4rem;
+			}
+		}
+	</style>
 </head>
 <body>
 	<div class="contenido">
 		<div class="titulo-superior-centralizado">
 			<h1>Beth-el</h1>
 		</div>
+		
 		<div class="texto-columna">
-			<!-- Aquí va el contenido del capítulo -->
-<p>La palabra "Beth-el" (בֵּית-אֵל) es un nombre hebreo que se compone de dos palabras:</p>
-
-
-<p>- "Beth" (בֵּית) significa "casa" o "morada".</p>
-<p>- "El" (אֵל) significa "Dios" o "divino".</p>
-
-
-<p>Por lo tanto, el nombre "Beth-el" puede traducirse como "Casa de Dios" o "Morada de Dios".</p> 
-
-
-
-        </div>
-<div class="botones">
-		<button onclick="location.href='genesis28.html'">◀️</button>
+			<p>La palabra <strong>"Beth-el"</strong> (בֵּית-אֵל) es un nombre hebreo compuesto que tiene un profundo significado teológico en las Escrituras. Esta denominación aparece por primera vez en el libro del Génesis, cuando Jacob tiene una revelación divina en ese lugar.</p>
+			
+			<div class="definicion">
+				<p><span class="hebreo">בֵּית</span> - <strong>"Beth"</strong> significa "casa", "morada" o "lugar de habitación". En el contexto bíblico, representa no solo una estructura física, sino también un espacio consagrado, un lugar de encuentro y protección.</p>
+				
+				<p><span class="hebreo">אֵל</span> - <strong>"El"</strong> significa "Dios", "Fuerte" o "Poderoso". Es uno de los nombres más antiguos para referirse a la Divinidad en las tradiciones semíticas, que enfatiza el poder y la majestad de Dios.</p>
+			</div>
+			
+			<div class="traduccion">
+				Por lo tanto, el nombre <strong>"Beth-el"</strong> se traduce como:
+				<span>"Casa de Dios" o "Morada de Dios"</span>
+			</div>
+			
+			<p>Este nombre adquirió especial importancia después del sueño de Jacob, quien vio una escalera que unía el cielo y la tierra, con ángeles que subían y bajaban por ella. Al despertar, Jacob exclamó: "¡Ciertamente Jehová está en este lugar, y yo no lo sabía!" (Génesis 28:16).</p>
+			
+			<p>Jacob tomó la piedra que había usado como cabecera, la erigió como pilar y derramó aceite sobre ella, consagrando el lugar. Y dijo: "Esta piedra que he puesto por señal será casa de Dios" (Génesis 28:22), estableciendo así el significado perpetuo de Bethel como lugar de encuentro divino.</p>
+			
+			<div class="decoracion">✦ ✦ ✦</div>
+			
+			<p>En la historia posterior de Israel, Bethel se convirtió en un importante centro religioso y lugar de peregrinación, simbolizando la presencia de Dios en medio de Su pueblo y recordando que el Cielo y la Tierra pueden encontrarse en los lugares que Dios elige para revelarse.</p>
+		</div>
+		
+		<div class="botones">
+			<button onclick="location.href='genesis28.html'">◀️ Volver al Capítulo</button>
 		</div>
 	</div>
 </body>
-<style>
-body {
-	background-image: url('https://media.istockphoto.com/id/1354441996/es/foto/imagen-de-libro-antiguo-abierto-sobre-mesa-de-madera-con-superposici%C3%B3n-de-purpurina.jpg?s=612x612&w=0&k=20&c=aCaABVsUwvbIWYUZPyxibex8DJJnjQsX6RWJHApov9Q=');
-	background-size: cover;
-	background-position: center;
-	font-family: Arial, sans-serif;
-}
-
-.contenido {
-	color: #fff;
-	background-image: url('https://play-lh.googleusercontent.com/Svb-oRYbki_MRCFqPw3zAf8_7F5AbY98JY7-ZGsBFH64r-XzYaGNzmoSULDoLwJMXQ=w526-h296-rw');
-	width: 80%;
-	margin: 40px auto;
-	padding: 20px;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.titulo-superior-centralizado {
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-.titulo-superior-centralizado h1 {
-	font-size: 24px;
-	font-weight: bold;
-	color: #fff;
-}
-
-.botones {
-	text-align: center;
-	margin-top: 20px;
-}
-
-.botones button {
-	background-color: #337ab7;
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	font-size: 18px;
-	cursor: pointer;
-	border-radius: 5px;
-	margin: 0 10px;
-}
-
-.botones button:hover {
-	background-color: #23527c;
-}
-</style>
 </html>
