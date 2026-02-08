@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Significado Bíblico de "Ed" - Estudio Teológico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f8fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .subtitle {
+            color: #3498db;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 30px;
+        }
+        
+        main {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        aside {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eaeff5;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h2 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .card h3 {
+            color: #3498db;
+            margin: 20px 0 10px 0;
+            font-size: 1.4rem;
+        }
+        
+        .bible-verse {
+            background-color: #f0f7ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #2c3e50;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .bible-verse span {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 5px;
+            font-style: normal;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+        
+        .highlight {
+            background-color: #e8f4fc;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2c3e50;
+            border-left: 3px solid #3498db;
+        }
+        
+        .meaning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .meaning-card {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border-top: 4px solid #3498db;
+            height: 100%;
+        }
+        
+        .meaning-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .meaning-card h4 i {
+            margin-right: 8px;
+            color: #3498db;
+        }
+        
+        .symbolism-list {
+            margin-top: 20px;
+        }
+        
+        .symbolism-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .symbolism-icon {
+            background-color: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #3498db;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px solid #3498db;
+        }
+        
+        .timeline-item h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .language-section {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .hebrew {
+            direction: rtl;
+            font-size: 1.4rem;
+            text-align: right;
+            font-family: 'Times New Roman', serif;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        
+        .name-analysis {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .name-box {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f4fc 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e1e8f0;
+        }
+        
+        .name-box h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .name-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: #ddd;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        .note-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .note-box h4 {
+            color: #ff9800;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .meaning-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-bible"></i> Significado Bíblico de "Ed"</h1>
+            <p>Estudio teológico y análisis del nombre "Ed" en las Escrituras y su relevancia espiritual</p>
+            <p class="subtitle">Explorando sus raíces hebreas y significado profético</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content-wrapper">
+            <main>
+                <section class="card">
+                    <h2><i class="fas fa-search"></i> Introducción: ¿Qué significa "Ed"?</h2>
+                    <p>El nombre <span class="highlight">"Ed"</span> aparece en la Biblia con un significado particular. Aunque no es uno de los nombres más comunes en las Escrituras, su aparición y significado ofrecen interesantes perspectivas teológicas.</p>
+                    
+                    <div class="bible-verse">
+                        "Y los hijos de Senaa: tres mil novecientos treinta. Los sacerdotes: los hijos de Jedaías, de la casa de Jesúa, novecientos setenta y tres; los hijos de Imer, mil cincuenta y dos; los hijos de Pasur, mil doscientos cuarenta y siete; los hijos de <strong>Ed</strong>, mil."
+                        <span>Esdras 2:35-36 (Versión Reina-Valera 1960)</span>
+                    </div>
+                    
+                    <p>En la Biblia, "Ed" es mencionado como un personaje específico en el libro de Esdras, formando parte de los que regresaron del exilio babilónico. Sin embargo, más allá del personaje histórico, el nombre en sí tiene un significado lingüístico y espiritual que vale la pena explorar.</p>
+                </section>
+                
+                <section class="card">
+                    <h2><i class="fas fa-language"></i> Origen y Significado Lingüístico</h2>
+                    
+                    <div class="language-section">
+                        <h3>Raíz Hebrea</h3>
+                        <p>El nombre "Ed" (עֵד) en hebreo proviene de la raíz verbal <span class="highlight">עוּד</span> (ud), que significa "testificar", "atestiguar" o "dar testimonio".</p>
+                        
+                        <div class="hebrew">עֵד</div>
+                        
+                        <p>Esta palabra hebrea aparece numerosas veces en el Antiguo Testamento con los siguientes significados principales:</p>
+                        <ul>
+                            <li><strong>Testigo</strong> - Alguien que da testimonio de algo que ha visto o conocido</li>
+                            <li><strong>Testimonio</strong> - La evidencia o declaración dada por un testigo</li>
+                            <li><strong>Piedra de testimonio</strong> - Monumento que sirve como recordatorio de un pacto o evento importante</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="name-analysis">
+                        <div class="name-box">
+                            <h4>Nombre Hebreo</h4>
+                            <div class="name-value">עֵד</div>
+                            <p>Transliteración: Ed</p>
+                        </div>
+                        
+                        <div class="name-box">
+                            <h4>Significado Principal</h4>
+                            <div class="name-value">Testigo</div>
+                            <p>Uno que atestigua o da testimonio</p>
+                        </div>
+                        
+                        <div class="name-box">
+                            <h4>Valor Numérico (Gematría)</h4>
+                            <div class="name-value">74</div>
+                            <p>Ayin (70) + Dalet (4) = 74</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="card">
+                    <h2><i class="fas fa-book-open"></i> Apariciones Bíblicas de "Ed"</h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Esdras 2:35 - El Personaje Histórico</h4>
+                            <p>"Los hijos de <strong>Ed</strong>, mil." - En este pasaje, Ed es mencionado como el jefe de una familia que regresó del exilio babilónico a Jerusalén. Esto lo sitúa en el contexto de la restauración post-exílica.</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>Nehemías 7:38 - Lista Paralela</h4>
+                            <p>"Los hijos de Senaa, tres mil novecientos treinta. Los hijos de Jedaías: de la casa de Jesúa, novecientos setenta y tres; los hijos de Imer, mil cincuenta y dos; los hijos de Pasur, mil doscientos cuarenta y siete; los hijos de <strong>Ed</strong>, mil." - Nehemías repite la lista de Esdras, confirmando la importancia de esta familia en la restauración.</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>1 Crónicas 24:20 - Posible Referencia</h4>
+                            <p>Algunos estudiosos sugieren que "Ed" podría estar relacionado con "Ido" o "Adaías", aunque esto no es concluyente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <h4><i class="fas fa-lightbulb"></i> Nota Histórica</h4>
+                        <p>El contexto de Esdras y Nehemías es crucial: después de 70 años de exilio en Babilonia, el pueblo judío regresa a Jerusalén para reconstruir el templo y la ciudad. Las familias mencionadas, incluida la de Ed, representan a aquellos fieles que mantuvieron su identidad y fe durante el exilio.</p>
+                    </div>
+                </section>
+                
+                <section class="card">
+                    <h2><i class="fas fa-pray"></i> Significado Espiritual y Simbólico</h2>
+                    
+                    <div class="symbolism-list">
+                        <div class="symbolism-item">
+                            <div class="symbolism-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div>
+                                <h4>Testimonio de Fidelidad</h4>
+                                <p>Como "testigo", Ed representa la fidelidad de Dios hacia su pueblo incluso en tiempos de exilio y restauración. La familia de Ed que regresa del exilio testifica de la fidelidad de Dios para cumplir sus promesas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="symbolism-item">
+                            <div class="symbolism-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div>
+                                <h4>Restauración y Renovación</h4>
+                                <p>El contexto del regreso del exilio sugiere un significado de renovación espiritual. Ed, como parte de esa restauración, simboliza el nuevo comienzo que Dios ofrece a su pueblo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="symbolism-item">
+                            <div class="symbolism-icon">
+                                <i class="fas fa-people-arrows"></i>
+                            </div>
+                            <div>
+                                <h4>Comunidad y Unidad</h4>
+                                <p>Ed no aparece como individuo aislado, sino como cabeza de una familia de "mil" personas. Esto enfatiza la importancia de la comunidad en el plan de Dios y el testimonio colectivo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="symbolism-item">
+                            <div class="symbolism-icon">
+                                <i class="fas fa-monument"></i>
+                            </div>
+                            <div>
+                                <h4>Piedra de Testimonio</h4>
+                                <p>En hebreo, "ed" también puede referirse a una piedra de testimonio o monumento (como en Génesis 31:52). Esto sugiere un recordatorio permanente de la obra de Dios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="card">
+                    <h2><i class="fas fa-cross"></i> Conexión con el Nuevo Testamento</h2>
+                    
+                    <p>El concepto de "testimonio" o "testigo" (ed en hebreo, mártys en griego) es fundamental en el Nuevo Testamento:</p>
+                    
+                    <div class="bible-verse">
+                        "Pero recibiréis poder, cuando haya venido sobre vosotros el Espíritu Santo, y <strong>me seréis testigos</strong> en Jerusalén, en toda Judea, en Samaria, y hasta lo último de la tierra."
+                        <span>Hechos 1:8</span>
+                    </div>
+                    
+                    <div class="bible-verse">
+                        "Y nosotros somos <strong>testigos</strong> de todas las cosas que Jesús hizo en la tierra de Judea y en Jerusalén."
+                        <span>Hechos 10:39</span>
+                    </div>
+                    
+                    <p>La idea de ser "testigos" (mártires en el sentido original) conecta directamente con el significado del nombre Ed. Cada creyente está llamado a ser un "Ed" espiritual - un testigo de la obra redentora de Cristo.</p>
+                    
+                    <h3>Jesús como el Testigo Fiel</h3>
+                    <p>El libro de Apocalipsis presenta a Jesús como "el testigo fiel y verdadero" (Apocalipsis 1:5; 3:14), cumpliendo así el significado más profundo del concepto de "ed".</p>
+                </section>
+            </main>
+            
+            <aside>
+                <div class="card">
+                    <h2><i class="fas fa-verse"></i> Versos Clave sobre "Testimonio"</h2>
+                    <div class="bible-verse">
+                        "Ponme como un sello sobre tu corazón, como una marca sobre tu brazo."
+                        <span>Cantares 8:6</span>
+                    </div>
+                    
+                    <div class="bible-verse">
+                        "Tú eres mis testigos, dice Jehová, y mi siervo que yo escogí."
+                        <span>Isaías 43:10</span>
+                    </div>
+                    
+                    <div class="bible-verse">
+                        "El que cree en el Hijo de Dios, tiene el testimonio en sí mismo."
+                        <span>1 Juan 5:10</span>
+                    </div>
+                    
+                    <div class="bible-verse">
+                        "Y este es el testimonio: que Dios nos ha dado vida eterna; y esta vida está en su Hijo."
+                        <span>1 Juan 5:11</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><i class="fas fa-list"></i> Nombres Bíblicos Relacionados</h2>
+                    <ul>
+                        <li><strong>Edar</strong> (עדר) - "Rebaño" o "Multitud" (Génesis 35:21)</li>
+                        <li><strong>Eder</strong> (עדר) - Similar a Edar, aparece en varias genealogías</li>
+                        <li><strong>Edom</strong> (אדום) - "Rojo", nombre de Esaú y su descendencia</li>
+                        <li><strong>Eden</strong> (עדן) - "Delicia" o "Placer", el jardín paradisíaco</li>
+                    </ul>
+                    
+                    <div class="note-box" style="margin-top: 15px;">
+                        <h4><i class="fas fa-info-circle"></i> Dato Interesante</h4>
+                        <p>En la tradición judía, el nombre "Ed" a veces se considera una forma abreviada de nombres como "Eduardo" o "Edmundo", aunque estos no tienen origen bíblico.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><i class="fas fa-applications"></i> Aplicación Personal</h2>
+                    <p>El significado de "Ed" como "testigo" tiene aplicaciones prácticas para la vida cristiana:</p>
+                    <ol>
+                        <li><strong>Ser testigo de Cristo</strong> en palabras y acciones</li>
+                        <li><strong>Recordar</strong> las obras de Dios en nuestra vida</li>
+                        <li><strong>Dar testimonio</strong> de la fidelidad divina</li>
+                        <li><strong>Edificar</strong> a otros con nuestro testimonio</li>
+                        <li><strong>Ser monumento vivo</strong> de la gracia de Dios</li>
+                    </ol>
+                    
+                    <div class="bible-verse" style="margin-top: 15px;">
+                        "Así alumbre vuestra luz delante de los hombres, para que vean vuestras buenas obras, y glorifiquen a vuestro Padre que está en los cielos."
+                        <span>Mateo 5:16</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><i class="fas fa-search-plus"></i> ¿Buscando "Altar Ed"?</h2>
+                    <p>Si llegaste aquí buscando información sobre "altar Ed", es posible que te refieras a:</p>
+                    <ul>
+                        <li>El <strong>altar que Edificó</strong> algún personaje bíblico</li>
+                        <li>Un error de escritura de <strong>"altar de"</strong></li>
+                        <li>El <strong>altar</strong> como concepto y <strong>Ed</strong> como nombre</li>
+                    </ul>
+                    <p>Te recomendamos revisar nuestro estudio sobre el <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">significado bíblico del altar</a> para información complementaria.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-bible"></i> Estudio Teológico del Nombre "Ed"</p>
+            <p>Recursos basados en las Sagradas Escrituras y estudios lingüísticos del hebreo bíblico</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">© 2023 Estudio Bíblico - Para fines educativos, devocionales y de investigación</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Interactividad simple para las tarjetas
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Efecto especial para los versículos
+            const verses = document.querySelectorAll('.bible-verse');
+            verses.forEach(verse => {
+                verse.addEventListener('click', function() {
+                    this.style.backgroundColor = '#e6f2ff';
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
