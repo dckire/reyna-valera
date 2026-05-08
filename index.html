@@ -1,117 +1,267 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --bg-body: #f9fafb;
-            --bg-card: #ffffff;
-            --border-color: #e5e7eb;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Santa Biblia Reina-Valera - App Móvil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=MedievalSharp&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Paleta Original (Día) */
+      --bg-app: #F5F5DC;
+      --bg-card: #FFFFFF;
+      --color-primary: #8B4513;
+      --color-dark: #3C2A1E;
+      --color-gold: #D4AF37;
+      --color-text: #333333;
+      --color-accent: #A52A2A;
+      --header-grad: linear-gradient(135deg, #8B4513 0%, #3C2A1E 100%);
+      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    /* Modo Sepia (Lectura Confort) */
+    [data-theme="sepia"] {
+      --bg-app: #f4ecd8;
+      --bg-card: #fdf6e3;
+      --color-text: #5b4636;
+      --color-primary: #704214;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-        }
+    /* Modo Noche (Oscuro Profundo) */
+    [data-theme="dark"] {
+      --bg-app: #1a1a1a;
+      --bg-card: #2d2d2d;
+      --color-text: #e0e0e0;
+      --color-primary: #d4af37;
+      --color-dark: #000000;
+      --header-grad: linear-gradient(135deg, #2d2d2d 0%, #000000 100%);
+      --shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
 
-        .card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-        .profile-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #e2e8f0;
-            margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    body {
+      font-family: 'Crimson Text', serif;
+      background-color: var(--bg-app);
+      color: var(--color-text);
+      transition: background-color 0.4s ease, color 0.4s ease;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-        h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 0 8px;
-            letter-spacing: -0.025em;
-        }
+    /* Barra de Progreso */
+    .progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 2001;
+    }
+    .progress-bar { height: 100%; background: var(--color-gold); width: 0%; transition: width 0.2s; }
 
-        p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
+    /* App Frame & Container */
+    .app-frame { width: 100%; max-width: 414px; height: 100%; margin: 0 auto; background: var(--bg-app); position: relative; display: flex; flex-direction: column; }
 
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            background-color: var(--bg-card);
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: all 0.2s ease;
-        }
+    /* Header Refinado */
+    .header {
+      background: var(--header-grad);
+      color: white;
+      padding: env(safe-area-inset-top) 15px 10px;
+      border-bottom: 2px solid var(--color-gold);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      text-align: center;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        .btn:hover {
-            background-color: #f3f4f6;
-            border-color: #d1d5db;
-            transform: translateY(-1px);
-        }
+    .header.hidden { transform: translateY(-100%); }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-        }
+    .title { font-family: 'MedievalSharp', cursive; color: var(--color-gold); font-size: 1.5rem; }
 
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-1px);
-        }
-    </style>
+    /* Selector de Temas Flotante */
+    .theme-selector {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px;
+      background: rgba(0,0,0,0.05);
+    }
+    .theme-dot {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid var(--color-gold);
+      cursor: pointer;
+    }
+
+    /* Botones Estilo "Lujo" */
+    .bible-button {
+      background: var(--header-grad);
+      color: white;
+      border: 1px solid var(--color-gold);
+      padding: 15px;
+      border-radius: 12px;
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 10px 0;
+    }
+
+    .bible-button:active { transform: scale(0.97); filter: brightness(1.2); }
+
+    /* Contenido Principal */
+    .main-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      padding-bottom: 100px;
+      scrollbar-width: none;
+    }
+    .main-content::-webkit-scrollbar { display: none; }
+
+    /* Tarjetas */
+    .card {
+      background: var(--bg-card);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .verse-card blockquote {
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    /* Bottom Nav */
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 70px;
+      background: var(--bg-card);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-bottom: env(safe-area-inset-bottom);
+      transition: transform 0.4s ease;
+    }
+    .bottom-nav.hidden { transform: translateY(100%); }
+
+    .nav-item { color: var(--color-text); text-decoration: none; text-align: center; opacity: 0.6; }
+    .nav-item.active { color: var(--color-primary); opacity: 1; }
+    
+    /* Animación de entrada */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s all ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="card">
-        <div class="profile-img">
-            <!-- Puedes poner un icono o logo aquí -->
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #94a3b8;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-        </div>
-        <h1>Tu Marca Profesional</h1>
-        <p>Soluciones digitales y marketing estratégico para potenciar tu presencia online.</p>
-        
-        <a href="#" class="btn btn-primary">Ver Catálogo</a>
-        <a href="#" class="btn">Instagram</a>
-        <a href="#" class="btn">WhatsApp</a>
-    </div>
-</div>
+  <div class="app-frame">
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
 
+    <header class="header" id="mainHeader">
+      <h1 class="title">LA SANTA BIBLIA</h1>
+      <div class="theme-selector">
+        <div class="theme-dot" style="background:#F5F5DC" onclick="setTheme('light')"></div>
+        <div class="theme-dot" style="background:#f4ecd8" onclick="setTheme('sepia')"></div>
+        <div class="theme-dot" style="background:#2d2d2d" onclick="setTheme('dark')"></div>
+      </div>
+    </header>
+
+    <main class="main-content" id="scrollContent">
+      <div class="card fade-in">
+        <h2 style="font-family:'Cinzel'; text-align:center; color:var(--color-primary);">Versículo del Día</h2>
+        <div class="verse-card">
+          <blockquote id="dailyVerse">
+            "Lámpara es a mis pies tu palabra, y lumbrera a mi camino."
+          </blockquote>
+          <p style="text-align:right; font-weight:bold; color:var(--color-gold);">Salmos 119:105</p>
+        </div>
+      </div>
+
+      <div class="bible-buttons fade-in">
+        <button class="bible-button" onclick="alert('Cargando Antiguo Testamento...')">
+          <i class="fas fa-scroll"></i> Antiguo Testamento
+        </button>
+        <button class="bible-button" onclick="alert('Cargando Nuevo Testamento...')">
+          <i class="fas fa-cross"></i> Nuevo Testamento
+        </button>
+      </div>
+
+      <div class="card fade-in">
+        <h3 style="font-family:'Cinzel'; margin-bottom:10px;">Continuar Lectura</h3>
+        <p>Juan Capítulo 3 - "De tal manera amó Dios al mundo..."</p>
+        <div style="width:100%; background:#eee; height:5px; margin-top:10px; border-radius:5px;">
+            <div style="width:45%; background:var(--color-gold); height:100%;"></div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" id="mainNav">
+      <a href="#" class="nav-item active"><i class="fas fa-home"></i><br><small>Inicio</small></a>
+      <a href="#" class="nav-item"><i class="fas fa-book"></i><br><small>Biblia</small></a>
+      <a href="#" class="nav-item"><i class="fas fa-heart"></i><br><small>Favoritos</small></a>
+      <a href="#" class="nav-item"><i class="fas fa-cog"></i><br><small>Ajustes</small></a>
+    </nav>
+  </div>
+
+  <script>
+    // --- MAGIA DE TEMAS ---
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('bible-theme', theme);
+    }
+
+    // Cargar tema guardado
+    const savedTheme = localStorage.getItem('bible-theme') || 'light';
+    setTheme(savedTheme);
+
+    // --- BARRA DE PROGRESO DE LECTURA ---
+    const scrollContainer = document.getElementById('scrollContent');
+    scrollContainer.onscroll = function() {
+      const winScroll = scrollContainer.scrollTop;
+      const height = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    };
+
+    // --- MODO LECTURA ENFOCADA (Doble Toque) ---
+    let lastTap = 0;
+    scrollContainer.addEventListener('touchend', function(e) {
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTap;
+      if (tapLength < 300 && tapLength > 0) {
+        document.getElementById('mainHeader').classList.toggle('hidden');
+        document.getElementById('mainNav').classList.toggle('hidden');
+      }
+      lastTap = currentTime;
+    });
+
+    // --- ANIMACIÓN AL HACER SCROLL ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
