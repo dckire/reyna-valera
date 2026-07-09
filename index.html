@@ -2,269 +2,466 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Santa Biblia Reina-Valera - App Móvil</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=MedievalSharp&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Escrituras Sagradas — Plataforma de Lectura Premium</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Paleta Original (Día) */
-      --bg-app: #F5F5DC;
-      --bg-card: #FFFFFF;
-      --color-primary: #8B4513;
-      --color-dark: #3C2A1E;
-      --color-gold: #D4AF37;
-      --color-text: #333333;
-      --color-accent: #A52A2A;
-      --header-grad: linear-gradient(135deg, #8B4513 0%, #3C2A1E 100%);
-      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+      /* Tema Light - Minimalista Editorial */
+      --bg-global: #F9F8F6;
+      --bg-surface: #FFFFFF;
+      --brand-primary: #1A1A1A;
+      --brand-accent: #B38F4D;
+      --brand-accent-muted: rgba(179, 143, 77, 0.1);
+      --text-main: #2D2A26;
+      --text-muted: #6E6A64;
+      --border-color: #ECEAE6;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-lg: 0 16px 40px rgba(45,42,38,0.06);
+      --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    /* Modo Sepia (Lectura Confort) */
     [data-theme="sepia"] {
-      --bg-app: #f4ecd8;
-      --bg-card: #fdf6e3;
-      --color-text: #5b4636;
-      --color-primary: #704214;
+      --bg-global: #F4EAD4;
+      --bg-surface: #FAF4E5;
+      --brand-primary: #433422;
+      --brand-accent: #A07833;
+      --brand-accent-muted: rgba(160, 120, 51, 0.12);
+      --text-main: #3D3123;
+      --text-muted: #7C6E5E;
+      --border-color: #E6DBC4;
+      --shadow-sm: 0 2px 8px rgba(67,52,34,0.04);
+      --shadow-lg: 0 16px 40px rgba(67,52,34,0.08);
     }
 
-    /* Modo Noche (Oscuro Profundo) */
     [data-theme="dark"] {
-      --bg-app: #1a1a1a;
-      --bg-card: #2d2d2d;
-      --color-text: #e0e0e0;
-      --color-primary: #d4af37;
-      --color-dark: #000000;
-      --header-grad: linear-gradient(135deg, #2d2d2d 0%, #000000 100%);
-      --shadow: 0 4px 20px rgba(0,0,0,0.5);
+      --bg-global: #0F0F10;
+      --bg-surface: #161618;
+      --brand-primary: #EAEAEA;
+      --brand-accent: #D4AF37;
+      --brand-accent-muted: rgba(212, 175, 51, 0.15);
+      --text-main: #E2E2E2;
+      --text-muted: #8E8E93;
+      --border-color: #242426;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.5);
+      --shadow-lg: 0 16px 40px rgba(0,0,0,0.7);
     }
 
+    /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
+    
     body {
-      font-family: 'Crimson Text', serif;
-      background-color: var(--bg-app);
-      color: var(--color-text);
-      transition: background-color 0.4s ease, color 0.4s ease;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* Barra de Progreso */
-    .progress-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      z-index: 2001;
-    }
-    .progress-bar { height: 100%; background: var(--color-gold); width: 0%; transition: width 0.2s; }
-
-    /* App Frame & Container */
-    .app-frame { width: 100%; max-width: 414px; height: 100%; margin: 0 auto; background: var(--bg-app); position: relative; display: flex; flex-direction: column; }
-
-    /* Header Refinado */
-    .header {
-      background: var(--header-grad);
-      color: white;
-      padding: env(safe-area-inset-top) 15px 10px;
-      border-bottom: 2px solid var(--color-gold);
-      box-shadow: var(--shadow);
-      z-index: 1000;
-      text-align: center;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .header.hidden { transform: translateY(-100%); }
-
-    .title { font-family: 'MedievalSharp', cursive; color: var(--color-gold); font-size: 1.5rem; }
-
-    /* Selector de Temas Flotante */
-    .theme-selector {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-global);
+      color: var(--text-main);
+      transition: var(--transition-smooth);
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 10px;
-      background: rgba(0,0,0,0.05);
-    }
-    .theme-dot {
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      border: 2px solid var(--color-gold);
-      cursor: pointer;
+      flex-direction: column;
     }
 
-    /* Botones Estilo "Lujo" */
-    .bible-button {
-      background: var(--header-grad);
-      color: white;
-      border: 1px solid var(--color-gold);
-      padding: 15px;
-      border-radius: 12px;
+    /* Barra de Progreso Discreta */
+    .progress-timeline {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 3px;
+      background: rgba(0,0,0,0.02);
+      z-index: 2000;
+    }
+    .progress-indicator { height: 100%; width: 0%; background: var(--brand-accent); transition: width 0.1s ease; }
+
+    /* Navegación Superior Responsiva */
+    .navbar {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0 2rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-brand {
       font-family: 'Cinzel', serif;
-      font-weight: bold;
-      text-transform: uppercase;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--brand-primary);
+      text-decoration: none;
+    }
+
+    /* Enlaces del Menú de Escritorio */
+    .nav-links-desktop {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links-desktop a {
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      font-weight: 600;
       letter-spacing: 1px;
-      box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow);
+      color: var(--text-main);
+      transition: var(--transition-smooth);
+    }
+    .nav-links-desktop a:hover {
+      color: var(--brand-accent);
+    }
+
+    /* Controles de Interfaz */
+    .nav-actions { display: flex; align-items: center; gap: 1.5rem; }
+
+    .theme-switcher {
+      display: flex;
+      background: var(--bg-global);
+      padding: 4px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .theme-btn {
+      border: none;
+      background: transparent;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      margin: 10px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: var(--transition-smooth);
+    }
+    .theme-btn.active {
+      background: var(--bg-surface);
+      color: var(--brand-accent);
+      box-shadow: var(--shadow-sm);
     }
 
-    .bible-button:active { transform: scale(0.97); filter: brightness(1.2); }
-
-    /* Contenido Principal */
-    .main-content {
-      flex: 1;
-      overflow-y: auto;
-      padding: 20px;
-      padding-bottom: 100px;
-      scrollbar-width: none;
-    }
-    .main-content::-webkit-scrollbar { display: none; }
-
-    /* Tarjetas */
-    .card {
-      background: var(--bg-card);
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(212, 175, 55, 0.2);
-    }
-
-    .verse-card blockquote {
-      font-style: italic;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    /* Bottom Nav */
-    .bottom-nav {
-      position: absolute;
-      bottom: 0;
+    /* Layout Adaptable Principal */
+    .dashboard-container {
+      max-width: 1200px;
       width: 100%;
-      height: 70px;
-      background: var(--bg-card);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      flex: 1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    /* Columnas Adaptables para Tablets/Móviles */
+    @media (max-width: 992px) {
+      .dashboard-container { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+      .nav-links-desktop { display: none; } /* Se oculta en móvil para dar espacio al Dock Inferior */
+    }
+
+    /* Bloques de Contenido Generales */
+    .main-feed { display: flex; flex-direction: column; gap: 2.5rem; }
+    .side-panel { display: flex; flex-direction: column; gap: 2rem; }
+
+    /* Módulo: Versículo Destacado (Estilo Editorial) */
+    .featured-verse-card {
+      background: var(--bg-surface);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      position: relative;
+    }
+    
+    .verse-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--brand-accent);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .verse-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      line-height: 1.7;
+      color: var(--brand-primary);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .verse-reference {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    /* Módulo: Enlaces de Testamentos (Grid Moderno) */
+    .testament-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 576px) {
+      .testament-grid { grid-template-columns: 1fr; }
+    }
+
+    .testament-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+    .testament-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--brand-accent);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .testament-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--brand-accent-muted);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-accent);
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .testament-info h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--brand-primary);
+    }
+    .testament-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Módulo Lateral: Progreso Actualizado */
+    .progress-widget {
+      background: var(--bg-surface);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .widget-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: var(--brand-accent);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .book-marker {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .book-icon {
+      font-size: 1.8rem;
+      color: var(--brand-primary);
+    }
+    .book-details h4 { font-size: 1.1rem; font-weight: 700; }
+    .book-details p { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+
+    .linear-progress-bar {
+      width: 100%;
+      height: 6px;
+      background: var(--bg-global);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    .linear-progress-fill {
+      height: 100%;
+      width: 45%;
+      background: var(--brand-accent);
+      border-radius: 10px;
+    }
+
+    /* Navegación Inferior Móvil (Solo visible en pantallas pequeñas) */
+    .mobile-dock {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; width: 100%;
+      height: 65px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
       justify-content: space-around;
       align-items: center;
-      border-top: 1px solid rgba(0,0,0,0.1);
-      padding-bottom: env(safe-area-inset-bottom);
-      transition: transform 0.4s ease;
+      z-index: 1000;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
     }
-    .bottom-nav.hidden { transform: translateY(100%); }
-
-    .nav-item { color: var(--color-text); text-decoration: none; text-align: center; opacity: 0.6; }
-    .nav-item.active { color: var(--color-primary); opacity: 1; }
     
-    /* Animación de entrada */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s all ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .dock-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.75rem;
+      gap: 4px;
+      font-weight: 600;
+    }
+    .dock-link i { font-size: 1.2rem; }
+    .dock-link.active { color: var(--brand-accent); }
 
+    @media (max-width: 768px) {
+      .mobile-dock { display: flex; }
+      body { padding-bottom: 65px; } /* Evita tapar contenido */
+      .navbar { padding: 0 1rem; }
+      .featured-verse-card { padding: 2.5rem 1.5rem; }
+      .featured-verse-text { font-size: 1.5rem; }
+    }
+
+    /* Animación Suave de Entrada */
+    .reveal { opacity: 0; transform: translateY(15px); animation: runReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+    @keyframes runReveal { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
-  <div class="app-frame">
-    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+  <!-- Línea de Progreso Global en la parte superior -->
+  <div class="progress-timeline"><div class="progress-indicator" id="topProgress"></div></div>
 
-    <header class="header" id="mainHeader">
-      <h1 class="title">LA SANTA BIBLIA</h1>
-      <div class="theme-selector">
-        <div class="theme-dot" style="background:#F5F5DC" onclick="setTheme('light')"></div>
-        <div class="theme-dot" style="background:#f4ecd8" onclick="setTheme('sepia')"></div>
-        <div class="theme-dot" style="background:#2d2d2d" onclick="setTheme('dark')"></div>
+  <!-- Barra de navegación fluida -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">ESCRITURAS</a>
+    
+    <!-- Enlaces accesibles en Computadoras -->
+    <div class="nav-links-desktop">
+      <a href="viejo.html"><i class="fas fa-scroll"></i> Antiguo Testamento</a>
+      <a href="nuevo.html"><i class="fas fa-cross"></i> Nuevo Testamento</a>
+    </div>
+    
+    <div class="nav-actions">
+      <!-- Selector de Temas Circular Ergonómico -->
+      <div class="theme-switcher">
+        <button class="theme-btn active" id="btn-light" onclick="changeTheme('light')" title="Modo Claro"><i class="fas fa-sun"></i></button>
+        <button class="theme-btn" id="btn-sepia" onclick="changeTheme('sepia')" title="Modo Confort"><i class="fas fa-book-open"></i></button>
+        <button class="theme-btn" id="btn-dark" onclick="changeTheme('dark')" title="Modo Oscuro"><i class="fas fa-moon"></i></button>
       </div>
-    </header>
+    </div>
+  </nav>
 
-    <main class="main-content" id="scrollContent">
-      <div class="card fade-in">
-        <h2 style="font-family:'Cinzel'; text-align:center; color:var(--color-primary);">Versículo del Día</h2>
-        <div class="verse-card">
-          <blockquote id="dailyVerse">
-            "Lámpara es a mis pies tu palabra, y lumbrera a mi camino."
-          </blockquote>
-          <p style="text-align:right; font-weight:bold; color:var(--color-gold);">Salmos 119:105</p>
-        </div>
-      </div>
-<div class="bible-buttons fade-in">
-        <!-- Botón para el Antiguo Testamento -->
-        <button class="bible-button" onclick="window.location.href='viejo.html'">
-          <i class="fas fa-scroll"></i> Antiguo Testamento
-        </button>
-
-        <!-- Botón para el Nuevo Testamento -->
-        <button class="bible-button" onclick="window.location.href='nuevo.html'">
-          <i class="fas fa-cross"></i> Nuevo Testamento
-        </button>
-      </div>
+  <!-- Contenedor Responsive Grid -->
+  <div class="dashboard-container">
+    
+    <!-- Columna Izquierda: Contenido de Lectura Principal -->
+    <main class="main-feed">
       
+      <!-- Bloque Versículo Editorial -->
+      <section class="featured-verse-card reveal">
+        <span class="verse-tag">Versículo del Día</span>
+        <blockquote class="verse-text">
+          "Lámpara es a mis pies tu palabra, y lumbrera a mi camino."
+        </blockquote>
+        <div class="verse-reference">Salmos 119:105</div>
+      </section>
 
-      <div class="card fade-in">
-        <h3 style="font-family:'Cinzel'; margin-bottom:10px;">Continuar Lectura</h3>
-        <p>Juan Capítulo 3 - "De tal manera amó Dios al mundo..."</p>
-        <div style="width:100%; background:#eee; height:5px; margin-top:10px; border-radius:5px;">
-            <div style="width:45%; background:var(--color-gold); height:100%;"></div>
-        </div>
-      </div>
+      <!-- Bloque de Enlaces a los Testamentos (Tarjetas de navegación centralizadas) -->
+      <section class="testament-grid reveal" style="animation-delay: 0.1s;">
+        
+        <!-- ENLACE FUNCIONAL AL ANTIGUO TESTAMENTO -->
+        <a href="viejo.html" class="testament-card">
+          <div class="testament-icon"><i class="fas fa-scroll"></i></div>
+          <div class="testament-info">
+            <h3>Antiguo Testamento</h3>
+            <p>Explora los 39 libros históricos, poéticos y proféticos desde el Génesis hasta Malaquías.</p>
+          </div>
+        </a>
+
+        <!-- ENLACE FUNCIONAL AL NUEVO TESTAMENTO -->
+        <a href="nuevo.html" class="testament-card">
+          <div class="testament-icon"><i class="fas fa-cross"></i></div>
+          <div class="testament-info">
+            <h3>Nuevo Testamento</h3>
+            <p>Accede a los 27 libros que abarcan los Evangelios, los Hechos, las Epístolas y el Apocalipsis.</p>
+          </div>
+        </a>
+      </section>
+
     </main>
 
-    <nav class="bottom-nav" id="mainNav">
-      <a href="#" class="nav-item active"><i class="fas fa-home"></i><br><small>Inicio</small></a>
-      <a href="#" class="nav-item"><i class="fas fa-book"></i><br><small>Biblia</small></a>
-      <a href="#" class="nav-item"><i class="fas fa-heart"></i><br><small>Favoritos</small></a>
-      <a href="#" class="nav-item"><i class="fas fa-cog"></i><br><small>Ajustes</small></a>
-    </nav>
+    <!-- Columna Derecha: Información de apoyo, progreso y utilidades -->
+    <aside class="side-panel reveal" style="animation-delay: 0.2s;">
+      
+      <div class="progress-widget">
+        <h3 class="widget-title">Continuar Lectura</h3>
+        <div class="book-marker">
+          <div class="book-icon"><i class="fas fa-bookmark" style="color: var(--brand-accent);"></i></div>
+          <div class="book-details">
+            <h4>Evangelio según Juan</h4>
+            <p>Capítulo 3 - "De tal manera amó Dios..."</p>
+          </div>
+        </div>
+        <div class="linear-progress-bar">
+          <div class="linear-progress-fill"></div>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- Dock inferior exclusivo para smartphones (Enlaces directos a un toque) -->
+  <div class="mobile-dock">
+    <a href="#" class="dock-link active"><i class="fas fa-home"></i>Inicio</a>
+    <a href="viejo.html" class="dock-link"><i class="fas fa-scroll"></i>A.T.</a>
+    <a href="nuevo.html" class="dock-link"><i class="fas fa-cross"></i>N.T.</a>
+    <a href="#" class="dock-link"><i class="fas fa-cog"></i>Ajustes</a>
   </div>
 
   <script>
-    // --- MAGIA DE TEMAS ---
-    function setTheme(theme) {
+    // --- GESTIÓN DE TEMAS MODERNA ---
+    function changeTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('bible-theme', theme);
+      localStorage.setItem('platform-theme', theme);
+      
+      // Conmutar clases activas de botones
+      document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(`btn-${theme}`).classList.add('active');
     }
 
-    // Cargar tema guardado
-    const savedTheme = localStorage.getItem('bible-theme') || 'light';
-    setTheme(savedTheme);
+    // Carga inicial persistente
+    const activeSavedTheme = localStorage.getItem('platform-theme') || 'light';
+    changeTheme(activeSavedTheme);
 
-    // --- BARRA DE PROGRESO DE LECTURA ---
-    const scrollContainer = document.getElementById('scrollContent');
-    scrollContainer.onscroll = function() {
-      const winScroll = scrollContainer.scrollTop;
-      const height = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById("myBar").style.width = scrolled + "%";
+    // --- CÁLCULO DE PROGRESO DE PÁGINA (Para toda resolución) ---
+    window.onscroll = function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      document.getElementById("topProgress").style.width = scrolled + "%";
     };
-
-    // --- MODO LECTURA ENFOCADA (Doble Toque) ---
-    let lastTap = 0;
-    scrollContainer.addEventListener('touchend', function(e) {
-      const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTap;
-      if (tapLength < 300 && tapLength > 0) {
-        document.getElementById('mainHeader').classList.toggle('hidden');
-        document.getElementById('mainNav').classList.toggle('hidden');
-      }
-      lastTap = currentTime;
-    });
-
-    // --- ANIMACIÓN AL HACER SCROLL ---
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
