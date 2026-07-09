@@ -9,7 +9,6 @@
   
   <style>
     :root {
-      /* Tema Light - Minimalista Editorial */
       --bg-global: #F9F8F6;
       --bg-surface: #FFFFFF;
       --brand-primary: #1A1A1A;
@@ -49,7 +48,6 @@
       --shadow-lg: 0 16px 40px rgba(0,0,0,0.7);
     }
 
-    /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     
     body {
@@ -62,7 +60,6 @@
       flex-direction: column;
     }
 
-    /* Barra de Progreso Discreta */
     .progress-timeline {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 3px;
@@ -71,326 +68,187 @@
     }
     .progress-indicator { height: 100%; width: 0%; background: var(--brand-accent); transition: width 0.1s ease; }
 
-    /* Navegación Superior Responsiva */
     .navbar {
       background: var(--bg-surface);
       border-bottom: 1px solid var(--border-color);
       position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 0 2rem;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      top: 0; z-index: 1000; padding: 0 2rem; height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
       box-shadow: var(--shadow-sm);
-      transition: var(--transition-smooth);
     }
 
     .nav-brand {
       font-family: 'Cinzel', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--brand-primary);
-      text-decoration: none;
+      font-size: 1.25rem; font-weight: 700; letter-spacing: 2px;
+      color: var(--brand-primary); text-decoration: none;
     }
 
-    /* Enlaces del Menú de Escritorio */
-    .nav-links-desktop {
-      display: flex;
-      gap: 2rem;
-    }
+    .nav-links-desktop { display: flex; gap: 2rem; }
     .nav-links-desktop a {
-      text-decoration: none;
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: var(--text-main);
-      transition: var(--transition-smooth);
+      text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.9rem;
+      font-weight: 600; letter-spacing: 1px; color: var(--text-main); transition: var(--transition-smooth);
     }
-    .nav-links-desktop a:hover {
-      color: var(--brand-accent);
-    }
+    .nav-links-desktop a:hover { color: var(--brand-accent); }
 
-    /* Controles de Interfaz */
     .nav-actions { display: flex; align-items: center; gap: 1.5rem; }
 
     .theme-switcher {
-      display: flex;
-      background: var(--bg-global);
-      padding: 4px;
-      border-radius: 30px;
-      border: 1px solid var(--border-color);
+      display: flex; background: var(--bg-global); padding: 4px; border-radius: 30px; border: 1px solid var(--border-color);
     }
     
     .theme-btn {
-      border: none;
-      background: transparent;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      transition: var(--transition-smooth);
+      border: none; background: transparent; width: 32px; height: 32px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.9rem; transition: var(--transition-smooth);
     }
-    .theme-btn.active {
-      background: var(--bg-surface);
-      color: var(--brand-accent);
-      box-shadow: var(--shadow-sm);
-    }
+    .theme-btn.active { background: var(--bg-surface); color: var(--brand-accent); box-shadow: var(--shadow-sm); }
 
-    /* Layout Adaptable Principal */
     .dashboard-container {
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-      flex: 1;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 3rem;
+      max-width: 1200px; width: 100%; margin: 0 auto; padding: 3rem 2rem;
+      flex: 1; display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;
     }
 
-    /* Columnas Adaptables para Tablets/Móviles */
     @media (max-width: 992px) {
       .dashboard-container { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
-      .nav-links-desktop { display: none; } /* Se oculta en móvil para dar espacio al Dock Inferior */
+      .nav-links-desktop { display: none; }
     }
 
-    /* Bloques de Contenido Generales */
     .main-feed { display: flex; flex-direction: column; gap: 2.5rem; }
     .side-panel { display: flex; flex-direction: column; gap: 2rem; }
 
-    /* Módulo: Versículo Destacado (Estilo Editorial) */
+    /* Tarjeta de Versículo Aleatorio */
     .featured-verse-card {
-      background: var(--bg-surface);
-      border-radius: 24px;
-      padding: 3.5rem 3rem;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border-color);
-      text-align: center;
-      position: relative;
+      background: var(--bg-surface); border-radius: 24px; padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); text-align: center;
+      text-decoration: none; color: inherit; display: block; transition: var(--transition-smooth);
+    }
+    .featured-verse-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand-accent);
     }
     
     .verse-tag {
-      font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      color: var(--brand-accent);
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      display: block;
+      font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 3px;
+      color: var(--brand-accent); text-transform: uppercase; margin-bottom: 2rem; display: block;
     }
 
     .verse-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.85rem;
-      line-height: 1.7;
-      color: var(--brand-primary);
-      margin-bottom: 2rem;
-      font-style: italic;
+      font-family: 'Playfair Display', serif; font-size: 1.85rem; line-height: 1.7;
+      color: var(--brand-primary); margin-bottom: 2rem; font-style: italic;
     }
 
     .verse-reference {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1rem;
+      letter-spacing: 1px; text-transform: uppercase; color: var(--text-main);
     }
+    
+    .verse-action-tip {
+      font-size: 0.8rem; color: var(--brand-accent); margin-top: 15px; display: block; font-weight: 600;
+      letter-spacing: 0.5px; opacity: 0; transform: translateY(5px); transition: var(--transition-smooth);
+    }
+    .featured-verse-card:hover .verse-action-tip { opacity: 1; transform: translateY(0); }
 
-    /* Módulo: Enlaces de Testamentos (Grid Moderno) */
-    .testament-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    @media (max-width: 576px) {
-      .testament-grid { grid-template-columns: 1fr; }
-    }
+    .testament-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 576px) { .testament-grid { grid-template-columns: 1fr; } }
 
     .testament-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 2rem;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 180px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition-smooth);
+      background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 20px;
+      padding: 2rem; text-decoration: none; color: inherit; display: flex;
+      flex-direction: column; justify-content: space-between; min-height: 180px;
+      box-shadow: var(--shadow-sm); transition: var(--transition-smooth);
     }
-    .testament-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--brand-accent);
-      box-shadow: var(--shadow-lg);
-    }
+    .testament-card:hover { transform: translateY(-5px); border-color: var(--brand-accent); box-shadow: var(--shadow-lg); }
 
     .testament-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--brand-accent-muted);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--brand-accent);
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
+      width: 48px; height: 48px; background: var(--brand-accent-muted); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; color: var(--brand-accent);
+      font-size: 1.3rem; margin-bottom: 1.5rem;
     }
 
-    .testament-info h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--brand-primary);
-    }
-    .testament-info p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
+    .testament-info h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--brand-primary); }
+    .testament-info p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
 
-    /* Módulo Lateral: Progreso Actualizado */
+    /* Widget de Continuar Lectura Inteligente */
     .progress-widget {
-      background: var(--bg-surface);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
+      background: var(--bg-surface); border-radius: 20px; padding: 2rem;
+      border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);
     }
 
     .widget-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: var(--brand-accent);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
+      font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 2px;
+      color: var(--brand-accent); margin-bottom: 1.5rem; text-transform: uppercase;
     }
 
-    .book-marker {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .book-icon {
-      font-size: 1.8rem;
-      color: var(--brand-primary);
-    }
-    .book-details h4 { font-size: 1.1rem; font-weight: 700; }
-    .book-details p { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+    .book-marker { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .book-icon { font-size: 1.8rem; color: var(--brand-primary); }
+    .book-details h4 { font-size: 1.1rem; font-weight: 700; color: var(--brand-primary); }
+    .book-details p { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-top: 2px; }
 
-    .linear-progress-bar {
-      width: 100%;
-      height: 6px;
-      background: var(--bg-global);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-top: 1.5rem;
+    .continue-btn {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
+      color: var(--brand-accent); text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      transition: var(--transition-smooth);
     }
-    .linear-progress-fill {
-      height: 100%;
-      width: 45%;
-      background: var(--brand-accent);
-      border-radius: 10px;
-    }
+    .continue-btn:hover { opacity: 0.8; transform: translateX(3px); }
 
-    /* Navegación Inferior Móvil (Solo visible en pantallas pequeñas) */
     .mobile-dock {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; width: 100%;
-      height: 65px;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border-color);
-      justify-content: space-around;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
+      display: none; position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
+      background: var(--bg-surface); border-top: 1px solid var(--border-color);
+      justify-content: space-around; align-items: center; z-index: 1000;
     }
     
     .dock-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.75rem;
-      gap: 4px;
-      font-weight: 600;
+      color: var(--text-muted); text-decoration: none; display: flex;
+      flex-direction: column; align-items: center; font-size: 0.75rem; gap: 4px; font-weight: 600;
     }
     .dock-link i { font-size: 1.2rem; }
     .dock-link.active { color: var(--brand-accent); }
 
     @media (max-width: 768px) {
       .mobile-dock { display: flex; }
-      body { padding-bottom: 65px; } /* Evita tapar contenido */
+      body { padding-bottom: 65px; }
       .navbar { padding: 0 1rem; }
       .featured-verse-card { padding: 2.5rem 1.5rem; }
-      .featured-verse-text { font-size: 1.5rem; }
     }
 
-    /* Animación Suave de Entrada */
     .reveal { opacity: 0; transform: translateY(15px); animation: runReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
     @keyframes runReveal { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
-  <!-- Línea de Progreso Global en la parte superior -->
   <div class="progress-timeline"><div class="progress-indicator" id="topProgress"></div></div>
 
-  <!-- Barra de navegación fluida -->
   <nav class="navbar">
     <a href="#" class="nav-brand">ESCRITURAS</a>
     
-    <!-- Enlaces accesibles en Computadoras -->
     <div class="nav-links-desktop">
       <a href="viejo.html"><i class="fas fa-scroll"></i> Antiguo Testamento</a>
       <a href="nuevo.html"><i class="fas fa-cross"></i> Nuevo Testamento</a>
     </div>
     
     <div class="nav-actions">
-      <!-- Selector de Temas Circular Ergonómico -->
       <div class="theme-switcher">
-        <button class="theme-btn active" id="btn-light" onclick="changeTheme('light')" title="Modo Claro"><i class="fas fa-sun"></i></button>
-        <button class="theme-btn" id="btn-sepia" onclick="changeTheme('sepia')" title="Modo Confort"><i class="fas fa-book-open"></i></button>
-        <button class="theme-btn" id="btn-dark" onclick="changeTheme('dark')" title="Modo Oscuro"><i class="fas fa-moon"></i></button>
+        <button class="theme-btn active" id="btn-light" onclick="changeTheme('light')"><i class="fas fa-sun"></i></button>
+        <button class="theme-btn" id="btn-sepia" onclick="changeTheme('sepia')"><i class="fas fa-book-open"></i></button>
+        <button class="theme-btn" id="btn-dark" onclick="changeTheme('dark')"><i class="fas fa-moon"></i></button>
       </div>
     </div>
   </nav>
 
-  <!-- Contenedor Responsive Grid -->
   <div class="dashboard-container">
-    
-    <!-- Columna Izquierda: Contenido de Lectura Principal -->
     <main class="main-feed">
       
-      <!-- Bloque Versículo Editorial -->
-      <section class="featured-verse-card reveal">
-        <span class="verse-tag">Versículo del Día</span>
-        <blockquote class="verse-text">
-          "Lámpara es a mis pies tu palabra, y lumbrera a mi camino."
+      <a href="#" id="verseLink" class="featured-verse-card reveal">
+        <span class="verse-tag">Iluminación Aleatoria</span>
+        <blockquote class="verse-text" id="dailyVerseText">
+          "Buscando en las Escrituras..."
         </blockquote>
-        <div class="verse-reference">Salmos 119:105</div>
-      </section>
+        <div class="verse-reference" id="dailyVerseRef">...</div>
+        <span class="verse-action-tip">Clic para leer el capítulo completo <i class="fas fa-chevron-right"></i></span>
+      </a>
 
-      <!-- Bloque de Enlaces a los Testamentos (Tarjetas de navegación centralizadas) -->
       <section class="testament-grid reveal" style="animation-delay: 0.1s;">
-        
-        <!-- ENLACE FUNCIONAL AL ANTIGUO TESTAMENTO -->
         <a href="viejo.html" class="testament-card">
           <div class="testament-icon"><i class="fas fa-scroll"></i></div>
           <div class="testament-info">
@@ -399,68 +257,103 @@
           </div>
         </a>
 
-        <!-- ENLACE FUNCIONAL AL NUEVO TESTAMENTO -->
         <a href="nuevo.html" class="testament-card">
           <div class="testament-icon"><i class="fas fa-cross"></i></div>
           <div class="testament-info">
             <h3>Nuevo Testamento</h3>
-            <p>Accede a los 27 libros que abarcan los Evangelios, los Hechos, las Epístolas y el Apocalipsis.</p>
+            <p>Accede a los 27 libros que abarcan los Evangelios, las Hechos, las Epístolas y el Apocalipsis.</p>
           </div>
         </a>
       </section>
-
     </main>
 
-    <!-- Columna Derecha: Información de apoyo, progreso y utilidades -->
     <aside class="side-panel reveal" style="animation-delay: 0.2s;">
-      
       <div class="progress-widget">
         <h3 class="widget-title">Continuar Lectura</h3>
         <div class="book-marker">
           <div class="book-icon"><i class="fas fa-bookmark" style="color: var(--brand-accent);"></i></div>
           <div class="book-details">
-            <h4>Evangelio según Juan</h4>
-            <p>Capítulo 3 - "De tal manera amó Dios..."</p>
+            <h4 id="lastBookTitle">Comenzar Lectura</h4>
+            <p id="lastBookSubtitle">No hay lecturas recientes</p>
           </div>
         </div>
-        <div class="linear-progress-bar">
-          <div class="linear-progress-fill"></div>
-        </div>
+        <a href="nuevo.html" id="continueReadingLink" class="continue-btn">
+          Ir al capítulo <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-
     </aside>
-
   </div>
 
-  <!-- Dock inferior exclusivo para smartphones (Enlaces directos a un toque) -->
   <div class="mobile-dock">
     <a href="#" class="dock-link active"><i class="fas fa-home"></i>Inicio</a>
     <a href="viejo.html" class="dock-link"><i class="fas fa-scroll"></i>A.T.</a>
     <a href="nuevo.html" class="dock-link"><i class="fas fa-cross"></i>N.T.</a>
-    <a href="#" class="dock-link"><i class="fas fa-cog"></i>Ajustes</a>
   </div>
 
   <script>
-    // --- GESTIÓN DE TEMAS MODERNA ---
+    // =========================================================
+    // BASE DE DATOS EXTENSA CON SUS ARCHIVOS CORRESPONDIENTES
+    // =========================================================
+    const bibliotecaDeVersos = [
+      { texto: "Y SAULO consentía en su muerte, Y en aquel día se hizo una grande persecución en la iglesia...", ref: "Hechos 8:1", archivo: "hechos8.html" },
+      { texto: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.", ref: "Salmos 119:105", archivo: "salmos119.html" },
+      { texto: "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito...", ref: "Juan 3:16", archivo: "juan3.html" },
+      { texto: "En el principio crió Dios los cielos y la tierra.", ref: "Génesis 1:1", archivo: "genesis1.html" },
+      { texto: "Todo lo puedo en Cristo que me fortalece.", ref: "Filipenses 4:13", archivo: "filipenses4.html" },
+      { texto: "Jehová es mi pastor; nada me faltará.", ref: "Salmos 23:1", archivo: "salmos23.html" },
+      { texto: "Y Saulo, respirando aún amenazas y muerte contra los discípulos del Señor...", ref: "Hechos 9:1", archivo: "hechos9.html" },
+      { texto: "Mas el fruto del Espíritu es: caridad, gozo, paz, tolerancia, benignidad, bondad, fe...", ref: "Gálatas 5:22", archivo: "galatas5.html" }
+    ];
+
+    // Función que selecciona un verso totalmente aleatorio en cada carga de pantalla
+    function generarVersoAleatorio() {
+      const totalVersos = bibliotecaDeVersos.length;
+      const indiceAleatorio = Math.floor(Math.random() * totalVersos);
+      const verso = bibliotecaDeVersos[indiceAleatorio];
+
+      // Inyectar textos en el HTML
+      document.getElementById("dailyVerseText").innerText = `"${verso.texto}"`;
+      document.getElementById("dailyVerseRef").innerText = verso.ref;
+      
+      // CAMBIO CLAVE: El link del cuadro se asigna dinámicamente al archivo exacto del capítulo
+      document.getElementById("verseLink").href = verso.archivo;
+    }
+
+    // =========================================================
+    // CONTINUAR LECTURA (Sincronizado con tus páginas)
+    // =========================================================
+    function verificarUltimaLectura() {
+      // Por defecto sugerimos Hechos 8 si el usuario nunca ha leído nada
+      const ultimoLibro = localStorage.getItem("ultima_biblia_libro") || "Hechos 8";
+      const ultimoUrl = localStorage.getItem("ultima_biblia_url") || "hechos8.html";
+      
+      document.getElementById("lastBookTitle").innerText = ultimoLibro;
+      document.getElementById("lastBookSubtitle").innerText = "Reanuda donde te quedaste";
+      document.getElementById("continueReadingLink").href = ultimoUrl;
+    }
+
+    // =========================================================
+    // CONTROL DE INTERFAZ Y TEMAS
+    // =========================================================
     function changeTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('platform-theme', theme);
-      
-      // Conmutar clases activas de botones
       document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
       document.getElementById(`btn-${theme}`).classList.add('active');
     }
 
-    // Carga inicial persistente
-    const activeSavedTheme = localStorage.getItem('platform-theme') || 'light';
-    changeTheme(activeSavedTheme);
-
-    // --- CÁLCULO DE PROGRESO DE PÁGINA (Para toda resolución) ---
     window.onscroll = function() {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
       document.getElementById("topProgress").style.width = scrolled + "%";
+    };
+
+    // Ejecución al abrir la app
+    window.onload = function() {
+      changeTheme(localStorage.getItem('platform-theme') || 'light');
+      generarVersoAleatorio();
+      verificarUltimaLectura();
     };
   </script>
 </body>
