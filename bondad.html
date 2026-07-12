@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bondad de Dios | Reflexión</title>
+    <!-- Fuentes de Google para un estilo elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf8f4;
+            background-image: radial-gradient(circle at 10% 20%, rgba(201, 169, 110, 0.05) 0%, transparent 50%);
+            color: #2c3e4f;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            padding: 2.5rem 2.8rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px -15px rgba(44, 62, 79, 0.15), 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 248, 235, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        /* Encabezado */
+        .header {
+            text-align: center;
+            margin-bottom: 2.8rem;
+            border-bottom: 2px solid #f0ebe0;
+            padding-bottom: 1.8rem;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.2rem;
+            color: #1e2b38;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(135deg, #b68a4b, #8f6e3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #6b7a8a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .intro {
+            font-size: 1.15rem;
+            color: #3f4d5e;
+            text-align: center;
+            background: #f4f0e9;
+            padding: 1.2rem 2rem;
+            border-radius: 60px;
+            margin-bottom: 2.5rem;
+            border-left: 6px solid #c9a96e;
+            font-weight: 400;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        /* Tarjetas de cada punto */
+        .card {
+            background: #ffffff;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            border: 1px solid #f0ebe0;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(44, 62, 79, 0.08);
+            border-color: #dcccae;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #1e2b38;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .card-title .verse-ref {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: #e8e0d3;
+            color: #6b5a44;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            background: #efe9df;
+        }
+
+        .card-sub {
+            font-weight: 600;
+            color: #b68a4b;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .card p {
+            color: #34495e;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .card p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .bible-quote {
+            font-style: italic;
+            color: #5d4a34;
+            background: #faf7f1;
+            padding: 0.8rem 1.4rem;
+            border-radius: 12px;
+            border-left: 4px solid #c9a96e;
+            margin: 0.8rem 0 1rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .bible-quote strong {
+            color: #8f6e3a;
+            font-weight: 600;
+        }
+
+        /* Resumen final */
+        .summary {
+            background: #eef0e8;
+            padding: 2rem 2rem 1.8rem;
+            border-radius: 24px;
+            margin-top: 2rem;
+            border: 1px solid #dcd5c6;
+            text-align: center;
+        }
+
+        .summary h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            color: #1e2b38;
+            margin-bottom: 0.8rem;
+        }
+
+        .summary .highlight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem 1.5rem;
+            margin: 1.2rem 0;
+            font-weight: 500;
+            color: #2c3e4f;
+        }
+
+        .summary .highlight-grid span {
+            background: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            font-size: 0.95rem;
+            border: 1px solid #dcccae;
+        }
+
+        .summary .final-encourage {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #6b5a44;
+            margin-top: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .summary .final-encourage em {
+            color: #b68a4b;
+            font-style: normal;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8f9aa7;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #ece6dc;
+            padding-top: 1.8rem;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem 1.2rem;
+                border-radius: 20px;
+            }
+            .header h1 {
+                font-size: 2.4rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .card-title {
+                font-size: 1.3rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .intro {
+                font-size: 1rem;
+                padding: 1rem 1.2rem;
+            }
+            .summary .highlight-grid span {
+                font-size: 0.85rem;
+                padding: 0.2rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .container {
+                padding: 1rem 0.8rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1>La Bondad de Dios</h1>
+            <p class="subtitle">Un refugio eterno en cada estación</p>
+        </header>
+
+        <!-- Introducción -->
+        <div class="intro">
+            ✦ No es un concepto abstracto, sino que se manifiesta de forma práctica en cada área de nuestra vida. Reflexionemos juntos en estos versículos. ✦
+        </div>
+
+        <!-- 1. Para contigo -->
+        <div class="card">
+            <div class="card-title">
+                Para contigo
+                <span class="verse-ref">Romanos 11:21-23</span>
+            </div>
+            <div class="card-sub">✦ Bondad que advierte y restaura</div>
+            <p>Pablo nos dice: <em>"Considera, pues, la bondad y la severidad de Dios"</em> (v. 22). Su bondad no es un "permiso para pecar", sino que te trata con paciencia para llevarte al arrepentimiento.</p>
+            <div class="bible-quote">
+                <strong>“Porque si Dios no perdonó a las ramas naturales, a ti tampoco te perdonará.”</strong> (v. 21) — Así como el olivo silvestre fue injertado, Su bondad te sostiene hoy, y si no permaneces en incredulidad, Él tiene el poder de injertarte de nuevo. Es una bondad que <strong>te toma en serio</strong> y te da oportunidad de volver a Él una y otra vez.
+            </div>
+        </div>
+
+        <!-- 2. Nos da fuerza -->
+        <div class="card">
+            <div class="card-title">
+                Nos da fuerza
+                <span class="verse-ref">Salmos 27:10-13</span>
+            </div>
+            <div class="card-sub">✦ Bondad que nos sostiene en el miedo</div>
+            <p>David confiesa: <em>"Aunque mi padre y mi madre me dejaran, con todo, Jehová me recogerá"</em> (v. 10). Cuando el corazón flaquea y el miedo acecha, la bondad de Dios no se aleja; se convierte en <strong>fortaleza para tu alma</strong>.</p>
+            <div class="bible-quote">
+                <strong>“Espera a Jehová; esfuérzate, y aliéntese tu corazón.”</strong> (v. 14) — Su bondad es el combustible para seguir adelante cuando humanamente no puedes. Él te esconde en su tabernáculo y te levanta.
+            </div>
+        </div>
+
+        <!-- 3. Para con nosotros -->
+        <div class="card">
+            <div class="card-title">
+                Para con nosotros
+                <span class="verse-ref">Efesios 2:7-9</span>
+            </div>
+            <div class="card-sub">✦ Bondad que salva por gracia</div>
+            <p>Este es el pináculo de Su bondad: <em>"Para mostrar en los siglos venideros las abundantes riquezas de su gracia en su bondad para con nosotros en Cristo Jesús"</em> (v. 7).</p>
+            <div class="bible-quote">
+                <strong>“Porque por gracia sois salvos por medio de la fe; y esto no de vosotros, pues es don de Dios; no por obras, para que nadie se gloríe.”</strong> (v. 8-9) — Aquí la bondad no es un favor que merecemos, sino un regalo inmerecido. Su bondad te rescató del pecado y te sentó en lugares celestiales. Es una bondad eterna, que trasciende el tiempo.
+            </div>
+        </div>
+
+        <!-- 4. Provee al pobre -->
+        <div class="card">
+            <div class="card-title">
+                Provee al pobre
+                <span class="verse-ref">Salmos 68:9-10</span>
+            </div>
+            <div class="card-sub">✦ Bondad que es práctica y tangible</div>
+            <p><em>"La lluvia abundante derramaste, oh Dios... Tú, oh Dios, has preparado de tu bondad para el pobre"</em>.</p>
+            <div class="bible-quote">
+                Su bondad no es solo teología; es <strong>pan en la mesa</strong>, es provisión en la sequía. Dios se preocupa por tus necesidades físicas y materiales. Él conforta a su heredad y sustenta al necesitado. Es una bondad que se moja las manos en la tierra para cuidar de los más vulnerables.
+            </div>
+        </div>
+
+        <!-- Resumen y ánimo -->
+        <div class="summary">
+            <h3>✨ En resumen</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">La bondad de Dios es...</p>
+            <div class="highlight-grid">
+                <span>⚖️ Severa para apartarte del mal</span>
+                <span>💪 Fuerte para levantarte en la debilidad</span>
+                <span>🎁 Gratuita para salvarte del pecado</span>
+                <span>🍞 Generosa para sustentar tu vida diaria</span>
+            </div>
+            <div class="final-encourage">
+                Así que hoy, anímate: <em>Él es bueno contigo, te da fuerzas, obra a tu favor y nunca te abandona.</em><br>
+                <span style="font-size: 1.6rem; display: inline-block; margin-top: 0.4rem;">¡Espera en Él, que su bondad no se acaba! 🙌</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            ❀ Confía en el Señor, porque su misericordia es para siempre ❀
+        </div>
+    </div>
+</body>
+</html>
