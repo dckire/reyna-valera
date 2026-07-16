@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Escrituras Sagradas — Plataforma de Lectura Premium</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:ital,wght=0,400;0,600;1,400&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -191,6 +191,100 @@
     }
     .continue-btn:hover { opacity: 0.8; transform: translateX(3px); }
 
+    /* =========================================================
+       NUEVO: Widget Patrocinado Premium (Publicidad Nativa)
+       ========================================================= */
+    .premium-ad-widget {
+      background: var(--bg-surface);
+      border: 1px dashed var(--brand-accent); /* Borde discontinuo elegante */
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+    .premium-ad-widget:hover {
+      border-style: solid;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .ad-tag {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 0.65rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+    .ad-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .ad-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .ad-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--brand-accent-muted);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-accent);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .ad-title h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+    }
+    .ad-title p {
+      font-size: 0.75rem;
+      color: var(--brand-accent);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .ad-description {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--text-main);
+      font-style: italic;
+    }
+    .ad-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--brand-primary);
+      color: var(--bg-surface) !important;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: var(--transition-smooth);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .ad-btn:hover {
+      background: var(--brand-accent);
+      transform: scale(1.02);
+    }
+
     .mobile-dock {
       display: none; position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
       background: var(--bg-surface); border-top: 1px solid var(--border-color);
@@ -268,6 +362,7 @@
     </main>
 
     <aside class="side-panel reveal" style="animation-delay: 0.2s;">
+      <!-- Widget: Continuar Lectura -->
       <div class="progress-widget">
         <h3 class="widget-title">Continuar Lectura</h3>
         <div class="book-marker">
@@ -280,6 +375,26 @@
         <a href="nuevo.html" id="continueReadingLink" class="continue-btn">
           Ir al capítulo <i class="fas fa-arrow-right"></i>
         </a>
+      </div>
+
+      <!-- NUEVO WIDGET: Publicidad Editorial Premium (Amazon Affiliate) -->
+      <div class="premium-ad-widget">
+        <span class="ad-tag">Patrocinado</span>
+        <div class="ad-content">
+          <div class="ad-header">
+            <div class="ad-icon"><i class="fas fa-book-open"></i></div>
+            <div class="ad-title">
+              <h4>Edición Física</h4>
+              <p>Recomendación del mes</p>
+            </div>
+          </div>
+          <p class="ad-description">
+            "Lleva tu estudio a lo profundo. Explora las Sagradas Escrituras en una cuidada edición impresa con notas de estudio, mapas detallados y encuadernación premium."
+          </p>
+          <a href="https://amzn.to/44BLqpc" target="_blank" rel="noopener sponsored" class="ad-btn">
+            Adquirir en Amazon <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
       </div>
     </aside>
   </div>
@@ -357,4 +472,8 @@
     };
   </script>
 </body>
-</html>
+</html>"""
+
+with open("index_con_anuncio.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+print("File generated successfully")
