@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL DISCIPULADO · Estudio Bíblico</title>
+    <style>
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f5f1eb;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            padding: 2rem 1.5rem;
+            color: #1e1e2a;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+            padding: 2.8rem 2.5rem;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1e293b;
+            border-left: 8px solid #b45309;
+            padding-left: 1.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .intro-text {
+            font-size: 1rem;
+            color: #4a4a5a;
+            margin-bottom: 2.5rem;
+            padding-left: 2.2rem;
+            border-bottom: 2px solid #e7dfd7;
+            padding-bottom: 0.8rem;
+        }
+        .seccion {
+            margin-top: 2.6rem;
+        }
+        .seccion h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 3px solid #dccfc2;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .seccion h2 .badge {
+            background: #b45309;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.1rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.4px;
+        }
+        .bloque {
+            background: #fcf9f6;
+            border-radius: 1.2rem;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eae2d9;
+        }
+        .bloque .ref {
+            font-weight: 600;
+            color: #7b5f47;
+            font-size: 0.95rem;
+            background: #efe7df;
+            display: inline-block;
+            padding: 0.1rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 0.5rem;
+        }
+        .bloque p {
+            margin: 0.4rem 0;
+            color: #1f1f2b;
+        }
+        .bloque .cita {
+            background: #f2ece6;
+            padding: 0.7rem 1.2rem;
+            border-radius: 0.8rem;
+            margin: 0.7rem 0 0.2rem;
+            font-style: italic;
+            color: #2b241e;
+            border-left: 4px solid #b45309;
+        }
+        .bloque .cita strong {
+            font-style: normal;
+            color: #784d2b;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.4rem;
+        }
+        .bloque.destacado {
+            background: #fdf7ef;
+            border-left: 6px solid #b45309;
+        }
+        .bloque.oscuro {
+            background: #1e293b;
+            border-color: #3a4755;
+            color: #ece7e1;
+        }
+        .bloque.oscuro .ref {
+            background: #3a4755;
+            color: #e0d3c6;
+        }
+        .bloque.oscuro p {
+            color: #dfd6cd;
+        }
+        .bloque.oscuro .cita {
+            background: #2c3846;
+            color: #e8ddd2;
+            border-left-color: #b45309;
+        }
+        .bloque.oscuro .cita strong {
+            color: #f0d6b0;
+        }
+        .separador {
+            margin: 2.2rem 0 1rem;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #dccfc2, transparent);
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b6158;
+            margin-top: 2.5rem;
+            border-top: 1px solid #e5d9ce;
+            padding-top: 1.5rem;
+            letter-spacing: 0.3px;
+        }
+        @media (max-width: 750px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+                padding-left: 1rem;
+            }
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .intro-text {
+                padding-left: 1.2rem;
+            }
+            .bloque {
+                padding: 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .container {
+                border-radius: 1.2rem;
+                padding: 1rem 0.8rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>📖 EL DISCIPULADO</h1>
+    <div class="intro-text">Estudio bíblico ·</div>
+
+    <!-- 1. ELISEO -->
+    <div class="seccion">
+        <h2>1 · VEAMOS COMO FUE LLAMADO ELISEO <span class="badge">Ejemplo</span></h2>
+        <div class="bloque">
+            <span class="ref">1 Reyes 19:19-21</span>
+            <p>Y partiéndose él de allí halló a Eliseo hijo de Saphat, que araba con doce yuntas delante de sí; y él era uno de los doce gañanes. Y pasando Elías por delante de él, echó sobre él su manto.</p>
+            <p>20- entonces dejando él los bueyes, vino corriendo en pos de Elías, y dijo: Ruégote que me dejes besar mi padre y mi madre, y luego te seguiré. Y él le dijo: Ve, vuelve: ¿qué te he hecho yo?</p>
+            <p>21- Y volvióse de en pos de él, y tomó un par de bueyes, y matólos, y con el arado de los bueyes coció la carne de ellos, y dióla al pueblo que comiesen. Después se levantó, y fue tras Elías, y serviale.</p>
+            <div class="cita">“Dejando él los bueyes, vino corriendo en pos de Elías”</div>
+        </div>
+    </div>
+
+    <!-- 2. LEVITAS -->
+    <div class="seccion">
+        <h2>2 · LOS LEVITAS MINISTRABAN EN EL TEMPLO <span class="badge">Herencia</span></h2>
+        <div class="bloque">
+            <span class="ref">Josué 13:14</span>
+            <p>Empero a la tribu de Leví no dio heredad: los sacrificios de Jehová Dios de Israel son su heredad, como él les había dicho.</p>
+        </div>
+    </div>
+
+    <!-- 3. PROFETAS -->
+    <div class="seccion">
+        <h2>3 · LOS PROFETAS, ORDENADOS PARA EL MINISTERIO DE LA OBRA DE DIOS <span class="badge">Consagración</span></h2>
+        <div class="bloque">
+            <span class="ref">1 Samuel 1:22</span>
+            <p>Mas Ana no subió, sino dijo a su marido: Yo no subiré hasta que el niño sea destetado; para que lo lleve y sea presentado delante de Jehová, y se quede allá para siempre.</p>
+        </div>
+    </div>
+
+    <!-- 4. PEDRO -->
+    <div class="seccion">
+        <h2>4 · PEDRO OBEDECE LA VOZ DE CRISTO <span class="badge">Seguimiento</span></h2>
+        <div class="grid-2">
+            <div class="bloque">
+                <span class="ref">Mateo 4:18-20</span>
+                <p>Y andando Jesús junto a la mar de Galilea, vio a dos hermanos, Simón, que es llamado Pedro, y Andrés su hermano, que echaban la red en la mar; porque eran pescadores.</p>
+                <p>19 - Y díceles: Venid en pos de mí, y os haré pescadores de hombres.</p>
+                <p>20- Ellos entonces, dejando luego las redes, le siguieron.</p>
+                <div class="cita">“Dejando luego las redes, le siguieron”</div>
+            </div>
+            <div class="bloque destacado">
+                <span class="ref">Lucas 18:28-30</span>
+                <p>Entonces Pedro dijo: He aquí, nosotros hemos dejado las posesiones nuestras, y te hemos seguido.</p>
+                <p>29- Y él les dijo: De cierto os digo, que nadie hay que haya dejado casa, padres, o hermanos, o mujer, o hijos, por el reino de Dios,</p>
+                <p>30- Que no haya de recibir mucho más en este tiempo, y en el siglo venidero la vida eterna.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. MATEO -->
+    <div class="seccion">
+        <h2>5 · MATEO SIGUE A JESUS <span class="badge">Llamado</span></h2>
+        <div class="bloque">
+            <span class="ref">Mateo 9:9</span>
+            <p>Y pasando Jesús de allí, vio a un hombre que estaba sentado al banco de los públicos tributos, el cual se llamaba Mateo; y dicele: Sígueme. Y se levantó, y le siguió.</p>
+        </div>
+    </div>
+
+    <!-- 6. JESUS LO ORDENO -->
+    <div class="seccion">
+        <h2>6 · JESUS LO ORDENO <span class="badge">Mandato</span></h2>
+        <div class="grid-2">
+            <div class="bloque destacado">
+                <span class="ref">Lucas 14:33</span>
+                <p>Así pues, cualquiera de vosotros que no renuncia a todas las cosas que posee, no puede ser mi discípulo.</p>
+            </div>
+            <div class="bloque">
+                <span class="ref">Mateo 19:21</span>
+                <p>Dicele Jesús: Si quieres ser perfecto, anda, vende lo que tienes, y dalo a los pobres, y tendrás tesoro en el cielo; y ven, sígueme.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. NO PODEMOS SER SIERVOS DE LOS HOMBRES -->
+    <div class="seccion">
+        <h2>7 · NO PODEMOS SER SIERVOS DE LOS HOMBRES <span class="badge">Libertad</span></h2>
+        <div class="bloque">
+            <span class="ref">1 Corintios 7:23</span>
+            <p>Por precio sois comprados; no os hagáis siervos de los hombres.</p>
+        </div>
+    </div>
+
+    <!-- 8. ES UN MANDAMIENTO DEL HIJO DE DIOS -->
+    <div class="seccion">
+        <h2>8 · ES UN MANDAMIENTO DEL HIJO DE DIOS <span class="badge">Ordenanza</span></h2>
+        <div class="grid-2">
+            <div class="bloque">
+                <span class="ref">1 Corintios 9:14</span>
+                <p>Así también ordenó el Señor a los que anuncian el evangelio, que vivan del evangelio.</p>
+            </div>
+            <div class="bloque">
+                <span class="ref">Mateo 10:7-14</span>
+                <p><em>(Leerlo)</em> — Yendo, predicad, diciendo: El reino de los cielos se ha acercado. Sanad enfermos, limpiad leprosos, resucitad muertos, echad fuera demonios; de gracia recibisteis, dad de gracia. No poseáis oro, ni plata, ni cobre en vuestras cinturas; ni alforja para el camino, ni dos túnicas, ni calzado, ni bordón; porque el obrero es digno de su alimento. Y en cualquier ciudad o aldea donde entréis, informaos quién en ella sea digno, y posad allí hasta que salgáis. Y al entrar en la casa, saludadla. Y si la casa fuere digna, vuestra paz vendrá sobre ella; mas si no fuere digna, vuestra paz se volverá a vosotros. Y si no os recibieren, ni oyeren vuestras palabras, salid de aquella casa o ciudad, y sacudid el polvo de vuestros pies.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. PABLO TRIBULACIONES -->
+    <div class="seccion">
+        <h2>9 · POR CAUSA DE DIOS, PABLO PASO POR GRANDES TRIBULACIONES Y NECESIDADES MATERIALES <span class="badge">Sufrimiento</span></h2>
+        <div class="bloque destacado">
+            <span class="ref">1 Corintios 4:11,12</span>
+            <p>Hasta esta hora hambreamos, y tenemos sed, y estamos desnudos, y somos heridos de golpes, y andamos vagabundos;</p>
+            <p>12- Y trabajamos, obrando con nuestras manos; nos maldicen, y bendecimos: padecemos persecución, y sufrimos.</p>
+        </div>
+    </div>
+
+    <!-- 10. PABLO TRABAJO EN EL EVANGELIO -->
+    <div class="seccion">
+        <h2>10 · PABLO TRABAJO EN EL EVANGELIO <span class="badge">Colaboradores</span></h2>
+        <div class="bloque">
+            <span class="ref">Filipenses 4:3</span>
+            <p>Asimismo te ruego también a ti, hermano compañero, ayuda a las que trabajaron juntamente conmigo en el evangelio, con Clemente también, y los demás mis colaboradores, cuyos nombres están en el libro de la vida.</p>
+        </div>
+    </div>
+
+    <!-- 11. PABLO NO QUISO SER CARGA -->
+    <div class="seccion">
+        <h2>11 · PABLO NO QUISO SER CARGA DE NADIE <span class="badge">Desprendimiento</span></h2>
+        <div class="bloque">
+            <span class="ref">2 Corintios 11:9-12</span>
+            <p><em>(Leerlo)</em> — Y estando con vosotros y teniendo necesidad, a ninguno fui carga; porque lo que me faltaba, suplieron los hermanos que vinieron de Macedonia, y en todo me guardé de seros gravoso, y me guardaré. Como la verdad de Cristo está en mí, que no se me impedirá esta gloria en las regiones de Acaya. ¿Por qué? ¿Porque no os amo? Dios lo sabe. Mas lo que hago, lo haré, para cortar la ocasión a aquellos que la desean, porque en lo que se glorían, sean hallados así como nosotros.</p>
+        </div>
+    </div>
+
+    <!-- 12. EL QUE RECIBE LA PALABRA -->
+    <div class="seccion">
+        <h2>12 · EL QUE RECIBE LA PALABRA DE DIOS DEBE COMUNICAR EN TODOS LOS BIENES AL QUE LO PREPARA <span class="badge">Compartir</span></h2>
+        <div class="grid-2">
+            <div class="bloque">
+                <span class="ref">Gálatas 6:6</span>
+                <p>Y el que es enseñado en la palabra, comunique en todos los bienes al que lo instruye.</p>
+            </div>
+            <div class="bloque">
+                <span class="ref">Lucas 8:2,3</span>
+                <p>Y algunas mujeres que habían sido curadas de malos espíritus y de enfermedades: María, que se llamaba Magdalena, de la cual habían salido siete demonios.</p>
+                <p>3- Y Juana, mujer de Chuza, procurador de Herodes, y Susana, y otras muchas que le servían de sus haciendas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 13. PABLO NO TRABAJO EN LO MATERIAL -->
+    <div class="seccion">
+        <h2>13 · PABLO NO TRABAJO EN LO MATERIAL PARA COBRAR UN SUELDO, SUS NECESIDADES PERSONALES SE LAS SUPLIAN LOS DEMAS HERMANOS <span class="badge">Providencia</span></h2>
+        <div class="grid-2">
+            <div class="bloque">
+                <span class="ref">Hechos 28:10</span>
+                <p>Los cuales también nos honraron con muchos obsequios, y cuando partimos, nos cargaron de las cosas necesarias.</p>
+            </div>
+            <div class="bloque destacado">
+                <span class="ref">2 Corintios 11:9</span>
+                <p>Y estando con vosotros y teniendo necesidad, a ninguno fui carga; porque lo que me faltaba, suplieron los hermanos que vinieron de Macedonia, y en todo me guardé de seros gravoso, y me guardaré.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 14. SU TRABAJO ERA EN EL SEÑOR -->
+    <div class="seccion">
+        <h2>14 · SU TRABAJO ERA EN EL SEÑOR <span class="badge">Entrega</span></h2>
+        <div class="grid-3">
+            <div class="bloque">
+                <span class="ref">2 Corintios 11:27</span>
+                <p>En trabajo y fatiga, en muchas vigilias, en hambre y sed, en muchos ayunos, en frío y en desnudez.</p>
+            </div>
+            <div class="bloque">
+                <span class="ref">Romanos 16:12</span>
+                <p>Saludad a Trifena y a Trifosa, las cuales trabajan en el Señor. Saludad a Pérsida amada, la cual ha trabajado mucho en el Señor.</p>
+            </div>
+            <div class="bloque">
+                <span class="ref">Gálatas 4:11</span>
+                <p>Temo de vosotros, que no haya trabajado en vano en vosotros.</p>
+                <p style="margin-top:0.5rem;"><span class="ref">2 Timoteo 2:3-7</span> <em>(Leerlo)</em> — Tú, pues, sufre penalidades como buen soldado de Jesucristo. Ninguno que milita se enreda en los negocios de la vida, a fin de agradar a aquel que lo tomó por soldado. Y el que lucha, no es coronado si no lucha legítimamente. El labrador que trabaja, debe ser el primero en participar de los frutos. Considera lo que digo, y el Señor te dé entendimiento en todo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 15. IGLESIA DE DIOS REGLAS DEL DISCIPULADO -->
+    <div class="seccion">
+        <h2>15 · LA IGLESIA DE DIOS DEBE DE TENER TODAS ESTAS REGLAS DEL DISCIPULADO. VENDIAN SUS HEREDADES O POSESIONES PARA DEDICAR SUS VIDAS A DIOS <span class="badge">Renuncia</span></h2>
+        <div class="bloque destacado">
+            <span class="ref">Mateo 19:21</span>
+            <p>Dicele Jesús: Si quieres ser perfecto, anda, vende lo que tienes, y dalo a los pobres, y tendrás tesoro en el cielo; y ven, sígueme.</p>
+        </div>
+    </div>
+
+    <!-- 16. VIVIAN TODOS JUNTOS -->
+    <div class="seccion">
+        <h2>16 · VIVIAN TODOS JUNTOS, LAS COSAS LES ERAN EN COMUN, ES DECIR, TODAS LAS COSAS ERAN PARA TODOS <span class="badge">Comunión</span></h2>
+        <div class="grid-2">
+            <div class="bloque">
+                <span class="ref">Hechos 2:43-47</span>
+                <p><em>(Leerlo)</em> — Y sobrevino temor a toda persona; y muchas maravillas y señales eran hechas por los apóstoles. Todos los que creían estaban juntos, y tenían en común todas las cosas; y vendían sus propiedades y sus bienes, y lo repartían a todos según la necesidad de cada uno. Y perseverando unánimes cada día en el templo, y partiendo el pan en las casas, comían juntos con alegría y sencillez de corazón, alabando a Dios, y teniendo favor con todo el pueblo. Y el Señor añadía cada día a la iglesia los que habían de ser salvos.</p>
+            </div>
+            <div class="bloque destacado">
+                <span class="ref">Hechos 4:32-37</span>
+                <p><em>(Leerlo)</em> — Y la multitud de los que habían creído era de un corazón y un alma; y ninguno decía ser suyo propio nada de lo que poseía, sino que tenían todas las cosas en común. Y con gran poder los apóstoles daban testimonio de la resurrección del Señor Jesús, y gran gracia había sobre todos ellos. Así que no había entre ellos ningún necesitado; porque todos los que poseían heredades o casas, las vendían, y traían el precio de lo vendido, y lo ponían a los pies de los apóstoles; y se repartía a cada uno según su necesidad. Entonces José, a quien los apóstoles llamaban Bernabé (que traducido es, Hijo de consolación), levita, natural de Chipre, vendió una heredad que tenía, y trajo el precio, y lo puso a los pies de los apóstoles.</p>
+                <div style="margin-top:0.8rem;"><span class="ref">Lucas 14:33</span> — Así pues, cualquiera de vosotros que no renuncia a todas las cosas que posee, no puede ser mi discípulo.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 17. LO ORDENO JESUS -->
+    <div class="seccion">
+        <h2>17 · LO ORDENO JESUS <span class="badge">Mandato final</span></h2>
+        <div class="grid-2">
+            <div class="bloque">
+                <span class="ref">Lucas 14:26,27</span>
+                <p>Si alguno viene a mí, y no aborrece a su padre, y a su madre, y mujer, e hijos, y hermanos, y hermanas, y aun también su vida, no puede ser mi discípulo.</p>
+                <p>27- Y cualquiera que no trae su cruz, y viene en pos de mí, no puede ser mi discípulo.</p>
+            </div>
+            <div class="bloque">
+                <span class="ref">Lucas 12:32-34</span>
+                <p>No temáis, manada pequeña; porque al Padre ha placido daros el reino.</p>
+                <p>33- Vended lo que poseéis, y dad limosna; haceos bolsas que no se envejecen, tesoro en los cielos que nunca falta; donde ladrón no llega, ni polilla corrompe.</p>
+                <p>34- Porque donde está vuestro tesoro, allí también estará vuestro corazón.</p>
+            </div>
+            <div class="bloque destacado" style="grid-column: span 2;">
+                <span class="ref">Mateo 16:24-26</span>
+                <p>Entonces Jesús dijo a sus discípulos: Si alguno quiere venir en pos de mí, niéguese a sí mismo, y tome su cruz, y sígame.</p>
+                <p>25- Porque cualquiera que quisiera salvar su vida, la perderá, y cualquiera que perdiere su vida por causa de mí la hallará.</p>
+                <p>26- Porque ¿de qué aprovecha al hombre, si granjeare todo el mundo, y perdiere su alma? o ¿qué recompensa dará el hombre por su alma?</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separador" />
+    <div class="footer">
+        Estudio completo basado en las Escrituras · EL DISCIPULADO ·
+    </div>
+
+</div>
+</body>
+</html>
